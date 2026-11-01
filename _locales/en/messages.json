@@ -1,0 +1,43 @@
+{
+  "extName": { "message": "Episode Limit" },
+  "extDescription": { "message": "Blocks playback on Netflix, Disney+, YouTube, CDA and TVP VOD until a parent unlocks a set number of episodes." },
+
+  "blockingOn": { "message": "Blocking: ON" },
+  "blockingOff": { "message": "Blocking: OFF" },
+  "remaining": {
+    "message": "Episodes left: $COUNT$",
+    "placeholders": { "count": { "content": "$1", "example": "3" } }
+  },
+  "noPassword": { "message": "No password set." },
+  "createPassword": { "message": "Create a parent password" },
+  "repeatPassword": { "message": "Repeat the password" },
+  "savePassword": { "message": "Save password" },
+  "parentPassword": { "message": "Parent password" },
+  "turnBlockingOff": { "message": "Turn blocking off" },
+  "turnBlockingOn": { "message": "Turn blocking on" },
+  "setRemaining": { "message": "Set the number of episodes left (0 = lock now)" },
+  "apply": { "message": "Apply" },
+  "passwordTooShort": { "message": "Use at least 4 characters" },
+  "passwordsDiffer": { "message": "The passwords don't match" },
+  "saved": { "message": "Saved" },
+  "wrongPassword": { "message": "Wrong password" },
+  "blockingTurnedOn": { "message": "Blocking turned on" },
+  "blockingTurnedOff": { "message": "Blocking turned off" },
+  "updated": { "message": "Updated" },
+  "version": {
+    "message": "version $VERSION$",
+    "placeholders": { "version": { "content": "$1", "example": "2.3.0" } }
+  },
+
+  "lockedTitle": { "message": "Locked" },
+  "lockedHeading": { "message": "That's all for now!" },
+  "lockedSub": { "message": "Ask a parent for more episodes." },
+  "forParent": { "message": "For parents" },
+  "noPasswordHint": { "message": "No password has been set yet. Click the extension's icon in the toolbar to set one." },
+  "password": { "message": "Password" },
+  "episodeCount": { "message": "Number of episodes / videos" },
+  "unlock": { "message": "Unlock" },
+  "back": { "message": "← Back" },
+  "atLeastOne": { "message": "Enter at least 1" },
+  "unlockedReopen": { "message": "Unlocked. Open the video again." }
+}

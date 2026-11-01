@@ -20,22 +20,22 @@
   <div id="status"></div>
 
   <form id="setup" hidden>
-    <label>Utwórz hasło rodzica</label>
+    <label data-i18n="createPassword">Utwórz hasło rodzica</label>
     <input type="password" id="pw1" autocomplete="off">
-    <label>Powtórz hasło</label>
+    <label data-i18n="repeatPassword">Powtórz hasło</label>
     <input type="password" id="pw2" autocomplete="off">
-    <button type="submit">Zapisz hasło</button>
+    <button type="submit" data-i18n="savePassword">Zapisz hasło</button>
   </form>
 
   <form id="manage" hidden>
     <hr>
-    <label>Hasło rodzica</label>
+    <label data-i18n="parentPassword">Hasło rodzica</label>
     <input type="password" id="pw" autocomplete="off">
     <button type="button" id="toggle"></button>
     <hr>
-    <label>Ustaw liczbę pozostałych odcinków (0 = zablokuj teraz)</label>
+    <label data-i18n="setRemaining">Ustaw liczbę pozostałych odcinków (0 = zablokuj teraz)</label>
     <input type="number" id="n" min="0" max="50" value="1">
-    <button type="submit">Zastosuj</button>
+    <button type="submit" data-i18n="apply">Zastosuj</button>
   </form>
 
   <div id="msg"></div>

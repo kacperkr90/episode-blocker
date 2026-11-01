@@ -1,4 +1,4 @@
-// Shared helpers: site detection, state storage and password hashing (PBKDF2 via Web Crypto).
+// Shared helpers: site detection, state storage, translations and password hashing (PBKDF2 via Web Crypto).
 // Loaded by the content script, background worker, popup and lock page.
 const STATE_KEY = 'state';
 
@@ -93,6 +93,19 @@ async function getState() {
 
 async function setState(s) {
   await chrome.storage.local.set({ [STATE_KEY]: s });
+}
+
+// ---- Translations --------------------------------------------------------------
+// Strings live in _locales/<lang>/messages.json; Chrome picks the language from its UI language.
+
+function t(key, ...subs) {
+  return chrome.i18n.getMessage(key, subs.map(String)) || key;
+}
+
+// Fills every element marked with data-i18n="key" on extension pages (popup, lock page).
+function localizePage() {
+  document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0];
+  document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t(el.dataset.i18n); });
 }
 
 // ---- Password ------------------------------------------------------------------

@@ -1,4 +1,5 @@
 const $ = (id) => document.getElementById(id);
+localizePage();
 
 // The video page we were sent away from. Only return to supported sites over https.
 const returnUrl = (() => {
@@ -33,13 +34,13 @@ async function init() {
 $('unlock').addEventListener('submit', async (e) => {
   e.preventDefault();
   const n = parseInt($('n').value, 10);
-  if (!(n >= 1)) { $('err').textContent = 'Wpisz co najmniej 1'; return; }
-  if (!(await checkPassword($('pw').value))) { $('err').textContent = 'Błędne hasło'; return; }
+  if (!(n >= 1)) { $('err').textContent = t('atLeastOne'); return; }
+  if (!(await checkPassword($('pw').value))) { $('err').textContent = t('wrongPassword'); return; }
   const s = await getState();
   s.remaining = n;
   await setState(s);
   $('pw').value = '';
-  if (!returnUrl) $('err').textContent = 'Odblokowano. Otwórz film ponownie.';
+  if (!returnUrl) $('err').textContent = t('unlockedReopen');
   goBackToVideo();
 });
 
