@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:23cefd6fac48533f26fcb9253a48d43f1c2888441a4f5bd08c7e70477bf1556e",
+  "claims": [
+    {
+      "id": "claim_559bdb1a0956421b9cd09105cdbf0950",
+      "statement": "The extension blocks playback on Netflix, Disney+, YouTube, YouTube Kids, CDA and TVP VOD until a parent unlocks a number of episodes, and is loaded as plain unbuilt files via a Manifest V3 manifest.",
+      "evidence": [
+        {
+          "resource": "repo://manifest.json#L1-L58",
+          "version": "repo-lines-v1:sha256:e55bd5f0dd8881f6589757f058abd518bf26996fdb8ef3d0f348d283a3a22629:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e8634ea0dc98464e8ab42ddfc0fb24f8",
+      "statement": "Each new video page opened in a tab spends one episode through the background worker's claim handling, and a tab with no remaining quota is redirected to the lock page.",
+      "evidence": [
+        {
+          "resource": "repo://background.js#L18-L35",
+          "version": "repo-lines-v1:sha256:68755dc2506faee25c79a234ceb697cdfaaf96a16f3aa8a78fe16678bc768765:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNmNmMDJjZWQxNDBiZjdmOTQ0MjVmOTQ4NDBjMGU0MmMwNmFkNzA5N2VlY2IzN2Y3ZGI5OTI4Yzk1MzEwMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MjE5NDc3ZTg4ZjJhMDYzOGE2ODczNzYzY2ZlOGQzYTliZjFhYzhlZDFjYjc1MDViMTFlNjBmMzNmN2Y2ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZjUzYTQ3MTM3YjNlN2QwNDM2OGE1MjA1YThhNjFiM2JmZGNmMDE1ZGIyN2RhYjFjYWQ1ZDgxOWY0ZDVkZjAifQ"
+        },
+        {
+          "resource": "repo://content.js#L14-L35",
+          "version": "repo-lines-v1:sha256:9bdb01640a9c9feb68d7f8cc56a62fbcdb0dcdc7a39096d5c63dc85ed4ea0189:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3NzlhOTEzY2MxYzlmOWNkZmMyOGNkYWRjNTk0MWMzYzMwYWI3NDMyMzE2ZmE1Mzk4MmExNzUzNjgxYWM3YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5OWZmYmVkMmMzNTk1OWVhYzE1YTk0ODEzMThlNDAyNjgwZTMxOTczODFmZGFkZmQzMDczYWY3NTViZWQyODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiOTUwZDgxOGVjZDE4NjM2MmQyNTg1MjM4ZDAxNDkxNDZjYzQ0NjViYzNhODMxZjliYzI0ODhlZWEyMzdiMGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_61c340a3d9234902b62d5806589d6dd9",
+      "statement": "tools/sync-manifest.js is a developer-run Node script that regenerates the manifest's site match lists from SITES in lib.js; it is not referenced by the manifest and does not run in the extension.",
+      "evidence": [
+        {
+          "resource": "repo://manifest.json",
+          "version": "repo-file-v1:sha256:e55bd5f0dd8881f6589757f058abd518bf26996fdb8ef3d0f348d283a3a22629"
+        },
+        {
+          "resource": "repo://tools/sync-manifest.js#L1-L16",
+          "version": "repo-lines-v1:sha256:44f10d018dd5d74b762e2e15590c136e9328bb59fb54356559e758a7c99da501:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzNTc1YTJjMDMxNWNkZTNjYjA4ZTEwYTVlYTNiMGRhNzRhOTQyMDM5NDdjZWY2NmJiMTllYmVkMzM2YjhlYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzOWIyZjFmYjA1NzRiYmMxNWM3ZmI1OGE1YzM3OTA2NDVjYzllMzRlYWE4NWFhM2RlZmVkMDI0MTc3NThhNGQifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-01T11:48:12.232Z"
+  }
+}

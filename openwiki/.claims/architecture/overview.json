@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:fae9bb97cf27a6780047084beb50dcd82c7977ee664c67e687bf3e04a695865c",
+  "claims": [
+    {
+      "id": "claim_7cace31593264bf8a932662a96168866",
+      "statement": "The extension is a Manifest V3 extension with a background service worker, a content script (lib.js + content.js) injected at document_start on six supported site patterns, a toolbar popup, and a web-accessible lock page.",
+      "evidence": [
+        {
+          "resource": "repo://manifest.json#L1-L58",
+          "version": "repo-lines-v1:sha256:e55bd5f0dd8881f6589757f058abd518bf26996fdb8ef3d0f348d283a3a22629:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7dbd22cece714ff1a92b78ba9a2393d2",
+      "statement": "lib.js is shared by the content script, background worker, popup and lock page and provides site detection, state storage access, and PBKDF2 password hashing.",
+      "evidence": [
+        {
+          "resource": "repo://background.js#L3-L3",
+          "version": "repo-lines-v1:sha256:26edcc60f780abd87a97800bfbd32505f1c8b8a2bb14a6383bdeb5391761fb4f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZlZGNjNjBmNzgwYWJkODdhOTc4MDBiZmJkMzI1MDVmMWM4YjhhMmJiMTRhNjM4M2JkZWI1MzkxNzYxZmI0ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjZlZGNjNjBmNzgwYWJkODdhOTc4MDBiZmJkMzI1MDVmMWM4YjhhMmJiMTRhNjM4M2JkZWI1MzkxNzYxZmI0ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzIxYWM5NWI0NDljYjVlODA3NDU0NzI3M2IzZTYyNDQ5YTlmOTMyNzI3YWMzMDFlZWIxOGM5Zjk3MmRmMGI1MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzQ2N2JhODE3NGUwYTJjYmE5NmU0MWMwODQ4ZWZkYjliZGE3ODc0N2JhZmIzODllNzE0ZmRiMmMwNDc5NDc5YyJ9"
+        },
+        {
+          "resource": "repo://lib.js#L1-L3",
+          "version": "repo-lines-v1:sha256:630cd97a3976fbff0d69805b41740ce6a7c523e94736171dadc30d1e292720e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiN2Q0ZTYzN2Y1NmE4ODgyYmYxMGJlMmNlOWMxNjk3OWNlMzQ0NjEwYjJmZWFlMjNjNWI3NDkxMGFlZGMwYzE0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzRhMTExZTI0YWQzOTU0YzU5NmRhYmZkMmViMjU5MTFmMGVhMWUxYTE3ZDI1ZTI0ZjYyMDMwY2RmMWNhNWU0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGRmMDkyOGVlMWVhZGU4MzZhNDNmOWU3NzVjNjliZjQ1NTQwMjJmMjdhYWE2NDM5YjI5ODllYTZjNjhlOGNjNiJ9"
+        },
+        {
+          "resource": "repo://locked.html#L54-L55",
+          "version": "repo-lines-v1:sha256:0fac8cf0a403cdd56edb827773e255fbfaf547709b04f87460e8957b431cf9ef:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDgzZWU4NzI1OTY4NDNiMDNhY2M1ODQ2YzJlOWQzZGE4YzlmZTYwMTY4YmU3ODQxZDA1NGUwN2E0NTlhYjM5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJjM2IxMGI5MWE4ZTdmYzE4ZThiNDFjYWMwYjQwNmM4YTNiZWVmZTg1NmIyOGY1NGExNDQ0ODlkNmY3NDFhZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTEwMmVmMjAwNDM0Y2I3MDI1MTg2NjRiYzgwOGQ0OThjNzNlMzFhOTM0YWI1N2FlZDQ2OWMzMjY1Y2YwYjAxNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDJlZDU0ZWRjNDJmYmJiYzM2OTg4YjJhMTg0YjY3ZTQ5NTY4YmU0ODA3ODMyNTM4YmE5YjdlZGRhNTM3NDRkOCJ9"
+        },
+        {
+          "resource": "repo://popup.html#L43-L44",
+          "version": "repo-lines-v1:sha256:160ec7786a6f58aa8ca74cc0d3c723a96aa5f27b42795df33f96ba21db702476:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDgzZWU4NzI1OTY4NDNiMDNhY2M1ODQ2YzJlOWQzZGE4YzlmZTYwMTY4YmU3ODQxZDA1NGUwN2E0NTlhYjM5NiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiM2Y3MzM5MDg4MTU4NzgxNmVmN2I1ODE3MzlkOTYyMTNjZWQ1MmM0MTNkYzkyNjFjNTdkYmMyYzgxZDE1NWExNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWM2ZWYzOWJiN2JiMjhjNDQxOWFiMjE1NzM3ZDYzM2QzNTdmOTBmNzlmYjQ0ZjQ0N2ViYjI2ZGJmNmIzZDBhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDJlZDU0ZWRjNDJmYmJiYzM2OTg4YjJhMTg0YjY3ZTQ5NTY4YmU0ODA3ODMyNTM4YmE5YjdlZGRhNTM3NDRkOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b37f665b39ec4731b287b1371266b36c",
+      "statement": "Persistent shared state {salt, hash, remaining, enabled, epoch} is stored under the 'state' key in chrome.storage.local.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L3-L3",
+          "version": "repo-lines-v1:sha256:34a111e24ad3954c596dabfd2eb25911f0ea1e1a17d25e24f62030cdf1ca5e40:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzRhMTExZTI0YWQzOTU0YzU5NmRhYmZkMmViMjU5MTFmMGVhMWUxYTE3ZDI1ZTI0ZjYyMDMwY2RmMWNhNWU0MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzRhMTExZTI0YWQzOTU0YzU5NmRhYmZkMmViMjU5MTFmMGVhMWUxYTE3ZDI1ZTI0ZjYyMDMwY2RmMWNhNWU0MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI4ZmU3YzQ1ZTA1YjBiYmQ2MzVlNmJkMzUzYmRkZGM1NWRhNThkNDAwN2I3ZDYxZWQ4MTU3OWFmZTRiOTliNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTRmODRjZjQ3NDFjZDFiMzZlZmRiMjhiZmE5MmJmNmE5ODQ2NDM0YTRjZTJhZWMyNDQwZTIwYzI2MGE5NzU3ZiJ9"
+        },
+        {
+          "resource": "repo://lib.js#L85-L96",
+          "version": "repo-lines-v1:sha256:6a73a610cd40470d6d7461829efd9a8712173d63b666b0786c98b28e465fa595:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYxNDU1NjJkZWE3NWYxYTQ4ZjUyNWNmNDdmYzM4ZDNjYzA2MGU4YTQ2YTk5ZTAxN2ZkNTdhZGI3NmEzYzFkNDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNlNjI3NjMzZWM0YzBhZWFjYzllYzEwMzQyNGU3YmRjOGEzOTY1NzgxNGZlNDIwNmQyZGM2YjM0Zjk0N2FkMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ4ZjUxM2ViZDM0YmJmNzEwOTJiNjUwOWNjZjZhNGYwNjUwYjhkNDNjMWQ2OWUwYTU1ZjBiMWI3NjQ5M2I2MmYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8cfd9a3ac9ba400295a3f564e6dc96e6",
+      "statement": "The popup and lock page never message the background worker; they read and write state in storage directly, and the only runtime message is the content script's claim request.",
+      "evidence": [
+        {
+          "resource": "repo://content.js#L28-L28",
+          "version": "repo-lines-v1:sha256:0c1a08973d0c082dbfa670a39c1568fdfc7f5400f53b6e95e8da36935ff80522:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGMxYTA4OTczZDBjMDgyZGJmYTY3MGEzOWMxNTY4ZmRmYzdmNTQwMGY1M2I2ZTk1ZThkYTM2OTM1ZmY4MDUyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMGMxYTA4OTczZDBjMDgyZGJmYTY3MGEzOWMxNTY4ZmRmYzdmNTQwMGY1M2I2ZTk1ZThkYTM2OTM1ZmY4MDUyMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjAxNDcwYjEwZmQ4OTkyZTY3Yjg4ZWVmYTgyNGEzNjJjMGU1MmYwOTlkNjkxZmJhMDY1NjExNGVjYmJiYmU1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjZjNjUxMjViOTYzMmE2YjY3OGVlOGQ4ZWU3YWQ5MzQ1ZDkwZTJlZmE5NDc3M2VhNjFkYWJjY2JkZjkxYjQxNCJ9"
+        },
+        {
+          "resource": "repo://locked.js#L1-L55",
+          "version": "repo-lines-v1:sha256:f36fd1cda1330ebba02b79a9f74fffeedbcce455f00ab41a6387b7644aac6df3:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyYWRhMjNkZDkyZjQ4OGVhNjMyYTczZGY1NDBmZTA0MTlkYmVkMzY0YzFiNDk0ZTY5MmY5Yjc1ZmJjYmZlZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkNDA4MWI2OWRmNWJmZTRhZTcxODkyZTdhMGQxMTJmNTM4NGU0ZTUzODE5YmM2M2RlNWFhNWU1ZmNmMzc2NDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://popup.js#L1-L57",
+          "version": "repo-lines-v1:sha256:871629b4242dd19b894e8488562ba7f0982ed2a6651c4a7ec7b794494d12e75c:eyJzZWxlY3RlZExpbmVDb3VudCI6NTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyYWRhMjNkZDkyZjQ4OGVhNjMyYTczZGY1NDBmZTA0MTlkYmVkMzY0YzFiNDk0ZTY5MmY5Yjc1ZmJjYmZlZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwZDBjM2U4MDlhZmI1NjQzNTQ2Zjk2NjQ0NGI0NzcxYmFmNGZlYmU3MWQyMjQwOWQwOTBlZmI0MGI4Zjc4NGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4f270f1139f4f92b47a94292ae888d9",
+      "statement": "The only API permission requested is storage, with host permissions limited to Netflix, Disney+, YouTube, YouTube Kids, CDA and TVP VOD.",
+      "evidence": [
+        {
+          "resource": "repo://manifest.json#L6-L16",
+          "version": "repo-lines-v1:sha256:a9dbac1e806a46c9987dc5266c71fc2317054ca6f0336230b6a7c9a92d73a670:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEwMjQyOTdkNjBhMmVjN2M5YTljNDgxNjE4MDZlNzQzMzNiYWI4YjRkN2IzMGRiN2E2ODk3MzE3YzllZGNlY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NGQ4YzA3MzQyOTg5MzEwMTU3NmQ4OGQ5OTEyN2U4OWQ2ODkxZDNiMTdlODlkZjAyZWM5YWU3MDcwNWQ4YmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY2YTcwNTkyOTAyYWNhNmViNzgzMzA4NDVhNDU0NWFlMGY1MThlOGU0MmQ3OTRmMzJjMTViMWJlMjg4MmNiNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhkYTcxNDAxMDY1MmQxMTU2MjRlYjY3YmI1YThiN2U5MWE0MTcwMWU4MTk3MzAwYTMyNDA0MzI2YTZhOTRjMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_36d4e87a746b4205a26abedd0bacc538",
+      "statement": "The manifest's host_permissions, content_scripts[0].matches and web_accessible_resources[0].matches lists are all generated from the matches fields of the SITES entries in lib.js by tools/sync-manifest.js.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L35-L72",
+          "version": "repo-lines-v1:sha256:84af4c2567cee4f8ecbd8eaa1229aee4befee8c20a28acb5a31d754d9b940793:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YTVkOWYzYWNiZTk3MTg5MjdjNzdhYzZjYmQwZWZkODc5M2Y2YTgxZWRkYzMyZGVhODcyYWVkMzc1NzEyY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwMmQyYzBkNmRjNWU3NGQ5MmZhMTRiOTFkYmVhMjY0MDkwYmViMzVmZGI5MTg4ZDliMzQxMTgxZGNlOWY0Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5ZjFiZmNiZGUyMzdhMTIxNDEyMDUyNDRhOWNhNDAzM2I4OGVkYzAwNTlmNmQ1YzAzM2U0MTcxMmRhYTEyMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNlNWE2ZmY3ZDcxOTczMmZlZTljNGQ1OTYwYTVjMGQ1NTRkY2FlNWEyNjkzZjIyZmVkMTQ3YzE2MDQ0ZmZhYWYifQ"
+        },
+        {
+          "resource": "repo://tools/sync-manifest.js#L1-L16",
+          "version": "repo-lines-v1:sha256:44f10d018dd5d74b762e2e15590c136e9328bb59fb54356559e758a7c99da501:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE1OWM0Nzg3MmI3MWYxMjU4OTk0Mjg5MjQ2NGU3NjRjMGRiMzUwYzIwYjcyMjI4NjQ1NjE1Y2MzNmUwYTA3MjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzNTc1YTJjMDMxNWNkZTNjYjA4ZTEwYTVlYTNiMGRhNzRhOTQyMDM5NDdjZWY2NmJiMTllYmVkMzM2YjhlYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzOWIyZjFmYjA1NzRiYmMxNWM3ZmI1OGE1YzM3OTA2NDVjYzllMzRlYWE4NWFhM2RlZmVkMDI0MTc3NThhNGQifQ"
+        },
+        {
+          "resource": "repo://tools/sync-manifest.js#L34-L40",
+          "version": "repo-lines-v1:sha256:2128db6d99062fea8c24efd19af7f942396832f63c1a09ea7de24ee10c51e9ed:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWRhNjAyZjZlN2QzYTY4MDM0MzNkMjY3NzVhYmNhMzFiNTI4OWY2YTcwOWFhMjJlZDQxNzBlNTAzNmE4YTZmNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNTc0OGFhNjYwZmVmMTg0YTFmZWI2NDM1Nzg3ZGNkODY5MzlhMGYwOWJmNWJmNTJhNmY1ODAzMTZhMDA1NjE5ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjYyOTBhZmRkODVjMDQyNGVlODBiNTcwZmU5OTUzNzI4OTBlZjk3MzYxMTY5YWIwYzVlYWQ0NTIxMDRlNzZhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzcwMDRjNjc2MzYzMmY5MmFkYzNiY2NhNTE4ZDkyOGQwZTRjNzM4NjkzYjBlZmE1OWI3OWZhMjgwYjcyMTIyMCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-01T11:48:12.232Z"
+  }
+}

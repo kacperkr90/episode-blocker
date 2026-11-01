@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f03344de35035d90745dbdd77817e890157d83d2b4719b83c9e9da8810a74157",
+  "claims": [
+    {
+      "id": "claim_9584f51a81f5471f9da40dcf198a318e",
+      "statement": "The parent password is stored as a base64 PBKDF2-SHA-256 hash (200000 iterations, 256 bits) with a fresh random 16-byte salt, and checkPassword returns false when no hash is set.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L77-L100",
+          "version": "repo-lines-v1:sha256:a0504c6ffeb08512ec2d80a98ee3ac24d57ae83c2cdbffd803221e5ef6cf0b80:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkOGZlYjA0MjBhMTA4YzA3ZDY4ZDY4NjVjYjJmN2ZlY2NlZTBjZTc3MzI5NGZhMDIxY2Q0Y2ZkYTNkYzI4NDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2NjJmZGNiYTNjODUyZDdmOWFhNThlOGNkOTdhOGVjNWViYjcxNjhhYTA2ODI2NjRlOWNiMTg0MzE2Mzc3MmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ae59e26c75f5424eab4ada69f0e6e721",
+      "statement": "The popup shows a password setup form only while no hash exists, requires at least 4 characters and matching confirmation, and offers no way to change an existing password.",
+      "evidence": [
+        {
+          "resource": "repo://popup.html#L22-L39",
+          "version": "repo-lines-v1:sha256:0ae33ea92f7b625b214de6e76e20ead8019bc8e753b7b509f2301392a479d12d:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmNWJhOWZlNWI5ZTliOGM4NTFkMjk5Yjc3YmQyMWJkMzkzYzAyNmRjMTE5ZWY4MWIyZjViZjcxMWZiZWY2MTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhZDY3MWExOTJlNGMyYTYyN2Q0MDY2YjBlZDNlZjU0ZTAwOThjYjhhNzJkOGVmZmM5NjEzMGFkM2ZjYjU4YTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRhMDExNzgzYjBkNDYzYjI2NmQ3ZGEyNTVlNGQ0ZmQxOTk5YzJhNGQxYzg1MmVjZDkxOGI5YTkyMTIyNGY0YWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljNmVmMzliYjdiYjI4YzQ0MTlhYjIxNTczN2Q2MzNkMzU3ZjkwZjc5ZmI0NGY0NDdlYmIyNmRiZjZiM2QwYWMifQ"
+        },
+        {
+          "resource": "repo://popup.js#L8-L29",
+          "version": "repo-lines-v1:sha256:657cb813e378bac78ffab3fd7df02d3fe6b79375b69b62df43f3724214350fb8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3ODMzZDFhYjg1ZWM3ZmQ4OWQ5MGRmY2QzNGYxOTRmZjNlNTcxOTdjY2M0M2M2ZGMxOGZhYTFmMThmYjhhZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4MTA3MTEwZjA4MjFkYTU4NGMzMWRiMGE4YjNkZjIxZWQ2YmU5YzJlM2M4YWUzNjhiMGE5ODBhNWNjOTQzMzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyMzZjYWFiZTJmNTc5YjE0ZDNlOTgxYTQ2MTM3NjQ1OGE2ZjA5ZTMyNzYyMGU5NTI0YjA1YzNkMjZlMTQyMWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5330aaaa00504d42994877474385d8a6",
+      "statement": "Every popup management action requires the correct password; toggling flips enabled and bumps epoch when re-enabling, and applying a count sets remaining with 0 also bumping epoch.",
+      "evidence": [
+        {
+          "resource": "repo://popup.js#L31-L54",
+          "version": "repo-lines-v1:sha256:e3eaad793c246205281e35f30ef7ae852c1ad3c5c90a8f9aad1e655c4a2d7e26:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiMWNmYjcyOTE3MzhkMDIzNjkzY2ExZmIzNzQ1ODhhZmNhNDA0ZmViY2I3YmM4MzVhMmFlYjRlMzE1NDI0ZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhOGIxZGE2YWQ2ODE2NzQ5ZWI2MGUzNmNiNGEzNjY2MjNhZGE4MTQ2Zjc3N2U5MGY5MzllYzExZmMzMmM1OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhYTgyNjZmNTQzMDkyNmE1ZWM0OWYyZDU0OTNjZTUyODc4YmY3YzUwZTM1OTYzYTAyMWM0MDUzMTgzZjhhZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1637dcb003a0400eb2ed55a0ecc2fdbd",
+      "statement": "Unlocking on the lock page requires the password and a count of at least 1, overwrites remaining with that count, and navigates back to the validated return URL.",
+      "evidence": [
+        {
+          "resource": "repo://locked.js#L13-L44",
+          "version": "repo-lines-v1:sha256:fb6113dbb2d3d5d405218e682b9f4bed64ad1f657703ec84f896caa33606708d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZTY4OTk2NmMyZTRkZjcwMWI4OWM0NjYyNTQ2ZmY3NTM1YjQ3OWU1OTk5ODU5YmUxMTVhOWQyN2ExOWMyN2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU4YjQyZjM5YjZkNGVlNWQ0ZTQyNTYzMDExZmFkZWM0OGVkY2U1YjM2MTEzNmFhYmI1OTRlN2ZiZTg2MzlkM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwZjk0ODc2YmI3ODFkZTM3YzE0MzQyYjI5ZGFlY2I0NGU2YzdlNDExMDVjN2Y1NDExMTVkNzI5ZGU0MGVmOTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9f19b91f75174f5c9e6c31f64e232b70",
+      "statement": "The lock page returns to the video automatically on a state change that disables blocking or leaves a password set with remaining above zero, but deliberately does not check on load to avoid redirect loops.",
+      "evidence": [
+        {
+          "resource": "repo://locked.js#L20-L31",
+          "version": "repo-lines-v1:sha256:3a55b87c63e92b1933cbda236db6ebb43e0f5feb9cc18c8b4bd75db4fbd000a9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZWQzZDdjZTgwZWMyM2IwNzQzYTU1ZDVjMDU0YjM2Mjg2YjBhNjNmN2EwMDQ0OGNhZmU2ZDdhMjZmMjNmMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgxMzI4ZmEyODhhYjE2MDQzMDc0YzczN2U4NzhmZjcyODc3YTNlMGNhZGJkMDE2YjdkZWI2NThlNDM2ZDkzY2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdhZjIyZDM2N2EwZTg3OTFhYjI4NzBmYzkzZjZmMjg3OWY5MWI1OWQyODIxNjMxOWY3YjExZmE2ZDIxOTJhYjcifQ"
+        },
+        {
+          "resource": "repo://locked.js#L51-L53",
+          "version": "repo-lines-v1:sha256:868cd362d5fa3c7442e4e5df2021efe6d16f3e3dea27ac0dee673c7563e12811:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzJkNDEyZTM5ZjAxYzE1ZTVlNGU3NTgzYzAxNmJiN2U2ODZjZTcwODg0ZGM2Y2I5NjQ1M2IzY2UyYTY0YWU5OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWUzYTUyZThjZjljNDAyNDY1N2ZiYzQ4NTM2Y2FmZDFkODhhNDA5MTljNzBjNTBiMjNmZjg5MzhjNmE2NGIwMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYTMzZjYxODlhNTBmYWI0NjQ4MWM0YTcyMWZkNmE3MjZjM2I0MGY4ZDU5NzM0YmY4NTg3ZDlmMjkzNTliZGQ0OSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0387ae8b63334873bdff1adc375b8a3c",
+      "statement": "The lock page Back button uses history.back() when history exists, otherwise navigates to the return URL's origin.",
+      "evidence": [
+        {
+          "resource": "repo://locked.js#L46-L49",
+          "version": "repo-lines-v1:sha256:168dc1c890be7859e69ac4c280fe246920d7a481bc167ce668a371367e207ddc:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODE4Y2Q5YzhhZWFjZTZmNDRkZjQwNzQ3ODlmNmFlZmNlZDY4NTZmNmUyZmYxNTRiMmMwMDc3Y2U0YTMyMmQ3YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmRkMWUwMGI0Y2Q0ZmFhMTM4MTljMzhjOWZjNWMyNDBkYjk4NjU0OGQ5MzA2YzhkMmZhNWMwZjNlMDUzNGI2NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjZhMDcxM2QxODFjZTdkNjQzNDQxNjgzMDI4ZDc3Nzg1MWQzY2U3NzdjNTQ5YjE3OWI0NzBhY2FiOTBjMzZmYSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-01T11:23:59.117Z"
+  }
+}

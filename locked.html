@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zablokowane</title>
+  <style>
+    :root{color-scheme:dark}
+    html,body{height:100%;margin:0}
+    body{background:#14161c;color:#eef0f4;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+         display:flex;align-items:center;justify-content:center}
+    .box{width:min(360px,calc(100% - 32px));text-align:center}
+    .lock{font-size:72px;line-height:1;margin-bottom:12px}
+    h1{font-size:32px;margin:0 0 6px}
+    .sub{margin:0 0 28px;color:#9aa0ad;font-size:18px}
+    form{background:#1d2029;border:1px solid #2b2f3a;border-radius:12px;padding:16px;text-align:left}
+    label{display:block;font-size:13px;color:#9aa0ad;margin-top:8px}
+    input{display:block;width:100%;box-sizing:border-box;margin:6px 0 4px;padding:10px;font-size:16px;
+          border-radius:8px;border:1px solid #3a3f4c;background:#14161c;color:#eef0f4}
+    .row{display:flex;gap:8px;margin-top:12px}
+    button{flex:1;padding:10px 14px;font-size:16px;border:0;border-radius:8px;cursor:pointer}
+    .primary{background:#3b82f6;color:#fff}
+    .secondary{background:#2b2f3a;color:#eef0f4}
+    .err{color:#ff7b7b;min-height:20px;margin-top:8px;font-size:14px}
+    details{margin-top:16px;color:#9aa0ad}
+    summary{cursor:pointer;font-size:14px}
+    #back{margin-top:16px;width:100%}
+    .muted{color:#9aa0ad;font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="lock" aria-hidden="true">🔒</div>
+    <h1>Koniec oglądania!</h1>
+    <p class="sub">Poproś rodzica o więcej odcinków.</p>
+
+    <details id="parent">
+      <summary>Dla rodzica</summary>
+      <form id="unlock">
+        <p class="muted" id="nopw" hidden>Hasło nie jest jeszcze ustawione. Kliknij ikonę rozszerzenia na pasku narzędzi, aby je ustawić.</p>
+        <div id="fields">
+          <label for="pw">Hasło</label>
+          <input type="password" id="pw" autocomplete="off">
+          <label for="n">Liczba odcinków / filmów</label>
+          <input type="number" id="n" min="1" max="50" value="1">
+          <div class="row"><button type="submit" class="primary">Odblokuj</button></div>
+          <div class="err" id="err"></div>
+        </div>
+      </form>
+    </details>
+
+    <button type="button" id="back" class="secondary">← Wróć</button>
+  </div>
+  <script src="lib.js"></script>
+  <script src="locked.js"></script>
+</body>
+</html>

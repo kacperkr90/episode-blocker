@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:0b2a2cf2781eca5cdae563b455d874c30b14f1f033100384e01383f1806da422",
+  "claims": [
+    {
+      "id": "claim_788f3b0084aa4f42bf84363410b053d2",
+      "statement": "Whether a page is a countable video is decided purely from the URL via a SITES table whose entries pair a hostname regex with a per-site id extractor that returns null for non-video pages; siteFor and videoKey use only the host and id fields.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L35-L83",
+          "version": "repo-lines-v1:sha256:8182eb1a4b196a51eb860f386b4cf514f075964efb0440445b1483e64cbd0923:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI1YTVkOWYzYWNiZTk3MTg5MjdjNzdhYzZjYmQwZWZkODc5M2Y2YTgxZWRkYzMyZGVhODcyYWVkMzc1NzEyY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5ZjFiZmNiZGUyMzdhMTIxNDEyMDUyNDRhOWNhNDAzM2I4OGVkYzAwNTlmNmQ1YzAzM2U0MTcxMmRhYTEyMWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE3OWNjOTg2ZGQ1ODYzNzdhODE2ZTEyYjUwODIzMDMzNmJlYmZiNzI3ZTAyNDg0NmIwOTY0M2RjODZhMjhiZDAifQ"
+        },
+        {
+          "resource": "repo://lib.js#L5-L7",
+          "version": "repo-lines-v1:sha256:ef4bf1ce7a7111a42761ce831b8e5c6af561e2e49aec3fb79c85656751f3a2de:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiM2YwNGFlODI2MWU0Mzg1NGY2ZDdhNDJkNmEzMzE0NDAxMDA4NGZhMjEzMzNiYWYxMzcwYTVkZjU5NTZmYmQ3MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTgwOWQ4OWQyMzE4ODBkNjliNDdhMDI1NTcwZmM4YWRiNjI3MmJmMzM0OGY1M2Y0NjRlNmMxODVhNTdlZjVlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDc4ZTlmMGQyYzU1MDk3OTgyZGM0YjcyMmE3MmU2OTU5YjFiNTczNmM2MGM0YTg3YzcwOGIyY2U3YWVlODNmYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTA5M2M3NjdhNzA1NzY4ODJlMzczOTIwZGE1YjhhMzVlNGRhYmI2ODMwNTA5OGQ5ZmNjYzQ5MmJhZmExOTQ0OCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_82648cd3cda540639bba141136dfdfb8",
+      "statement": "YouTube and YouTube Kids video pages are /watch?v=ID or /shorts, /live, /embed paths with an id of at least six [\\w-] characters.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L14-L19",
+          "version": "repo-lines-v1:sha256:9beb5d81cbb5889a97da6a8b1e8df0d15ff438e0a1d508b4b04efb10819d167a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJmOWRkM2FhNTZmMzAwYzY0YjMxMjMxYWYwYmE1ZTQ5M2JjNmRhZjM3YzY4OTdmYzUzYWZjODA4YjZjNWYwNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTViN2Y1NzkwMjAzMDYzNmJlMGM0N2Y3MWZjNmI1NTQwZDM3M2FhNWIzYzEyNmQ1ODEyNTVkNWNkZjI3ZDhkNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmYwMTRjZWY4ZTZiOTcxYjdlMDZhY2VjMWRjMmYyZGI0NjAwOGYwMTc5MjM4OGRmYTg1MDY1Zjg3MTc0OTUzYSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_3caa5c50bf204aea81a30d238c13da67",
+      "statement": "TVP VOD counts episode URLs under a '-odcinki' series segment (excluding 'sezon' season lists) and two-segment film/live URLs whose slug does not end in '-odcinki'; category and series pages are not counted.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L21-L33",
+          "version": "repo-lines-v1:sha256:172b592f519fd94fff1c3d2ec08dfdb83202e1538cd543369057bbb3bc1a5d57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3OTQzYjdhNTg0NDMyYjIxMTcyODJmNzczODM3YzgwMDQxM2UxODJlMjliZDk0ZTA1MmZlZjQ4YzUyZDU3ZGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmNmVhMGI2MzFmNmI4OTIxMmQ5ODlhYzhmZjNkMTYwNThmYmJhNjM5MzY0Nzc1ZDJkN2RhOTI4YzE5MWEzOGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRhNTI2N2Q5M2QzOWJlNzY5MDRhOTA2NTA3YzQxZDRiODQxYWRlMzAyNmM0ODUyZGNlY2E4MWI2NzA1YTE5YTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a479703368ca4143ac60363eab6a6284",
+      "statement": "videoKey forms '<hostname with leading www. or m. stripped>:<id>' so desktop and mobile URLs of the same video share a key.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L78-L83",
+          "version": "repo-lines-v1:sha256:08feea64bbe1e6ca40d4dad17f4846a287e180773411efa3b58b358147db7746:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjc3ZThhYTJlZjZhZmFjNDhjY2Y1NTc5ZDRmYmY0YjcyZTllYjVlOWIxMTA4MWI3OTAzZGQ3Y2MxOGYzNzI3YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjNiY2FhNTE2OTBlYTBkNTkyMGNmMWM5YTY4YzJiZTQ3YzRkZGNhMWNlZDA3YzFjMzIzOGUxMTk5NTBjMjY1NiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTc5Y2M5ODZkZDU4NjM3N2E4MTZlMTJiNTA4MjMwMzM2YmViZmI3MjdlMDI0ODQ2YjA5NjQzZGM4NmEyOGJkMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_61d3eef8d0cf449ba5cbd009097ef0c5",
+      "statement": "The lock page only returns to a URL that is https and whose host is recognized by siteFor.",
+      "evidence": [
+        {
+          "resource": "repo://locked.js#L3-L11",
+          "version": "repo-lines-v1:sha256:379f2b398ad3026591dd52f65eff055881ec223182dd45e773c131b5467b81c6:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWRkMDJjZjAxNGYxNDQ1NDZjOTJlMGY2ZWY1NzI2YjIzNzAzMmUwZDQ5NWUyYWZlMzk0NTExMGM3NTBlMzI3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlmYWM1YTMwMzliYmFkMjg3YWM4MTVkNTMzY2YzYWJkNGI0MjE3OTIwY2JlMmM5M2JiMzRhNmUzMDAwMzE0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjc2N2EyMjI3MjNjZmE4OGEyODdiYTMyYzIyZGU1NTM5MDMwYjYzNzk3OTdlODYxN2Y5M2I4ODYwYWI4ZGYzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmU4NzA2MzBkMmUzMTc5MjJhYTRiMzg1M2NiOGQxYWMwYjQ5ZGUxZWNhYWJmODlkMjYzNzNhN2YxMzEyMjRiNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b460eb865d5c4a24a3ab2952db476cf6",
+      "statement": "The supported host patterns appear in host_permissions, content_scripts matches and web_accessible_resources matches in the manifest, and all three lists are generated from the SITES entries' matches fields by tools/sync-manifest.js rather than edited by hand.",
+      "evidence": [
+        {
+          "resource": "repo://manifest.json#L9-L53",
+          "version": "repo-lines-v1:sha256:732575a617e25acd9f9823baff604f5e651bdbd22b7df4d9f728f62ae1ec9515:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NTIxY2MwMjYwMGZjOTM4YjZjZTMxYzJmMzlkN2JlYjk0ZTEwNGQyMGZiZmY2ZmFiZmE4MDJkNTEzZTlkMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NGQ4YzA3MzQyOTg5MzEwMTU3NmQ4OGQ5OTEyN2U4OWQ2ODkxZDNiMTdlODlkZjAyZWM5YWU3MDcwNWQ4YmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyODE3ZTA4ZmRmNTNmYjM5N2YwMGM3NTNjYTBkMzc1ZDBiN2VmMzJjMmZlMTk4OGJjM2UxYWUzY2JlZjEzMTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmODA4YWUyMjIyNDM3YmMzMGUxYWJkZjMyY2ZhMTA5OTI4NmIxNzQyMDNhMzIyNjA5ZWM2ZmUyOGQ2M2M2ZWIifQ"
+        },
+        {
+          "resource": "repo://tools/sync-manifest.js#L34-L50",
+          "version": "repo-lines-v1:sha256:2f3e8b119835c27dddeec74ed81b6be39f8ffe642bd2206297103af7ea098ff9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkYTYwMmY2ZTdkM2E2ODAzNDMzZDI2Nzc1YWJjYTMxYjUyODlmNmE3MDlhYTIyZWQ0MTcwZTUwMzZhOGE2ZjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI2MjkwYWZkZDg1YzA0MjRlZTgwYjU3MGZlOTk1MzcyODkwZWY5NzM2MTE2OWFiMGM1ZWFkNDUyMTA0ZTc2YTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_57dedff9cf9b45a99b1d21873be51ceb",
+      "statement": "tools/sync-manifest.js refuses to write the manifest if a site has no match patterns, a pattern is not of the form https://[*.]host/*, or a pattern's host does not satisfy that site's host regex.",
+      "evidence": [
+        {
+          "resource": "repo://tools/sync-manifest.js#L18-L32",
+          "version": "repo-lines-v1:sha256:e3f3ec2605f1eee0a3458e2b9e712f055756e0b01a279fa7ff34967489f8fd74:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiYzgzMDZiNGVhZWFiMzQzOWI2MzM0NmI3YWIzYjBlNDJmMmU3OTAxMDEzM2NhNzc3Zjc5OGI5NGIwZmYzZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5Y2IwYTQzYmIyZTUwYTliNWVhNDQ4OTMwMWFkNDBjZDk3NTk1OWU1MmYxODM2OTgwMThhOTM4OWZmYmMxZTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3ZjNjOWY2OThmNTQwYzM5YzM0YjNlN2JjMDM4ZjVlMmI5Yzc4NjAxNjU1MTljNmU0YmQ2OTA0YWIyN2VjNzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ecc829d0f3f459a96b41c2a4303ab66",
+      "statement": "Running tools/sync-manifest.js with --check makes no changes and exits with status 1 when manifest.json is out of date with SITES.",
+      "evidence": [
+        {
+          "resource": "repo://tools/sync-manifest.js#L4-L5",
+          "version": "repo-lines-v1:sha256:983f02571f5ad059ca6f42a03285bfcb586fad07fdb68ac3d1b957d34bf64758:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJjNTM3ZTdhMDc2ZjVmNTA4N2RkYjZjYzQ2Nzk0MzQ4NzZmNDA0NDQ5MTk0NmVlOWIwZjIzY2MyNTE0MDIyNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU0M2FjYTlmYjViYWYxNWNhYTcxNGYxM2JmNWVkZjEwYWQ2ODAxMzJmNjQ4YTVjNDE1YmI2YmIyNDhjMTBlMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTgwODA3OTIyN2M5YjY2Y2RjYWE4YTQxMTcxMGVmODM1ZjUzOTNmN2RkZjMyODNmMmQwNjJmMDQzMGJlMjg1YyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjIwYWJkMjYyZmZhODE4MDA5MTViMDg3NjFmZTY0YzM0MDlkMmUwOWMzYmRhMmRmZGZkZTEwODZiNWMxMjg0ZiJ9"
+        },
+        {
+          "resource": "repo://tools/sync-manifest.js#L42-L50",
+          "version": "repo-lines-v1:sha256:c5b72cc5b0426433e31693b1e3d38a71d364eb8e1274f27c0dc1d94076ee7f3f:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDg2OGE0ZWVjZWM5YmQ2ODY4ZGRjZWU2YzViMTIxODY2NzM5MTk1OTM0YzRjNDJmOTVjNGIwNjdjNmY4YzMyMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmJhMDU1NGExNmJjMWQxZDNlNDMyNDA4YWEzMmRkOWRkMTRiODA4ZDkxYWM1NDE5M2NmNGNiYTNmMTk3M2NjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-01T11:48:12.232Z"
+  }
+}

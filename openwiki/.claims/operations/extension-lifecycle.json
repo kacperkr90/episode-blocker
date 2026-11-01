@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:849fbf500b1b99bdf872befd1915fcc26ab408833e0f66ea69ffa4198fce095b",
+  "claims": [
+    {
+      "id": "claim_ac00681834cf48618dd0a8fcf98ab188",
+      "statement": "On install, update or reload, the background worker reloads every non-discarded tab matching the content script's URL patterns, because Chrome does not inject content scripts into already-open tabs.",
+      "evidence": [
+        {
+          "resource": "repo://background.js#L47-L55",
+          "version": "repo-lines-v1:sha256:588a6f9016a7f09107ff59c183541ef308ee47d1855acb132bbcf51724b76c67:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJjZjZhNjAyZTg3MDRjZWNmOTE1YThjYTYxM2NiOWVjZGU1ZDhlYzY1NzNhOTcyNGNhMTM4NTM2NzM4NjU5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTQxNmJhNTRiYmMyMmE0MTVhMTE1ZWI0NTE3NGYzYWUwOWI4MTAyN2M1YWY5YmE0ZDY0ZjFmYjJjY2UzZmI3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI4MTMzNmQyNzY4ZDEwNTY3Y2E2NDZhNWYwMzkyZmEyZGQ4NzU1MDRhMzVhOTVlNjBlZTRkZGIyMjQ2YWQ0NiJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d063ea353a0242b2923bfbb8cff90966",
+      "statement": "A content script orphaned by an extension reload detects this via chrome.runtime.id and, if on a video page for more than 1.5 seconds, reloads the page so the new version can count or lock it; on browsing pages it does nothing.",
+      "evidence": [
+        {
+          "resource": "repo://content.js#L41-L52",
+          "version": "repo-lines-v1:sha256:3c5a3b34ee1e03ecb093d010d0d15ccec9b9843c3ff586308ee80cbd98101470:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM1NTQ3N2EzYTk0YzM5NTdjZTExMGM4YjQ0NWEwOWYyZWRhNzBiMzllNzFmYWZlZTE2YmRmOWMxM2Y2Mjk0YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIwYjA5YjVkM2RjZjg0OTk3YWVlZDU4N2VkOTJiNjNjNTAwN2VhMTk5MDljYjBjMGY4YjBiZWVkM2YwZDA5MTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiYzkwY2ZmOWQxNjlkMWNjYzNmMzU3Y2Q0M2NlOTBiY2E5ODUxN2FlZTI1ZTEwNmE2ZGY0YjM3NTgwNWNhZmYifQ"
+        },
+        {
+          "resource": "repo://content.js#L9-L12",
+          "version": "repo-lines-v1:sha256:7ef729c6b26fb6a38aff5c7a60d42148cc3248627d1b1c04328d9c4a848c55b7:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzdkZjgzYjIwZTBlZjg4ZTBlNzljZjA1ZjYyYTUxZjNiYWU1MGViZDgwODVlMzE1ZTEzMzYyODQ0ZmZjMWYxNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTlhMzdkOGM0MmFhYWNjN2E5ZGU0NDFjMDA2NTdkZGQyM2E4YTMxNzkwNjNiNjIxNmFmYWM3ZDQxNjk2MDRlYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYmVhODNhZWY5ZDU4NzZjMDkyODU3ZGE4NWI4NzJiOGI1YjEzNzliYmUzZjRlZGRkYjlmNmQ1NDgzYzE1NzUwZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjg1NzZkYWVhYzQ0ZWM5OThlZDdkNTZhMzQxNjgzMjAxOWEzYzI2OTMyMTVlMWZlZWVmNzE3NTllNTExM2M0ZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_59e2ffdc19d34a28a2d139f7e49ee932",
+      "statement": "SPA navigation is handled by polling location.href every 300 ms and scheduling a new check on change, with the content script injected at document_start.",
+      "evidence": [
+        {
+          "resource": "repo://content.js#L53-L55",
+          "version": "repo-lines-v1:sha256:fbc90cff9d169d1ccc3f357cd43ce90bca98517aee25e106a6df4b375805caff:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNmZmNmZGI3YjUxYTk4Zjg4ODhlNGM4YmZhYWFlODUwNzJjODEyYzhhNGI4ZTNjYzIyMGVkNDMwZDM1ODM4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFlZTFiZWU2NjZiOWRmZTVmM2NlOTMwNmQ3MDA3ODQxZTBkMzA4YzcwMzY3MDQ3NjA1ZTM4ZGM4MzE0NjRhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmE0MWQ3M2M0NTIyYmVhMzlmZjgxNWUyNGJjZjEzMTE4NTMxZDY3MWViM2NmNTMxMjE4ODVlMTFhMWM0NzI0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzAxMjkxOTcyMTk1NDU3ZTQ4Y2I5MjBmZmQ1NDIzMGQxNDhiNjRjYWRjM2YxNTEzZGJkNDE3MDQyYWI3ODJiNCJ9"
+        },
+        {
+          "resource": "repo://manifest.json#L34-L34",
+          "version": "repo-lines-v1:sha256:491ea6521eee1b162226f070b7ea611e1bbb92afb76925659cc09fee884fcf8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkxZWE2NTIxZWVlMWIxNjIyMjZmMDcwYjdlYTYxMWUxYmJiOTJhZmI3NjkyNTY1OWNjMDlmZWU4ODRmY2Y4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkxZWE2NTIxZWVlMWIxNjIyMjZmMDcwYjdlYTYxMWUxYmJiOTJhZmI3NjkyNTY1OWNjMDlmZWU4ODRmY2Y4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjUxZjgzMWQyYTcxNzU0ZTg0YjJkNTk3ODExYzNjYmZiNDUxMzcxMGQ2N2RlZGM0MDEzZWU4ZTZiN2IwZjdhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzUyODI3ZWI4MTE4ODdiMTcxMDJjMDIzYTQwMzVlMmFlZjM3ZDE2MTY5YmU1ZjE4M2VmN2IzNDYwMGU1ZTYzZCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_286c424b3fd3476282908043155d7ea1",
+      "statement": "An orphaned content script's failed claim does not trigger a lock; check() returns early when the extension is unreachable.",
+      "evidence": [
+        {
+          "resource": "repo://content.js#L21-L32",
+          "version": "repo-lines-v1:sha256:f6bf60b428395a089c415c582b6572c7a9c4469a66a20147f905e2afc0493926:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZjQ3M2Y1MjA4YWY5MTU5Y2ZmZjZhOWIxOTAzNTc2MjUxOGMyY2FiMDg2MTI5NzQ3Y2U4ZWQ0ZjNmMzE3ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4MjkxNGIwMjZlODRkOWMyMDA3MzJkZDU2NGVlZjU3MzdjMmU0MWM1ODA0MmViMDRmMjgxMGYxMTdkMjQxNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMDhmYjYzMjIzOTI2OWNmMDU4Mjc2YTc1YTllYmEzNTNkMTQ5M2VlMGJhYWUxZWQ5MTUxMWZiYTNhOGMxYmIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-01T11:23:59.117Z"
+  }
+}

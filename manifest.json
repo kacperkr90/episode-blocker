@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Limit odcinków",
+  "version": "2.3.0",
+  "description": "Blokuje odtwarzanie na Netflix, Disney+, YouTube, CDA i TVP VOD, dopóki rodzic nie odblokuje określonej liczby odcinków.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.netflix.com/*",
+    "https://*.disneyplus.com/*",
+    "https://*.youtube.com/*",
+    "https://*.youtubekids.com/*",
+    "https://*.cda.pl/*",
+    "https://vod.tvp.pl/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.netflix.com/*",
+        "https://*.disneyplus.com/*",
+        "https://*.youtube.com/*",
+        "https://*.youtubekids.com/*",
+        "https://*.cda.pl/*",
+        "https://vod.tvp.pl/*"
+      ],
+      "js": [
+        "lib.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "locked.html",
+        "locked.js",
+        "lib.js"
+      ],
+      "matches": [
+        "https://*.netflix.com/*",
+        "https://*.disneyplus.com/*",
+        "https://*.youtube.com/*",
+        "https://*.youtubekids.com/*",
+        "https://*.cda.pl/*",
+        "https://vod.tvp.pl/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Limit odcinków"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/episode-quota.md": {
+      "sourceFingerprint": "sha256:ba0fb2a3aa2f1eeeb29efbd7f43464e64ab6b676676c0c78e76fae8222a4af47",
+      "pageVersion": "sha256:4951be074fb200fb0b29d3c963c1447de71a3a9a62e23fa7ca7d473ad0af58d0",
+      "completedBy": "claude-code",
+      "completedRunId": "ec8376a4-315e-4fb4-9c8c-85f066a2ca87"
+    },
+    "/openwiki/architecture/overview.md": {
+      "pageVersion": "sha256:fae9bb97cf27a6780047084beb50dcd82c7977ee664c67e687bf3e04a695865c",
+      "completedBy": "claude-code",
+      "completedRunId": "ccc68304-e848-4d8d-b74c-d8cd5b4134b4",
+      "sourceFingerprint": "sha256:bd07e732329e8f98001e01cc7e1e0f35b325e6635dc60daf65706010ee0d4d0d"
+    },
+    "/openwiki/concepts/site-detection.md": {
+      "pageVersion": "sha256:0b2a2cf2781eca5cdae563b455d874c30b14f1f033100384e01383f1806da422",
+      "completedBy": "claude-code",
+      "completedRunId": "ccc68304-e848-4d8d-b74c-d8cd5b4134b4",
+      "sourceFingerprint": "sha256:bd07e732329e8f98001e01cc7e1e0f35b325e6635dc60daf65706010ee0d4d0d"
+    },
+    "/openwiki/operations/extension-lifecycle.md": {
+      "sourceFingerprint": "sha256:ba0fb2a3aa2f1eeeb29efbd7f43464e64ab6b676676c0c78e76fae8222a4af47",
+      "pageVersion": "sha256:849fbf500b1b99bdf872befd1915fcc26ab408833e0f66ea69ffa4198fce095b",
+      "completedBy": "claude-code",
+      "completedRunId": "ec8376a4-315e-4fb4-9c8c-85f066a2ca87"
+    },
+    "/openwiki/quickstart.md": {
+      "pageVersion": "sha256:23cefd6fac48533f26fcb9253a48d43f1c2888441a4f5bd08c7e70477bf1556e",
+      "completedBy": "claude-code",
+      "completedRunId": "ccc68304-e848-4d8d-b74c-d8cd5b4134b4",
+      "sourceFingerprint": "sha256:bd07e732329e8f98001e01cc7e1e0f35b325e6635dc60daf65706010ee0d4d0d"
+    },
+    "/openwiki/workflows/parent-controls.md": {
+      "sourceFingerprint": "sha256:ba0fb2a3aa2f1eeeb29efbd7f43464e64ab6b676676c0c78e76fae8222a4af47",
+      "pageVersion": "sha256:f03344de35035d90745dbdd77817e890157d83d2b4719b83c9e9da8810a74157",
+      "completedBy": "claude-code",
+      "completedRunId": "ec8376a4-315e-4fb4-9c8c-85f066a2ca87"
+    }
+  }
+}

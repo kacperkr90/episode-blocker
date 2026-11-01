@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4951be074fb200fb0b29d3c963c1447de71a3a9a62e23fa7ca7d473ad0af58d0",
+  "claims": [
+    {
+      "id": "claim_3eb0c5d71a5143478243a2076da3ba0e",
+      "statement": "All quota claims from every tab are processed one at a time through a module-level promise chain in the background worker, so concurrent tabs cannot spend the same episode.",
+      "evidence": [
+        {
+          "resource": "repo://background.js#L1-L12",
+          "version": "repo-lines-v1:sha256:c69708767f43a949b6455dd872e0e4210ea53bc46259ce0d94b2cbfa20105475:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmOGZmMGEyYjZkNjdhZWIxMzE1MjExMDNjOWViMDllNGE2ODM1MThkNjczMDVjNzFkN2QzZjYwZWY4YTBmM2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2NDkxYmYxZjgxMTUwN2RiMzQxMzlhMjQwODhjMmU4OWNlOGRlODdhNmZjM2E5ZWVmODI2YzcyY2YzN2IyNDcifQ"
+        },
+        {
+          "resource": "repo://background.js#L37-L45",
+          "version": "repo-lines-v1:sha256:f2aaeae99c577bde4773f3d38a9c2f1820ae0ea56d8f69b033672c1cfe92ce58:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWU2YTMyOTI1ZTYxMzJhMTcxNmJkM2RlOTQyOTVkN2M2MmFiYzFhYjQxZTg1MGExNmVkNmMyMzZmNmVlODcwYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTBhMmEyYmY1ZWE5MTgzZTYwMTUzY2IxZTVhN2M4Y2ZiNzI5YzRkZDg2Yzk2MWQ2NjVmMjVlMzRlM2NiMGYyMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTY5MmVkNTI4Y2EyNTI1YTlhNjA1NWFkN2RhODlmNjgxZDdjNzJjM2RiNTYzYTk2MjIzNDdlM2VkZTZiNWQ2MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f66fefb5046a402abf4b1a1753226468",
+      "statement": "A claim is allowed without charge when blocking is disabled or when the tab already paid for the same video id in the current epoch; otherwise it is allowed and decrements remaining only if a password hash is set and remaining is positive, else denied.",
+      "evidence": [
+        {
+          "resource": "repo://background.js#L18-L35",
+          "version": "repo-lines-v1:sha256:68755dc2506faee25c79a234ceb697cdfaaf96a16f3aa8a78fe16678bc768765:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNmNmMDJjZWQxNDBiZjdmOTQ0MjVmOTQ4NDBjMGU0MmMwNmFkNzA5N2VlY2IzN2Y3ZGI5OTI4Yzk1MzEwMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MjE5NDc3ZTg4ZjJhMDYzOGE2ODczNzYzY2ZlOGQzYTliZjFhYzhlZDFjYjc1MDViMTFlNjBmMzNmN2Y2ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZjUzYTQ3MTM3YjNlN2QwNDM2OGE1MjA1YThhNjFiM2JmZGNmMDE1ZGIyN2RhYjFjYWQ1ZDgxOWY0ZDVkZjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c4d3e330fcfa4c1a94d25b10bf975622",
+      "statement": "Claim messages are only honored from top-level frames of tabs (sender.tab present and frameId 0).",
+      "evidence": [
+        {
+          "resource": "repo://background.js#L38-L38",
+          "version": "repo-lines-v1:sha256:97aed7538fa9f57bf2dfb376aec2a646a92b87ecc2f4a2f985966b1753f1f384:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdhZWQ3NTM4ZmE5ZjU3YmYyZGZiMzc2YWVjMmE2NDZhOTJiODdlY2MyZjRhMmY5ODU5NjZiMTc1M2YxZjM4NCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTdhZWQ3NTM4ZmE5ZjU3YmYyZGZiMzc2YWVjMmE2NDZhOTJiODdlY2MyZjRhMmY5ODU5NjZiMTc1M2YxZjM4NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTZhOTY3MjdlYzNkMjdmYjdiMGY5MDAwNzA4OWM1YTk5OWM2ZWNkNzVlYzdlYmU4YjFiYzVmZDg2MDk3NmVlNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZWYzNTk0YTdiNmU1ZDhkOTY5YjFiOGExMDg5ZjlmZjk2Y2EwYzQzNWViYTgzMzdiYzljODM4OWEzNDZjZTgzOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_76f7d0cab77a4b02915820a812a6f5f6",
+      "statement": "Per-tab paid records ({id, epoch} keyed by tabId) are kept in chrome.storage.session and removed when the tab is closed.",
+      "evidence": [
+        {
+          "resource": "repo://background.js#L5-L5",
+          "version": "repo-lines-v1:sha256:c35adf63381827d43d909e6ea78c02f4f13735c548e26868fb6282267b96d2f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM1YWRmNjMzODE4MjdkNDNkOTA5ZTZlYTc4YzAyZjRmMTM3MzVjNTQ4ZTI2ODY4ZmI2MjgyMjY3Yjk2ZDJmOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM1YWRmNjMzODE4MjdkNDNkOTA5ZTZlYTc4YzAyZjRmMTM3MzVjNTQ4ZTI2ODY4ZmI2MjgyMjY3Yjk2ZDJmOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMjY2MTJiZTE3MGFhZDhlODg4NmYwODFiMzNiMjNiZTA0ZjhmMTA2ZjIxNjYzYjFkNmIyNDg2NDc1N2IwZWY1NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDM0Y2Y0YzI2ODllZTI4MmVjZTkxNmQ3YmUzYjMyZmI0ODNiZjFhOTUxNmJiNTFhZDJlNGQ5NGEyN2I3NGQ3OCJ9"
+        },
+        {
+          "resource": "repo://background.js#L57-L62",
+          "version": "repo-lines-v1:sha256:d0eecfd98da4dba93dfe85c4ee3a8a08327531f7e61a98cdd933220fc308f93c:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDdlZGMxNDhmNmMzYWM4ZjM4Y2Q5YzNiNTI5ZWU5YTRhNzRmNmRlNzEzZTZhMjg2MjhkNmJmYzM4OWQzZTBmNCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWIxZWExNWEwZjdiMWQ3NzQxYzA5MmRlODAyZDM5ZmRhNDQzNGVjZjA1Zjk0MzU4YzZmMzY5Y2E5MTE2ZTIyZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_78166524614e43e5b338dd77fc6f8bcd",
+      "statement": "The content script locks the page (pauses videos and location.replace to locked.html with a return parameter) whenever the claim is not explicitly allowed, including on errors or missing responses.",
+      "evidence": [
+        {
+          "resource": "repo://content.js#L14-L35",
+          "version": "repo-lines-v1:sha256:9bdb01640a9c9feb68d7f8cc56a62fbcdb0dcdc7a39096d5c63dc85ed4ea0189:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3NzlhOTEzY2MxYzlmOWNkZmMyOGNkYWRjNTk0MWMzYzMwYWI3NDMyMzE2ZmE1Mzk4MmExNzUzNjgxYWM3YjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI3ZTU3ODhkNWQ5ZDczZDI0YTgxZGJjMGE1YTc0YmZhODJjOWMzYjNhZjk5ZTUyYWY3OTZlOTBiNDY4YThhM2QiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY5OWZmYmVkMmMzNTk1OWVhYzE1YTk0ODEzMThlNDAyNjgwZTMxOTczODFmZGFkZmQzMDczYWY3NTViZWQyODIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNiOTUwZDgxOGVjZDE4NjM2MmQyNTg1MjM4ZDAxNDkxNDZjYzQ0NjViYzNhODMxZjliYzI0ODhlZWEyMzdiMGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1e0ce7675e9d49129b3c220e949cd554",
+      "statement": "The content script re-runs its check on startup, on polled URL changes every 300 ms, and on any change to the state key in chrome.storage.local.",
+      "evidence": [
+        {
+          "resource": "repo://content.js#L37-L62",
+          "version": "repo-lines-v1:sha256:be4a3e341acc84ed5193a13abf4e43e8e291756fb10f52ca038e9d4472098d94:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAyNmI0OWI3NjdjZDJhMWUyNTFjN2RjZjRhYWNkMGMyMzUzNGZkMjZiNThiNDExZTBmM2IzMWU0NjQ0OGVkMDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNTljMGE2ZTY0YWJjYTYwMWZjNjgwNWU3YWRkOWViZTNjNzk1ZTE4YjAyMGMwYWRmYTExOTVjNGE5ZjJjZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1YmM3NGFhMzc4YjIxZGI5NTI3ZjY0MDBhZTA3MjVmYjBmNzIwMDRkNWI0N2U0NDllYmI4YzY1N2ViOWM5ZDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5ZmFjNWEzMDM5YmJhZDI4N2FjODE1ZDUzM2NmM2FiZDRiNDIxNzkyMGNiZTJjOTNiYjM0YTZlMzAwMDMxNDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_15a164a952a340cb885014b255e448c3",
+      "statement": "The popup bumps state.epoch when the parent sets remaining to 0 or re-enables blocking, invalidating existing paid records so open video tabs must pay again or lock.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L54-L56",
+          "version": "repo-lines-v1:sha256:5388a67abd72c93f3d7cc20b89508c74aa87acbe1111dfc12adb0a2f3675a51c:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjE0NTU2MmRlYTc1ZjFhNDhmNTI1Y2Y0N2ZjMzhkM2NjMDYwZThhNDZhOTllMDE3ZmQ1N2FkYjc2YTNjMWQ0MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWFiZjRkMDcyZjVjMDBjYTVlMTczMzA1YTU2NTI2MGEyMTY2MjI0OTQyNWE3MGRhMGNkYzkzZTE3ZWZiMzBhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2U2Mjc2MzNlYzRjMGFlYWNjOWVjMTAzNDI0ZTdiZGM4YTM5NjU3ODE0ZmU0MjA2ZDJkYzZiMzRmOTQ3YWQwNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmVmNzY4MDk1N2RmYTI4NmEwOWQyYzBlNzI4MzUzMDMyZGZlZDdlNTJmNzFmODMzNDJhY2E2Y2I1ZjhkM2RhYiJ9"
+        },
+        {
+          "resource": "repo://popup.js#L31-L54",
+          "version": "repo-lines-v1:sha256:e3eaad793c246205281e35f30ef7ae852c1ad3c5c90a8f9aad1e655c4a2d7e26:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiMWNmYjcyOTE3MzhkMDIzNjkzY2ExZmIzNzQ1ODhhZmNhNDA0ZmViY2I3YmM4MzVhMmFlYjRlMzE1NDI0ZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhOGIxZGE2YWQ2ODE2NzQ5ZWI2MGUzNmNiNGEzNjY2MjNhZGE4MTQ2Zjc3N2U5MGY5MzllYzExZmMzMmM1OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhYTgyNjZmNTQzMDkyNmE1ZWM0OWYyZDU0OTNjZTUyODc4YmY3YzUwZTM1OTYzYTAyMWM0MDUzMTgzZjhhZDkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_769a197921e8487db950fb867c39bb30",
+      "statement": "Popup and lock page write state directly via setState rather than through the background serialization queue.",
+      "evidence": [
+        {
+          "resource": "repo://locked.js#L33-L44",
+          "version": "repo-lines-v1:sha256:83d2c7c2c62b5ba475ac37efa6b3793c46c3171c362eba66d769ecfb1f66eebe:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVkNDRiZTEyMjk0OTg0Zjk0YzRjZDI3MTk1NzNmMmNjZTJmNWM2NzAzZTFjZGJkZjJkZDJkZmM2OGZkMGYwZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2ZTY4ODA4NTRlZjdlZmVjMmY4MDI5MGRhOGVkOGE1YzFiMmE4NTE3NGUzZTRiNmQwZDQ3MTI2NGZjZTk3NTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjUwZjk0ODc2YmI3ODFkZTM3YzE0MzQyYjI5ZGFlY2I0NGU2YzdlNDExMDVjN2Y1NDExMTVkNzI5ZGU0MGVmOTkifQ"
+        },
+        {
+          "resource": "repo://popup.js#L43-L54",
+          "version": "repo-lines-v1:sha256:cc225ad201d728ecade69a9f16fbc52eb8b5298ac147502a08aa85026a81aae8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxNjI0MDliODI0NWU4N2QzNmUyOTYzYTgxMDc1NDVhMjIxNDljMjE1OWQ4YmFkZWE2NTY0ZjZiOGI2ZWY4ODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhOGIxZGE2YWQ2ODE2NzQ5ZWI2MGUzNmNiNGEzNjY2MjNhZGE4MTQ2Zjc3N2U5MGY5MzllYzExZmMzMmM1OGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVhYTgyNjZmNTQzMDkyNmE1ZWM0OWYyZDU0OTNjZTUyODc4YmY3YzUwZTM1OTYzYTAyMWM0MDUzMTgzZjhhZDkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-01T11:23:59.117Z"
+  }
+}
