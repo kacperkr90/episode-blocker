@@ -22,10 +22,12 @@ series pages are not counted.
 
 There is no build step and nothing to install from a package manager.
 
-1. Open `chrome://extensions`.
-2. Turn on **Developer mode**.
-3. Click **Load unpacked** and choose this folder.
-4. Click the extension's toolbar icon and set the parent password.
+1. Download the zip from the latest [GitHub release](https://github.com/kacperkr90/episode-blocker/releases)
+   and unzip it, or use a clone of this repository.
+2. Open `chrome://extensions`.
+3. Turn on **Developer mode**.
+4. Click **Load unpacked** and choose the unzipped folder (or the repository folder).
+5. Click the extension's toolbar icon and set the parent password.
 
 Until a password is set, every video is locked.
 
@@ -97,6 +99,30 @@ All user-visible text is in [_locales/en/messages.json](_locales/en/messages.jso
 `chrome.i18n` has no plural forms, so write counts as "label: number" (for example
 "Pozostało odcinków: 3"). To test the other language on macOS, set Chrome's language in System
 Settings → General → Language & Region → Applications, restart Chrome and reload the extension.
+
+## Checks and releases
+
+Run the checks locally with:
+
+```sh
+node tools/sync-manifest.js --check
+node --test
+```
+
+The [Build workflow](.github/workflows/build.yml) runs the same checks on every push and pull
+request, and packages the extension as a zip (downloadable from the workflow run).
+
+To release, bump `version` in [manifest.json](manifest.json), commit, and push a matching tag:
+
+```sh
+git tag v2.4.0 && git push origin v2.4.0
+```
+
+The workflow then creates a GitHub release with `limit-odcinkow-<version>.zip` attached. To
+install it, download the zip from the release, unzip it, and load the unzipped folder with
+**Load unpacked** as described in [Installation](#installation). Chrome does not install zip
+files directly. To update, unzip the new version over the same folder and click the reload
+button on the extension's card in `chrome://extensions`; the password and episode count are kept.
 
 ## Limitations
 
