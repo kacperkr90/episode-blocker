@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f70b23d19caaef2628b9883f7c7e0e0721e54961b7142cbd872cbe27e84600c2",
+  "claims": [
+    {
+      "id": "claim_d4c9f3badaac4470ba65ac7e8c0f18ab",
+      "statement": "The Build workflow runs on pushes to main, v* tags, pull requests and manual dispatch, and its test job runs node --check on all JS files, tools/sync-manifest.js --check, and node --test on Node 22.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L7-L36",
+          "version": "repo-lines-v1:sha256:2019a53a687637ac2212366cd3834c52c035860134a31e39a47a1b453e3ae6d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZTM2M2I2ZjdjNDdkOGZjZDYyYTZmN2UxZGM4MjQ5YzllZDdiYTE4MDBjNjQwOWZmZjM3ZWQ3OTYyOGU5ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5NjIyYWIxNzIwOWYzNmRjNjA5ODU3MzI1NzNiNzQzMzEwYmZlMmY4OGQ2NWNhMWYyYTIwOTZiNTZkMzU0ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljY2UzOWFiMDhhMDFlOTc4NzViNDU4NzliNWJkYTk1YjA5M2ZlODZmMmIyN2FjM2IzODQwOWViN2IyMzRmMWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1d91b9102a4b4c83841b697c5e8a9495",
+      "statement": "The build job packages only manifest.json, root *.js and *.html files and _locales/ into dist/limit-odcinkow-<manifest version>.zip and uploads it as the 'extension' workflow artifact.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L38-L62",
+          "version": "repo-lines-v1:sha256:07269651e6c091a660d6f5abff86e44b3a6f6bb9f8c57b57aea93b11c91327f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZTNjNjBkYjI1M2NiY2VhNzI0YWFkZDkxOGViOTQ2NjRmN2M2N2U3ODRmNzk2Zjc4NGNmMTAyMjA3ZDI2YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZGFmNWYyNTgxMmM3MDViOTA4MzIyNTczOWE1MzFjZmY5NmM4MDE3M2UyMTJmMzAzZWZjYjg5ZWU0MDc3NzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjOTdiM2UyMWRkYmQyZTJkZjk4YWQyZTc5NWRlNDgwNGUxMDNmOGI4Yzg2YWQ0MzIxNmJhNDI3NzEzZTIzMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwZjM0MDNiMzg1M2M1YWVmZWEzMDdmMjMzMDY5NjhlOWJmYTBiY2I2MGYwZjgyNWY0ZGNlMjU3NWJlMmE5MmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc6076b813a94505a746b5b48010ef6c",
+      "statement": "The publish job runs only for v* tag refs, fails unless the tag equals 'v' plus the manifest.json version, and creates a GitHub release with the zip attached via gh release create; it is the only job with contents: write.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L14-L15",
+          "version": "repo-lines-v1:sha256:e8f2263b0413f25128aa11d16dd3ae0ef6b0c660fb5b1dc08fe71e0a7daabb4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUyNjI0N2VkZTAwNmU5YmRhYjljNjg1MDcyODQyNWQxYjQxNjZjYWY1Y2FjNTBjZjA5NTVjNDRkMjRjMWE4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDllY2VkYzE4ZWNhZjFkYWY5ZTdiZWZiOWZkNzllMmMzY2YxNTU5OWU1M2U3OWNkYmQ5MDFlZTZlMmM5NzlkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDlkNGZlMzYxMTkzM2EzZWJmN2ZkMTFiNDYxMmFiOTY1NTYyZjc4OWJmNjY3NDE5ZDE0MTI0ZmZkZjM1Y2Y5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjE3MWM2ZjEwYjgwNmNmZGFiZmJlZWQ5NTg5MWZmMzdjYTVjYzYxZDQzMGY4ZDJjMzQ4MjJkZjVkMDdmM2ZhZCJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/build.yml#L64-L90",
+          "version": "repo-lines-v1:sha256:7815a805d15332bbd64ecbc339180568016add471ab2886752f80f0469d52ef8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MjU0YzkxNmE0NDgxMjNlMmQzZDk1ZWJhYTJlNGIxZGIwZmE3YjU0M2UxMmMzZTFiMTFjZjM2MjE2ZjIwMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MDI5Y2I4ZjcxMDk0MDAyY2QzNTlkOWJkNzcxOTFhOGJhMzRiZTEzODJiOWI2MDJkYzMxNDIzNzgxYjUxZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNmFiMzZiZjM3MDcyYzE2MWMwMTNlZDc5MTUxMDFhNDAzZjNlYTI4MjM1YzkyODNmNWIzYWJhNzdkNmZmM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3ab1b77e716f48eb9fb6a87465a8c6c1",
+      "statement": "Releases are intended for manual download: users unzip the release zip and install it with Load unpacked; there is no Chrome Web Store publishing.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L1-L5",
+          "version": "repo-lines-v1:sha256:956c133eddf43fb0d5435e3e096deb10d42fa342e61c6b716816b69e83f0b47a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgyMzRjNGY2OWE2YjEzYzBiMjhjOTBjNmYzYTRhNzliNmEwNTViMWRkZGRjNmM5NWM3OTlmZDk2NzEzZTVjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE5ZWFlMGUwOTE4MmY3YzI5NGNjZmJkOTEzNWY3ZGFiYzcwZjU5ZDYxZDVmYTcwMmUzYjQ5MzNiOWRjODk5ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMzNjJjMTlmYWVkZDcwNDMxNWY1ODg4MzBlNGE1ZDA4MTllNjlkODkyMDc2MDJkYzY1N2FjZWFkNDNhNTIxYSJ9"
+        },
+        {
+          "resource": "repo://README.md#L103-L125",
+          "version": "repo-lines-v1:sha256:c30eeedf841e5fb43c0e4dcb1da0aeb52e9f20659aaf95396bc9a03bcf910c4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMTM3NTQ2YWFkZDU2ZmQyOWRiMjUyNDM4MjE5MDY1MTU4YWYwNjYyNzJiNDlmMGJlNDBjZGQ2YmFmODlhZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZWMxYjNlMGM2ODgzMGUyMmM3N2RmOGUxNTM3NzM2OWExZmIyYWQ2NTZmNjc4Y2M3ZjUwZmFkN2I0MDlhYWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMjYwNGE1MjljNmRkYWZiNzZlZmE4YmVjMmM3OTdjNTNhN2JjM2QxY2JkMDY5YTAyY2FiOWU3OGUxNWEwYjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMjY2YTZkZjg3NzVkMzZlNzQzYjYzYjhiYTgzZWFhZTg5OGNjMjBhZjk3OTg0ZmNlMGVmOTI1NzkxM2U3ZDMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1a531d90d2de45628f3a811078f07a3e",
+      "statement": "The separate OpenWiki Update workflow runs on a daily schedule, regenerates openwiki/ and opens a pull request on the openwiki/update branch; it does not test or package the extension.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L12",
+          "version": "repo-lines-v1:sha256:1a27c71781b6cfecdcb9515c9523b05e81fe6c63a5a13aa4505bfe3f7c531fa4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZDgwMTU0ZWQ0MmZjNWM3NzliMTMzMTU3OGI1OGI4OWM4MDFlYWNlNzRmMjRjZDQ4ZWI0YTIzNTc5NDBhOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjNWE4OTI3NzBhZTRmNTMzM2ZkN2M5ZTEyZTBhNmJjNDViMjZiNWJiNzc1M2UwMzlkZjhlZDQ5Yzk3Yjk2MDcifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/openwiki-update.yml#L64-L72",
+          "version": "repo-lines-v1:sha256:e4f0c376295a0ab27415fbd9ed19def5186a7b603927304b523fd75ee9b15f04:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFjZmY0YWQzM2JhOTFiMTQ4ZTFiMWI4MjkwYjhmZmYyN2IyMDNmYWJmZWU1ODcwMjgyZGUzNjczODNiMWJlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGRhNDE2NjQ5MGIxNzI5YjVlY2JmYWZiZGUyZjViYWIwOWQyZjdlZWZlNDRkZDVlZmQwNmRmZTIwNWJiNjFhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGJlMWFkYWRhMTdhZTJmNGYzZDhkNDc5N2RiMzZkNTI2NzU4YmY0OWE4YzRhNzQ5ODk4NjRhNDNjY2IxOGUxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQ4OWRkZTY2ODA4NTU2NGZiZGRjMWJkNzczMDEwYzI0Y2FkZWI5NWJjNDZlNzExMGIzMTk3Y2RiYmE3Y2RmOCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-01T12:16:37.173Z"
+  }
+}

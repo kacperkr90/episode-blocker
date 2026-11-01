@@ -10,12 +10,14 @@ sources:
     resource: repo://locked.js
   - id: openwiki-source-b25e71362ad2d0521bb4e04c
     resource: repo://manifest.json
+  - id: openwiki-source-6827bfa6cc4545b673ce7dc4
+    resource: repo://tests/lib.test.js
   - id: openwiki-source-395d1fa7dad02829f74386db
     resource: repo://tools/sync-manifest.js
-generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
+generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:05:30.576Z
+    at: 2026-11-01T12:16:37.173Z
 ---
 
 # Supported sites and video detection
@@ -105,5 +107,11 @@ then ignore. On any error it prints one line per problem and exits with 1 withou
 is out of date. The script keeps the manifest's 2-space JSON formatting and whether or not
 the file ends with a newline, so a run with no changes leaves the file byte-identical.
 
-There is no automated test suite. Check new patterns by hand: reload the unpacked extension
-and visit a browsing page and a video page on the site.
+[tests/lib.test.js](../../tests/lib.test.js) loads `lib.js` in a Node `vm` sandbox, the same
+way `tools/sync-manifest.js` does, and calls `videoKey` on two tables of URLs. One table lists
+video pages and the key each should produce, for every site including `m.` and `www.`
+variants. The other lists pages that must return `null`: home, search, a bare `/watch`, TVP
+category, series and season pages, and an unsupported host. When you add or change a site,
+add a case to both tables and run `node --test`. The tests cannot show that Chrome actually
+injects the content script, so still reload the unpacked extension and visit one browsing page
+and one video page on the site. See [checks, packaging and releases](../operations/build-and-release.md).

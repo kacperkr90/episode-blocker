@@ -3,9 +3,6 @@ type: concept
 title: Localization (Polish and English UI)
 description: How the extension's user-visible text is translated into English and Polish — the _locales message catalogs, default_locale, __MSG_ placeholders in the manifest, the t() and localizePage() helpers in lib.js, data-i18n markup, and how to add or test a string.
 tags: [i18n, localization, translations, chrome-i18n, ui]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-11-01T12:05:30.576Z
 sources:
   - id: openwiki-source-c7a8e6c25b0da5055873aed3
     resource: repo://_locales/en/messages.json
@@ -21,7 +18,12 @@ sources:
     resource: repo://popup.js
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
-generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
+  - id: openwiki-source-667e11e637cd9f360199963b
+    resource: repo://tests/locales.test.js
+generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-11-01T12:16:37.173Z
 ---
 
 # Localization (Polish and English UI)
@@ -82,7 +84,14 @@ sentence that would need Polish plural agreement.
    manifest, use `__MSG_<key>__`.
 3. Reload the extension in `chrome://extensions`.
 
-There is no automated check that the catalogs match. A quick comparison of key lists is enough.
+`node --test` runs [tests/locales.test.js](../../tests/locales.test.js), which checks two
+things. Every catalog under `_locales/` must have exactly the same keys as `en`. Every key the
+code uses must exist in the English catalog. "Used" means a literal `t('<key>'`, either branch
+of a `t(<expr> ? '<a>' : '<b>')` ternary, `data-i18n="<key>"` in an HTML file, or
+`__MSG_<key>__`, found in the root `.js`, `.html` and `manifest.json` files. A key built at
+runtime in any other way, such as `t(el.dataset.i18n)` or a key in a variable, is not seen. The
+test does not catch unused keys either. The [Build workflow](../operations/build-and-release.md)
+runs it on every push and pull request.
 
 ## Testing the other language
 

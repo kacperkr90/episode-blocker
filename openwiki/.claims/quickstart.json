@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:d5a00dbfde3cac405ffcfa6778a2790c3848fa814675aed86e5ce72117da5d58",
+  "pageVersion": "sha256:edcba7fff954726dbf741fb02cb44b4541fa99942087c45b5300412910320449",
   "claims": [
     {
       "id": "claim_559bdb1a0956421b9cd09105cdbf0950",
@@ -53,10 +53,28 @@
           "version": "repo-lines-v1:sha256:9ad19ac0f4a5607f33dfd9082cd453386d7b3f017070c697dd88834c464f87b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM5YzdiYTQ5OWI0MWM3YWFmZjkxODI1ZDhhYzdhNmY1ZmNiZTk2MjkzNzJhOWU5OTUyZDEwYmVhMWM5OGU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI4MTdlMDhmZGY1M2ZiMzk3ZjAwYzc1M2NhMGQzNzVkMGI3ZWYzMmMyZmUxOTg4YmMzZTFhZTNjYmVmMTMxMSJ9"
         }
       ]
+    },
+    {
+      "id": "claim_12502a659345439c9a9c2a9d3f4a19a8",
+      "statement": "Developers verify changes with node tools/sync-manifest.js --check and node --test, which CI runs on every push and pull request; pushing a v<version> tag attaches limit-odcinkow-<version>.zip to a GitHub release.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L47-L55",
+          "version": "repo-lines-v1:sha256:19fd56df9ae426c941246244087d417248e6c2d18b61a0e4050b564b73a3f75a:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGNiYmNiZTRlNDMzZjk0ZDFmOTkyY2NlNDY0YjU4YTcwZGZkMGQ0M2I3NTE5MTkzZmU2MzZkY2Y5YTAxNjE0MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZGMwYTJhMmM5YWUyODUyMTY4ZmMyMmFjYjhjNjkyODk2YWU1MDAzZGMzYTc3MDVhZTIwNzgzY2IxNDczYzE2NyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzUwMTkzODBiMGU4MTUzMmMxZGRiZDZmZTNjMzJlMDE1ZjY1OTQzZDk2Y2Y0ODA2ZTg4MTlmOGY3ZTNkZDk0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGY1ZTVhYTU0NWZmMTk5YWY4OTU1MjA4MmUwMjliOTVkZjkxNjliMjJlZGVkMWJlMWNjMjM3ODdiMzlkOTQzMSJ9"
+        },
+        {
+          "resource": "repo://.github/workflows/build.yml#L64-L90",
+          "version": "repo-lines-v1:sha256:7815a805d15332bbd64ecbc339180568016add471ab2886752f80f0469d52ef8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MjU0YzkxNmE0NDgxMjNlMmQzZDk1ZWJhYTJlNGIxZGIwZmE3YjU0M2UxMmMzZTFiMTFjZjM2MjE2ZjIwMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MDI5Y2I4ZjcxMDk0MDAyY2QzNTlkOWJkNzcxOTFhOGJhMzRiZTEzODJiOWI2MDJkYzMxNDIzNzgxYjUxZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNmFiMzZiZjM3MDcyYzE2MWMwMTNlZDc5MTUxMDFhNDAzZjNlYTI4MjM1YzkyODNmNWIzYWJhNzdkNmZmM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://.github/workflows/build.yml#L7-L36",
+          "version": "repo-lines-v1:sha256:2019a53a687637ac2212366cd3834c52c035860134a31e39a47a1b453e3ae6d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZTM2M2I2ZjdjNDdkOGZjZDYyYTZmN2UxZGM4MjQ5YzllZDdiYTE4MDBjNjQwOWZmZjM3ZWQ3OTYyOGU5ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5NjIyYWIxNzIwOWYzNmRjNjA5ODU3MzI1NzNiNzQzMzEwYmZlMmY4OGQ2NWNhMWYyYTIwOTZiNTZkMzU0ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljY2UzOWFiMDhhMDFlOTc4NzViNDU4NzliNWJkYTk1YjA5M2ZlODZmMmIyN2FjM2IzODQwOWViN2IyMzRmMWEifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:05:30.576Z"
+    "at": "2026-11-01T12:16:37.173Z"
   }
 }

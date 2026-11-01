@@ -20,7 +20,7 @@ test('keys used in code, pages and manifest exist', () => {
   for (const f of fs.readdirSync(root)) {
     const text = f.endsWith('.js') || f.endsWith('.html') || f === 'manifest.json' ? read(f) : '';
     for (const m of text.matchAll(/\bt\('(\w+)'/g)) used.add(m[1]);
-    for (const m of text.matchAll(/\bt\([\w.]+ \?'(\w+)' : '(\w+)'/g)) used.add(m[1]).add(m[2]);
+    for (const m of text.matchAll(/\bt\([\w.]+ \? '(\w+)' : '(\w+)'/g)) used.add(m[1]).add(m[2]);
     if (f.endsWith('.html')) for (const m of text.matchAll(/data-i18n="(\w+)"/g)) used.add(m[1]);
     for (const m of text.matchAll(/__MSG_(\w+)__/g)) used.add(m[1]);
   }

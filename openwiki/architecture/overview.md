@@ -6,6 +6,8 @@ tags: [architecture, manifest-v3, chrome-extension, storage, messaging]
 sources:
   - id: openwiki-source-c7a8e6c25b0da5055873aed3
     resource: repo://_locales/en/messages.json
+  - id: openwiki-source-7a80b79a6fb3618cbfab08a2
+    resource: repo://.github/workflows/build.yml
   - id: openwiki-source-f22365b596e25ba4bf7c6003
     resource: repo://background.js
   - id: openwiki-source-33784e8411f34531e1834579
@@ -22,12 +24,14 @@ sources:
     resource: repo://popup.html
   - id: openwiki-source-dda1dc9054b73bb09bf02f85
     resource: repo://popup.js
+  - id: openwiki-source-6827bfa6cc4545b673ce7dc4
+    resource: repo://tests/lib.test.js
   - id: openwiki-source-395d1fa7dad02829f74386db
     resource: repo://tools/sync-manifest.js
-generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
+generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:05:30.576Z
+    at: 2026-11-01T12:16:37.173Z
 ---
 
 # Architecture overview
@@ -35,7 +39,10 @@ verified:
 "Limit odcinków" ("Episode limit") is a Chrome Manifest V3 extension. It blocks video playback
 on Netflix, Disney+, YouTube, YouTube Kids, CDA and TVP VOD until a parent unlocks a
 specific number of episodes ([manifest.json](../../manifest.json)). It is plain JavaScript, with
-no build step, no dependencies and no test suite. You load the folder as an unpacked extension.
+no build step and no dependencies. You load the folder (or an unzipped release package) as an
+unpacked extension. Unit tests for video detection and translation keys run under Node's built-in
+test runner, and a GitHub Actions workflow checks, packages and releases the extension (see
+[checks, packaging and releases](../operations/build-and-release.md)).
 The UI is available in English (the default locale) and Polish; strings live in
 [_locales/](../../_locales/).
 

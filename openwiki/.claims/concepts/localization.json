@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:8b977ff6c6f08fa5b87f807d075e9debc0c118dd2d6df4a1200283eb5db1489e",
+  "pageVersion": "sha256:a847d4a32be83bfe83f3d367950ef0e9bc894c6907ff6c48b560c090a7056a04",
   "claims": [
     {
       "id": "claim_2f288495c2b7462b8b61144e457f6496",
@@ -57,7 +57,7 @@
       "statement": "The remaining and version messages take a $1 placeholder, and counts are written as label: number because chrome.i18n has no plural forms.",
       "evidence": [
         {
-          "resource": "repo://README.md#L97-L98",
+          "resource": "repo://README.md#L99-L100",
           "version": "repo-lines-v1:sha256:ae3a964a758d42140f663c6086e05a5ac54ec68cc27e2e70d1f6ce704c420b7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAyNjk0Nzk0ZTk4YzI2YzBkOGUxMDkwOWFjYWIxNWFkMGJhZjNlZDY5MDk1OGM1MjIxOTQ1YzZjOTg2NzY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ1OWRjM2FlNTM1MjYzNjBlYjVlMmU0YjMxYmQ5MjgxODRmMDE0N2EwNTRlMTU4NzY5ZmE1MTgzNDJkNDI5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc2N2QyMmU3YTY5ZmQwMzIwODIzYmY1YTgwMmQ4OWE3YzczYmIzYzExMGJlMTc5OGQ4OWU2YzI0MGExZGU5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTA3NTc4ZmJmMjY4MDI1MGIxYTc5ZGE5ZDdiNmIxNWNiODM1ZmMzZjY2MjRkMTgyNjI2Nzc3NWNkYWQ3NTVhOCJ9"
         },
         {
@@ -79,14 +79,24 @@
       "statement": "Both catalogs must define the same keys.",
       "evidence": [
         {
-          "resource": "repo://README.md#L90-L91",
+          "resource": "repo://README.md#L92-L93",
           "version": "repo-lines-v1:sha256:ac388aedee0648a3b0357fe11e68eb0543dd882bbe696129746413561e9709bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVkZTcyMDk5NjJhMDZjZDAzYTczY2U3ZTk0N2M1OGQyNjcwMmE0YmQxY2JlMDQ1NGRlMmNmMzU2MTJjOWRjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJhZDk5NTYyOTg1ZWE2YmI1N2E2MzU0M2I5ZjRkMDMyMDEwNWUwMDg3Mjc2ZDkzMzUwOGQ5MTAyOWI4YzVjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjNDQ0ZGNlYWYwNjBiYTE2NTg2MGM2NjlkY2ZjZmM0MTVmZGIwODU0NTZjNzNiNjhiYWU3YmI1NDJhYTEyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU2NGFhZmU1OGExYjExYTg0Njk1ZGQ1OWY2ZGMxMzJkNTVkN2NjNTQyYzM5NGRkODdhYzFhM2UyY2Q3NzA4MCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b8d428af4a24098bffd0f011c647ca0",
+      "statement": "tests/locales.test.js requires every locale catalog to have the same key set as en, and requires every key referenced via literal t('key'), t(expr ? 'a' : 'b'), data-i18n in HTML, or __MSG_key__ in root .js/.html/manifest.json files to exist in the English catalog.",
+      "evidence": [
+        {
+          "resource": "repo://tests/locales.test.js#L13-L29",
+          "version": "repo-lines-v1:sha256:32f48477a9698bee55d9ae3e3c6c0db562efb5153edb69e6f26266eb2bd811f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlY2RiNjAwOWUyNTU0NWYyY2JmN2JhNWZkMDA5NTczNjJhMjlmYjRmOWEyMGExZWY1NDg3ZjAyZWFhNGU4NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NTU0NDJjMzIxZWM0Y2E5MjNmZDljMGZlZDg4NDY1NDk3ZWZiNzMzOGIxOWI5NTU2NzI2NjNiMjJhZjU2ZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:05:30.576Z"
+    "at": "2026-11-01T12:16:37.173Z"
   }
 }

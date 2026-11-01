@@ -4,6 +4,8 @@ title: Quickstart
 description: Orientation for the Limit odcinków Chrome extension — what it does, how to load it, where each piece lives, and which wiki page to read for a given task.
 tags: [quickstart, overview, chrome-extension, routing]
 sources:
+  - id: openwiki-source-7a80b79a6fb3618cbfab08a2
+    resource: repo://.github/workflows/build.yml
   - id: openwiki-source-f22365b596e25ba4bf7c6003
     resource: repo://background.js
   - id: openwiki-source-33784e8411f34531e1834579
@@ -14,10 +16,10 @@ sources:
     resource: repo://README.md
   - id: openwiki-source-395d1fa7dad02829f74386db
     resource: repo://tools/sync-manifest.js
-generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
+generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:05:30.576Z
+    at: 2026-11-01T12:16:37.173Z
 ---
 
 # Quickstart
@@ -29,9 +31,14 @@ tab opens spends one episode. When none are left, the tab is replaced by a lock 
 
 ## Run it
 
-There is no build, no package manager and no automated test suite. Open
-`chrome://extensions`, turn on Developer mode, choose **Load unpacked**, and select this folder.
-Click the toolbar icon to set the parent password. Until a password is set, every video is locked.
+There is no build step and no package manager. Open `chrome://extensions`, turn on Developer
+mode, choose **Load unpacked**, and select this folder. You can also select the unzipped folder
+from a GitHub release zip. Click the toolbar icon to set the parent password. Until a password
+is set, every video is locked.
+
+Run the checks with `node tools/sync-manifest.js --check` and `node --test`. They need Node only.
+The Build GitHub Actions workflow runs them on every push and pull request. When a `v<version>`
+tag is pushed, it also attaches `limit-odcinkow-<version>.zip` to a GitHub release.
 
 ## File map
 
@@ -46,6 +53,8 @@ Click the toolbar icon to set the parent password. Until a password is set, ever
 | [_locales/](../_locales/) | `en` (default) and `pl` message catalogs for all user-visible text. |
 | [README.md](../README.md) | User-facing install and usage guide. |
 | [tools/sync-manifest.js](../tools/sync-manifest.js) | Dev-only Node script, not shipped in the extension. Generates the three site lists in `manifest.json` from `SITES` in `lib.js`. `--check` reports drift. |
+| [tests/](../tests/) | `node --test` unit tests for video detection (`lib.test.js`) and translation keys (`locales.test.js`). Not shipped. |
+| [.github/workflows/build.yml](../.github/workflows/build.yml) | CI: checks, packages the zip, and creates a GitHub release for `v*` tags. `openwiki-update.yml` separately regenerates this wiki. |
 
 The UI is in English and Polish. Chrome picks the language from its own UI language, and
 anything other than Polish falls back to English.
@@ -60,6 +69,7 @@ anything other than Polish falls back to English.
 | Change the popup, lock page, or password behavior | [Parent controls](workflows/parent-controls.md) |
 | Add or change UI text, or test the other language | [Localization](concepts/localization.md) |
 | Handle install, update or reload, SPA navigation, or test manually | [Install, update and reload behavior](operations/extension-lifecycle.md) |
+| Run or extend the automated tests, change packaging, or cut a release | [Checks, packaging and releases](operations/build-and-release.md) |
 
 ## Key ideas in one breath
 

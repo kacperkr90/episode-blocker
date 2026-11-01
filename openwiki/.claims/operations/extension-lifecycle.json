@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:c2d2e282f8a3cab417508da722d17408b957298170df05af24c777f2e89e797a",
+  "pageVersion": "sha256:2e189d0c14e407186bd806029747ff42c20256bf97e157e74311d7d415d5a35e",
   "claims": [
     {
       "id": "claim_ac00681834cf48618dd0a8fcf98ab188",
@@ -49,10 +49,38 @@
           "version": "repo-lines-v1:sha256:f6bf60b428395a089c415c582b6572c7a9c4469a66a20147f905e2afc0493926:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUxZjQ3M2Y1MjA4YWY5MTU5Y2ZmZjZhOWIxOTAzNTc2MjUxOGMyY2FiMDg2MTI5NzQ3Y2U4ZWQ0ZjNmMzE3ZjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ4MjkxNGIwMjZlODRkOWMyMDA3MzJkZDU2NGVlZjU3MzdjMmU0MWM1ODA0MmViMDRmMjgxMGYxMTdkMjQxNGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFhMDhmYjYzMjIzOTI2OWNmMDU4Mjc2YTc1YTllYmEzNTNkMTQ5M2VlMGJhYWUxZWQ5MTUxMWZiYTNhOGMxYmIifQ"
         }
       ]
+    },
+    {
+      "id": "claim_7095883a00434933959924af8e7cbc04",
+      "statement": "The extension can be loaded unpacked from the repository folder or from the unzipped release zip, and a release install is updated by unzipping the new version over the same folder and reloading.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L121-L125",
+          "version": "repo-lines-v1:sha256:52106ad81666fba45ed023b71f501dd78798dfca781fc1273671a59aca05c563:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg0YjRiYjI3OTBkZjExOTNiYmJiYTNkMzNlZjhlZThmNWJhNThjYTA0NWU4MmUyZDBlMWY5Mzg5NTM1NjBhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBlYzFiM2UwYzY4ODMwZTIyYzc3ZGY4ZTE1Mzc3MzY5YTFmYjJhZDY1NmY2NzhjYzdmNTBmYWQ3YjQwOWFhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2MyNWEyNGE2N2E2OWYxYjk0OTY3NmU0YzMwYzdlNTUyMDdkMzEyMjRkYzc1NTZlMGYxMTVmYzNkYjA1N2U0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEyNjZhNmRmODc3NWQzNmU3NDNiNjNiOGJhODNlYWFlODk4Y2MyMGFmOTc5ODRmY2UwZWY5MjU3OTEzZTdkMyJ9"
+        },
+        {
+          "resource": "repo://README.md#L22-L31",
+          "version": "repo-lines-v1:sha256:f8d0c595a9c9e854542319d86bce6ddbac5b9716d3e8670c7d492a06813093dc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViYWE0M2U3Njk0NjJiOTg1ZDA1NmMyNmEzYzg5NjE3Y2E3OThlYmJhZDA2MWY0NjdjZTE2ZTlkNjFjYzNhZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0NjQ5NDJiNTY2YjllZTJiMzY2YWY1YjFmZWRmODFlYjQyOTU3Y2QwOGQxZGZhMTgzMjM5OWZiZjhmMTc5MTAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0b4fa64fdb6d4f0bbcc0ea6244996412",
+      "statement": "Automated tests cover only video detection and translation keys, so runtime behavior such as claims, storage, popup, lock page and tab reloads is verified manually in Chrome.",
+      "evidence": [
+        {
+          "resource": "repo://tests/lib.test.js#L1-L11",
+          "version": "repo-lines-v1:sha256:725b5c39b4caf98bbb0b4347b0e66fe74ba184a29fa54629f64b31499305d8c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OTJlMjQ4YWUxYzcwY2JkM2IxMDI4M2JiNjk0NjA0MzI3MDdmMDVlZjU3MDY5YjYzODVmNjY2N2JkNWE2NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MmFkMzExNDU4ZGIzOTg1MWZkNjNlMmEyM2FlN2Y5Njc3ZWIyZmJkMmM1ZGJiMmRiNzE4YzExYjljNjI1MjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5NjAzOGQ3YWI2YjVhNjhmZTNlNDFmYzIzYTdhNWU3MjMxM2QwYzVlZjc0ZDM5NmM2NWQzMWQyYjZhZjFjOTYifQ"
+        },
+        {
+          "resource": "repo://tests/locales.test.js#L1-L2",
+          "version": "repo-lines-v1:sha256:d35c5f3232e953132e59d4c0f126257e95d97534e507faa8452125cf65f60439:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk4YmE3MzQ2YzY2NWMzMWZjYjk5MDIyMjMyMzM1MWE4MDUyNzcxOGQ0NjY0MDRiMTc0YTYwNjI5ZTYyYmM4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZlNmU4MTkwMWZhZmIyNjNiODhkNmIwNTRlNzYyZGQxZmVlNmM3ZjY4MzA5Y2Y0Mzk2M2FjNjM4YjJkZDQ1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ0ODNiZTcwMDY1YzM0YmFmOTEwNjNkMmRlMmQ1OWNlZjhhN2E1MmYyNTA2OGU1MzQ4MTcyZjAxZWIzODNiNiJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:05:30.576Z"
+    "at": "2026-11-01T12:16:37.173Z"
   }
 }

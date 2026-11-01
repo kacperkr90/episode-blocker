@@ -10,10 +10,16 @@ sources:
     resource: repo://content.js
   - id: openwiki-source-b25e71362ad2d0521bb4e04c
     resource: repo://manifest.json
-generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
+  - id: openwiki-source-23775c3de52f3ab95a13cb8b
+    resource: repo://README.md
+  - id: openwiki-source-6827bfa6cc4545b673ce7dc4
+    resource: repo://tests/lib.test.js
+  - id: openwiki-source-667e11e637cd9f360199963b
+    resource: repo://tests/locales.test.js
+generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:05:30.576Z
+    at: 2026-11-01T12:16:37.173Z
 ---
 
 # Install, update and reload behavior
@@ -25,7 +31,11 @@ updating the extension.
 ## Loading the extension
 
 There is no build step and there are no dependencies. In `chrome://extensions`, turn on Developer mode,
-choose **Load unpacked**, and select the repository folder. The version shown in the popup
+choose **Load unpacked**, and select the repository folder, or the unzipped folder from a GitHub
+release (see [checks, packaging and releases](build-and-release.md#installing-a-release)).
+To update a release install, unzip the new version over the same folder and reload. Chrome
+derives an unpacked extension's ID from its path, so the stored password and count are kept.
+The version shown in the popup
 footer ("version …" in English, "wersja …" in Polish) comes from `manifest.json`'s `version`
 (currently `2.3.0`).
 
@@ -69,7 +79,9 @@ chain only orders requests that are in flight.
 
 ## Manual testing checklist
 
-There is no automated test suite. After a change, reload the unpacked extension and check:
+`node --test` covers only video detection and translation keys (see
+[checks, packaging and releases](build-and-release.md)). Everything below needs a real browser.
+After a change, reload the unpacked extension and check:
 
 1. With no password set, opening a video on a supported site goes to the lock page.
 2. After setting a password and, say, 2 episodes in the popup, two different videos play and

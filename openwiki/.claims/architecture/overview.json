@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:3969f95cb78a11ca86f4c822e1148f4f2e81f8f10f96414c4cfb9ccff066c850",
+  "pageVersion": "sha256:16fcf115b56f6f8a801a1e2c847355f92ffc3b906207831bf02a3deceebaa8f2",
   "claims": [
     {
       "id": "claim_7cace31593264bf8a932662a96168866",
@@ -115,10 +115,24 @@
           "version": "repo-lines-v1:sha256:11de6202a88cdd6290f5e2d2caaf1ba72f607bc2b443047a7d0b7074dfd7f7a9:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMmIwZWFmMzQ4YmZhMmE2N2ZmYzQ3YTQyMmNiN2U5MTEzNWMzMmU3MjYyNTNkNTlkOTU2NjZlOTQxNGQxMjAxYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjdlNTc4OGQ1ZDlkNzNkMjRhODFkYmMwYTVhNzRiZmE4MmM5YzNiM2FmOTllNTJhZjc5NmU5MGI0NjhhOGEzZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNzQyY2UxZDY3ZGQ3OWI1NDZlNGU1Y2MwN2EwOTFjZjE5YjM5Y2FmMGU4MGUzOTkzMDViNTlkOGVhMzQyNjJjNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjEsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZDEwYjM2YWE3NGE1OWJjZjRhODgxODU4MzdmNjU4YWZhZjM2NDZlZmYyYmIxNmMzOTI4ZDBlOTMzNWU5NDVkMiJ9"
         }
       ]
+    },
+    {
+      "id": "claim_2b01aa40830644c0ae9953a4b86d2861",
+      "statement": "The project has no build step or dependencies, but has Node built-in test runner unit tests and a GitHub Actions Build workflow that checks, packages and releases the extension.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L1-L36",
+          "version": "repo-lines-v1:sha256:b24d4ef2853edbe80e5abf875977761811674190fdce26fc4d91137adec25fbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4MjM0YzRmNjlhNmIxM2MwYjI4YzkwYzZmM2E0YTc5YjZhMDU1YjFkZGRkYzZjOTVjNzk5ZmQ5NjcxM2U1Y2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZTM2M2I2ZjdjNDdkOGZjZDYyYTZmN2UxZGM4MjQ5YzllZDdiYTE4MDBjNjQwOWZmZjM3ZWQ3OTYyOGU5ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljY2UzOWFiMDhhMDFlOTc4NzViNDU4NzliNWJkYTk1YjA5M2ZlODZmMmIyN2FjM2IzODQwOWViN2IyMzRmMWEifQ"
+        },
+        {
+          "resource": "repo://tests/lib.test.js#L1-L11",
+          "version": "repo-lines-v1:sha256:725b5c39b4caf98bbb0b4347b0e66fe74ba184a29fa54629f64b31499305d8c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OTJlMjQ4YWUxYzcwY2JkM2IxMDI4M2JiNjk0NjA0MzI3MDdmMDVlZjU3MDY5YjYzODVmNjY2N2JkNWE2NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MmFkMzExNDU4ZGIzOTg1MWZkNjNlMmEyM2FlN2Y5Njc3ZWIyZmJkMmM1ZGJiMmRiNzE4YzExYjljNjI1MjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5NjAzOGQ3YWI2YjVhNjhmZTNlNDFmYzIzYTdhNWU3MjMxM2QwYzVlZjc0ZDM5NmM2NWQzMWQyYjZhZjFjOTYifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:05:30.576Z"
+    "at": "2026-11-01T12:16:37.173Z"
   }
 }
