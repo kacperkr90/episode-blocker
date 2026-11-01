@@ -3,9 +3,6 @@ type: operations
 title: Install, update and reload behavior
 description: How the extension keeps tabs covered across install, update and reload — reloading already-open supported tabs, self-reloading orphaned content scripts on video pages, SPA URL polling — plus how to load and manually test it.
 tags: [operations, lifecycle, install, reload, content-script, testing]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-11-01T11:23:59.117Z
 sources:
   - id: openwiki-source-f22365b596e25ba4bf7c6003
     resource: repo://background.js
@@ -13,7 +10,10 @@ sources:
     resource: repo://content.js
   - id: openwiki-source-b25e71362ad2d0521bb4e04c
     resource: repo://manifest.json
-generated: { by: "claude-code", at: "2026-11-01T11:23:59.117Z" }
+generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-11-01T12:05:30.576Z
 ---
 
 # Install, update and reload behavior
@@ -26,7 +26,8 @@ updating the extension.
 
 There is no build step and there are no dependencies. In `chrome://extensions`, turn on Developer mode,
 choose **Load unpacked**, and select the repository folder. The version shown in the popup
-("wersja …", "version …") comes from `manifest.json`'s `version` (currently `2.3.0`).
+footer ("version …" in English, "wersja …" in Polish) comes from `manifest.json`'s `version`
+(currently `2.3.0`).
 
 ## Already-open tabs on install or update
 
@@ -77,3 +78,5 @@ There is no automated test suite. After a change, reload the unpacked extension 
 4. Turning blocking off lets everything play. Turning it back on makes open videos pay again.
 5. Reloading the extension while a video tab is open reloads that tab within about 2 s.
 6. Unlocking on the lock page returns to the video and spends one episode.
+7. With Chrome's UI language set to Polish, and again to English, the popup and lock page show
+   translated text and no raw message keys (see [localization](../concepts/localization.md)).

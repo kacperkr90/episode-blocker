@@ -5,7 +5,7 @@ description: How the extension spends one unit of the shared episode quota per v
 tags: [quota, claim, background, content-script, storage, epoch]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T11:23:59.117Z
+    at: 2026-11-01T12:05:30.576Z
 sources:
   - id: openwiki-source-f22365b596e25ba4bf7c6003
     resource: repo://background.js

@@ -3,10 +3,9 @@ type: architecture
 title: Architecture overview
 description: The four runtime contexts of the Limit odcinków Manifest V3 extension (background worker, content script, popup, lock page), the shared lib.js helpers, and the storage areas and messages that connect them.
 tags: [architecture, manifest-v3, chrome-extension, storage, messaging]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-11-01T11:48:12.232Z
 sources:
+  - id: openwiki-source-c7a8e6c25b0da5055873aed3
+    resource: repo://_locales/en/messages.json
   - id: openwiki-source-f22365b596e25ba4bf7c6003
     resource: repo://background.js
   - id: openwiki-source-33784e8411f34531e1834579
@@ -25,7 +24,10 @@ sources:
     resource: repo://popup.js
   - id: openwiki-source-395d1fa7dad02829f74386db
     resource: repo://tools/sync-manifest.js
-generated: { by: "claude-code", at: "2026-11-01T11:48:12.232Z" }
+generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-11-01T12:05:30.576Z
 ---
 
 # Architecture overview
@@ -34,6 +36,8 @@ generated: { by: "claude-code", at: "2026-11-01T11:48:12.232Z" }
 on Netflix, Disney+, YouTube, YouTube Kids, CDA and TVP VOD until a parent unlocks a
 specific number of episodes ([manifest.json](../../manifest.json)). It is plain JavaScript, with
 no build step, no dependencies and no test suite. You load the folder as an unpacked extension.
+The UI is available in English (the default locale) and Polish; strings live in
+[_locales/](../../_locales/).
 
 ## Runtime contexts
 
@@ -57,12 +61,14 @@ no build step, no dependencies and no test suite. You load the folder as an unpa
 | Background service worker | [background.js](../../background.js) (+ `importScripts('lib.js')`) | The only place that spends quota. It serializes claims, tracks what each tab has paid for, and reloads open tabs on install. |
 | Content script | [lib.js](../../lib.js), [content.js](../../content.js), injected at `document_start` on supported hosts | Spots video pages, asks for a claim, and redirects to the lock page when refused. |
 | Toolbar popup | [popup.html](../../popup.html), [popup.js](../../popup.js) | Lets the parent set the password, turn blocking on or off, and set or zero the remaining count. |
-| Lock page | [locked.html](../../locked.html), [locked.js](../../locked.js), a web-accessible resource | Shows the child "Koniec oglądania!" ("Done watching!") and lets the parent unlock with the password. |
+| Lock page | [locked.html](../../locked.html), [locked.js](../../locked.js), a web-accessible resource | Shows the child "That's all for now!" ("Koniec oglądania!" in Polish) and lets the parent unlock with the password. |
 
 [lib.js](../../lib.js) is loaded into all four contexts. It holds:
 
 - **site detection**: `SITES`, `siteFor`, `videoKey` (see [site detection](../concepts/site-detection.md));
 - **state access**: `STATE_KEY = 'state'`, `getState`, `setState` over `chrome.storage.local`;
+- **translations**: `t(key, ...subs)` over `chrome.i18n.getMessage` and `localizePage()`, which
+  fills `data-i18n` elements on the popup and lock page (see [localization](../concepts/localization.md));
 - **password**: PBKDF2-SHA-256 hashing through Web Crypto (`hashPassword`, `savePassword`,
   `checkPassword`) (see [parent controls](../workflows/parent-controls.md)).
 
@@ -95,3 +101,10 @@ are generated from the `matches` field of each `SITES` entry in [lib.js](../../l
 `node tools/sync-manifest.js` ([tools/sync-manifest.js](../../tools/sync-manifest.js)), and
 `--check` reports drift. See [site detection](../concepts/site-detection.md#adding-a-site) and
 [extension lifecycle](../operations/extension-lifecycle.md).
+
+## Manifest localization
+
+The manifest's `name`, `description` and `action.default_title` are `__MSG_extName__` /
+`__MSG_extDescription__` placeholders resolved from the message catalogs, and
+`default_locale` is `en`. Chrome therefore shows "Episode Limit" or "Limit odcinków"
+depending on its UI language. See [localization](../concepts/localization.md).

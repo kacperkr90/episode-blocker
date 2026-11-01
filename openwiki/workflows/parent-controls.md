@@ -3,25 +3,30 @@ type: workflow
 title: "Parent controls: password, popup and lock page"
 description: Parent-facing workflows — creating the PBKDF2-hashed password, toggling blocking, setting or zeroing remaining episodes from the toolbar popup, and unlocking from the lock page with automatic return to the video.
 tags: [parent-controls, password, pbkdf2, popup, lock-page, ui]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-11-01T11:23:59.117Z
 sources:
   - id: openwiki-source-ac1612f5b3f29b4158b7f5dd
     resource: repo://lib.js
+  - id: openwiki-source-64cba43784b7a751100d3078
+    resource: repo://locked.html
   - id: openwiki-source-05a2d846482ced23f1fd99f1
     resource: repo://locked.js
   - id: openwiki-source-6390fee3c395fd7746cec673
     resource: repo://popup.html
   - id: openwiki-source-dda1dc9054b73bb09bf02f85
     resource: repo://popup.js
-generated: { by: "claude-code", at: "2026-11-01T11:23:59.117Z" }
+generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-11-01T12:05:30.576Z
 ---
 
 # Parent controls: password, popup and lock page
 
-The parent controls the extension from two screens. Both are in Polish and both change
-`state` directly in `chrome.storage.local`. Every change is checked against the parent password.
+The parent controls the extension from two screens. Both change `state` directly in
+`chrome.storage.local`, and every change is checked against the parent password. Labels are
+shown in English or Polish depending on Chrome's UI language; below, the English text is given
+with the Polish version in parentheses and the message key where useful (see
+[localization](../concepts/localization.md)).
 
 ## Password
 
@@ -37,36 +42,36 @@ Until a password exists, every video page is locked (see
 
 ## Toolbar popup ([popup.html](../../popup.html), [popup.js](../../popup.js))
 
-**First run, no hash.** The popup shows "Nie ustawiono hasła." ("No password set.") and the setup
-form: "Utwórz hasło rodzica" ("Create parent password") and "Powtórz hasło" ("Repeat
-password"). The password must be at least 4 characters ("Użyj co najmniej 4 znaków") and both
-fields must match ("Hasła nie są takie same", "Passwords don't match"). Anyone who opens the popup
-first can set the password. Once it is set, the popup has no screen for changing it.
+**First run, no hash.** The popup shows "No password set." ("Nie ustawiono hasła.") and the
+setup form: "Create a parent password" ("Utwórz hasło rodzica") and "Repeat the password"
+("Powtórz hasło"). The password must be at least 4 characters (`passwordTooShort`) and both
+fields must match (`passwordsDiffer`). Anyone who opens the popup first can set the password.
+Once it is set, the popup has no screen for changing it.
 
-**After setup.** The header shows "Blokada: WŁĄCZONA / WYŁĄCZONA" ("Blocking: ON / OFF") and
-"Pozostało odcinków: N" ("Episodes left: N"). Each action needs the password in the
-"Hasło rodzica" field. A wrong one shows "Błędne hasło" ("Wrong password").
+**After setup.** The header shows "Blocking: ON / OFF" ("Blokada: WŁĄCZONA / WYŁĄCZONA") and
+"Episodes left: N" ("Pozostało odcinków: N"). Each action needs the password in the
+"Parent password" ("Hasło rodzica") field. A wrong one shows "Wrong password" ("Błędne hasło").
 
 | Action | Effect on `state` |
 |---|---|
-| "Wyłącz blokadę" / "Włącz blokadę" (turn blocking off / on) | Flips `enabled`. Turning it **on** also bumps `epoch`, so open videos have to be paid for again. |
-| "Zastosuj" (apply) with a count, "0 = zablokuj teraz" (0 = lock now) | Sets `remaining = max(0, n)`. When `n === 0` it also bumps `epoch`, which locks videos that are already playing. |
+| "Turn blocking off" / "Turn blocking on" ("Wyłącz blokadę" / "Włącz blokadę") | Flips `enabled`. Turning it **on** also bumps `epoch`, so open videos have to be paid for again. |
+| "Apply" ("Zastosuj") with a count, "0 = lock now" | Sets `remaining = max(0, n)`. When `n === 0` it also bumps `epoch`, which locks videos that are already playing. |
 
-The popup footer shows the manifest version.
+The popup footer shows the manifest version ("version 2.3.0" / "wersja 2.3.0").
 
 ## Lock page ([locked.html](../../locked.html), [locked.js](../../locked.js))
 
 The content script opens it as `locked.html?return=<video URL>` with `location.replace()`, so
-the video page drops out of history. The child sees "Koniec oglądania!" ("Done watching!")
-and "Poproś rodzica o więcej odcinków." ("Ask a parent for more episodes.").
+the video page drops out of history. The child sees "That's all for now!" ("Koniec oglądania!")
+and "Ask a parent for more episodes." ("Poproś rodzica o więcej odcinków.").
 
 - **Return URL.** The page accepts it only if it is `https:` and belongs to a supported site
   (see [site detection](../concepts/site-detection.md)). Otherwise it is ignored.
-- **Unlock.** Under "Dla rodzica" ("For the parent"), enter the password and a count (minimum 1)
-  and press "Odblokuj" ("Unlock"). This **overwrites** `remaining` with the count and does not add to it, and then
-  `location.replace()`s back to the video. Loading the video spends one episode as usual, so
-  unlocking 1 lets exactly this video play. Without a valid return URL, the page shows
-  "Odblokowano. Otwórz film ponownie." ("Unlocked. Open the video again.").
+- **Unlock.** Under "For parents" ("Dla rodzica"), enter the password and a count (minimum 1,
+  otherwise `atLeastOne`) and press "Unlock" ("Odblokuj"). This **overwrites** `remaining` with
+  the count and does not add to it, and then `location.replace()`s back to the video. Loading
+  the video spends one episode as usual, so unlocking 1 lets exactly this video play. Without a
+  valid return URL, the page shows "Unlocked. Open the video again." (`unlockedReopen`).
 - **No password yet.** The form fields are hidden, and a note sends the parent to the
   toolbar icon to set one.
 - **Automatic return.** A `storage.onChanged` listener sends the page back to the video when
@@ -74,8 +79,8 @@ and "Poproś rodzica o więcej odcinków." ("Ask a parent for more episodes.").
   parent unlocks from the popup instead. The page deliberately does **not** check on load: if
   the background could not be reached, the video would lock again at once and the two pages would
   bounce back and forth forever.
-- **"← Wróć" (Back).** The button calls `history.back()` when there is history. Otherwise it goes to the
-  video site's origin, for example the home page.
+- **"← Back" ("← Wróć").** The button calls `history.back()` when there is history. Otherwise it
+  goes to the video site's origin, for example the home page.
 
 ## Limits of the protection
 

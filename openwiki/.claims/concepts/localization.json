@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:8b977ff6c6f08fa5b87f807d075e9debc0c118dd2d6df4a1200283eb5db1489e",
+  "claims": [
+    {
+      "id": "claim_2f288495c2b7462b8b61144e457f6496",
+      "statement": "User-visible strings come from chrome.i18n message catalogs in _locales/en and _locales/pl, with default_locale en so non-Polish UI languages fall back to English.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L7-L8",
+          "version": "repo-lines-v1:sha256:1237b4843baffb25279578e50ed85b7851ca7c05dfb418ad586c8cb390f0d856:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc5MzlhODAwZWJlNjFjOTQ5MWZkYmZlNWEwOTI2NDBlY2Q2M2FmOWNlMDA3NmQ1ZDEyODQyMDJhMTAzM2U3MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY3MzczYTc3ZjkyMmY0ODIxZDEyMmU5MWI0YjcyMzc2YjYyYTRmZjU2ZTU4ZmMxNmEyMGFhNTY2NDAyMTg4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjBjMjg4NGZhYjc5MTc2ODM5MWM1Y2Y5MTRhZDUxNDFhM2UxNGJkODUyYTU4NGVkNGNmZTEzZTJmYzZkNWYxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDZiYmMyMmQzMDE0OWI1YWM0OWNjNjkzNjViOTM3NjM0YmE4NTQzNzFiMTc4M2Q1OTZjYzM4NmZkYTc2MWIzZiJ9"
+        },
+        {
+          "resource": "repo://_locales/en/messages.json",
+          "version": "repo-file-v1:sha256:de27ddf9e7acaf4a1c16dbac78efcd92f7a56b2179c45c640e2796feaf275950"
+        },
+        {
+          "resource": "repo://_locales/pl/messages.json",
+          "version": "repo-file-v1:sha256:5ded29685fa5fb28d8770a2147aa3e0f41d1952fdf5c50152a55921cd79b8f37"
+        },
+        {
+          "resource": "repo://manifest.json#L1-L6",
+          "version": "repo-lines-v1:sha256:9ad19ac0f4a5607f33dfd9082cd453386d7b3f017070c697dd88834c464f87b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM5YzdiYTQ5OWI0MWM3YWFmZjkxODI1ZDhhYzdhNmY1ZmNiZTk2MjkzNzJhOWU5OTUyZDEwYmVhMWM5OGU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI4MTdlMDhmZGY1M2ZiMzk3ZjAwYzc1M2NhMGQzNzVkMGI3ZWYzMmMyZmUxOTg4YmMzZTFhZTNjYmVmMTMxMSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_f4d3670c5cef4f98a5a84c2e5fa10d97",
+      "statement": "t(key, ...subs) wraps chrome.i18n.getMessage and returns the key itself when no message is found.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L101-L103",
+          "version": "repo-lines-v1:sha256:c0d5db837e092a31d77b05381f8d895e6c58e5392f9d1ec8f1629e493f55d2b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzkwZjQ0YzI2OTM2NDRjNTJjOWQ2MzA1NDcwYTg4NTZjNDllNDgwOTM0MDA3NDBhYWFiNzU1ZmFlNzlkYWUwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjMzZjVlNzQ5NDgyNmFmMjkzOTI5MzIyNjRiMTQ3NDlkOTFiNzcwYjczNmE0MmE0YmU5ZDNiYWQ5NDcwZmQ3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNmYzk3ZjlmNzMwZTkxMzNmNmJiOGYzMDBjYzE2OTIzOWIxY2JmNGU0MDM4NDQwMWEwMGJjNjYxMTNhYTIxMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc9c1947a9744a9299a42fe63aec5cbe",
+      "statement": "localizePage() sets the document lang from chrome.i18n.getUILanguage() and fills every data-i18n element's textContent; popup.js and locked.js call it at startup.",
+      "evidence": [
+        {
+          "resource": "repo://lib.js#L105-L109",
+          "version": "repo-lines-v1:sha256:07bbcc98a1d764e1574b1a8a761a9bb4e556a547e2225ea192be08b1a0ec4851:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMyOWFlMmEwYzliMmIyMWE0MTk0MTZhMzQxZTg4NmU1OWQwMmE1NjY5NGVmMGQyNDg1YTBiYzQ5ODBhMzE4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTQ1NmRlZDYxNDk1ZWM2MTUzOGZmNWUzZGE4M2I4YmE3YThmYTQ3NDEzZGEwZmFlYmM0YWM2MDZmOTNlY2UwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDhmNTEzZWJkMzRiYmY3MTA5MmI2NTA5Y2NmNmE0ZjA2NTBiOGQ0M2MxZDY5ZTBhNTVmMGIxYjc2NDkzYjYyZiJ9"
+        },
+        {
+          "resource": "repo://locked.js#L1-L2",
+          "version": "repo-lines-v1:sha256:ddaa6108387e732170072dcf5fdd506ed025f40b0e160c3cf13e00b447ab3642:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTJhZGEyM2RkOTJmNDg4ZWE2MzJhNzNkZjU0MGZlMDQxOWRiZWQzNjRjMWI0OTRlNjkyZjliNzVmYmNiZmVmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZlNjc3MTRiNjYxNWJhZjAyMDBkODZhZDAxY2YzZWE2OWQzMDQxZWFiZWFmOTQ3NmM3ZDBiOTM1ZDgwODU0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTkwZThhM2RjNTJkNzMzNTgwZDk3MTFiOWM1YjUzNGY4Yzk3NmUwOTg1YjBlMTk3MjE1MGUxYTFjZGJhNjY2ZCJ9"
+        },
+        {
+          "resource": "repo://popup.js#L1-L2",
+          "version": "repo-lines-v1:sha256:ddaa6108387e732170072dcf5fdd506ed025f40b0e160c3cf13e00b447ab3642:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTJhZGEyM2RkOTJmNDg4ZWE2MzJhNzNkZjU0MGZlMDQxOWRiZWQzNjRjMWI0OTRlNjkyZjliNzVmYmNiZmVmYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDZlNjc3MTRiNjYxNWJhZjAyMDBkODZhZDAxY2YzZWE2OWQzMDQxZWFiZWFmOTQ3NmM3ZDBiOTM1ZDgwODU0ZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODVkYjIzMjAxMzY4ZmQwNDJlMWE0NGY4MWUyNjViZTNiYjYwYzdiM2UzYjIzMTM5ZmE5NmI2NzA0ODdjMTFhMCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_5932f4ba3d55466ba795b260b0dc03bb",
+      "statement": "The remaining and version messages take a $1 placeholder, and counts are written as label: number because chrome.i18n has no plural forms.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L97-L98",
+          "version": "repo-lines-v1:sha256:ae3a964a758d42140f663c6086e05a5ac54ec68cc27e2e70d1f6ce704c420b7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAyNjk0Nzk0ZTk4YzI2YzBkOGUxMDkwOWFjYWIxNWFkMGJhZjNlZDY5MDk1OGM1MjIxOTQ1YzZjOTg2NzY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ1OWRjM2FlNTM1MjYzNjBlYjVlMmU0YjMxYmQ5MjgxODRmMDE0N2EwNTRlMTU4NzY5ZmE1MTgzNDJkNDI5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc2N2QyMmU3YTY5ZmQwMzIwODIzYmY1YTgwMmQ4OWE3YzczYmIzYzExMGJlMTc5OGQ4OWU2YzI0MGExZGU5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTA3NTc4ZmJmMjY4MDI1MGIxYTc5ZGE5ZDdiNmIxNWNiODM1ZmMzZjY2MjRkMTgyNjI2Nzc3NWNkYWQ3NTVhOCJ9"
+        },
+        {
+          "resource": "repo://_locales/en/messages.json#L27-L30",
+          "version": "repo-lines-v1:sha256:f165e402fa68c1c14a2a74c8ef508f6833306ac9fc4e10e3178bd7dce249f463:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMwODE4NzFiZWU2MTNmOGVmNTU5OTQ5NWFhZWMwNWIwM2MxMzFlN2Q1MzY5ODdlM2U2NDMzOWU1YjU1Y2E5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRiNWIxNzZhZWE4NjkwMzU0NDhmYWQwMjNlZjZhZGFmMjQ1ZTg2NTYwMmExZDdlNDFhYjRiODI4NzU1ZDM0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGEyMzE1NmM2OGUyMDliYTc3ZTYxOWMxZDZhYjkxMTBjZjM2MzAzOTFkZmJhMjRlZjg3ZmNmZWYyOGQwNWI4NiJ9"
+        },
+        {
+          "resource": "repo://_locales/en/messages.json#L7-L10",
+          "version": "repo-lines-v1:sha256:31eea45e3dbc58e2c0f6a0ad5468f76944ddb5345faa3f29355626b57914e88f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRmYTU4YmUyYzExYzIyOTVhOTA1NTE5MjBhYjYwMjM4MmVhY2E2MzYzMjU3NDkwMTM4YWM4OTA4ZmM3M2I0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc4YzBjMTZjN2UzMWFjZmUwNGY2Y2E3YjZhZjNmMjI3ZjBlZTI2ZDRlMzZlMDJiNzU3NTg3NTVmZjMzNmJmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDgzYWIzMWM3Y2QzY2VlMWRhZjIxMDcxNWQwZTA3MmE3NTJhZTgxM2FhNDE0ODAxNjNlMDg3MDlmNWVmOGRkMSJ9"
+        },
+        {
+          "resource": "repo://popup.js#L16-L18",
+          "version": "repo-lines-v1:sha256:a67af1ca91a990a3e2292af9847ac6e4249c3bcb72a10eba5162a96c4992f60d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIxZjQ2MTFiNjRiNGYwOGRkNjI5NjQ0ZTYzZDk0MjA5NTg2MGE3NTU5MDMwMzA5MGQ2ZGNiNWU0NzgxYzU0YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOThmYzAxOGQ5ZWYyYzg3YTQ3ZjgzMDE1ZTUxNmY1YjI2YjYzNjBlZTc1MDU3ZmE0ZTFiM2RmYmM4MDRjYjBhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTg2MTdjMTlhODI4Y2I0YmZhNmYzNTkyODdkYzU0ODJjNDM4MGU1YjhiZTg0NDRkYWNhMDdmZmYzOTkzNDVhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDMwMzMyNWY5MGY3ZDc4YTFjMzY3NGY4MDI0N2VjMmFlZDJlNDRjYjllOTI2NDczZmUyZmZiZDZkYWQ0YTMyOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_b12dd9286af44e138530e4a232765079",
+      "statement": "Both catalogs must define the same keys.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L90-L91",
+          "version": "repo-lines-v1:sha256:ac388aedee0648a3b0357fe11e68eb0543dd882bbe696129746413561e9709bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVkZTcyMDk5NjJhMDZjZDAzYTczY2U3ZTk0N2M1OGQyNjcwMmE0YmQxY2JlMDQ1NGRlMmNmMzU2MTJjOWRjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJhZDk5NTYyOTg1ZWE2YmI1N2E2MzU0M2I5ZjRkMDMyMDEwNWUwMDg3Mjc2ZDkzMzUwOGQ5MTAyOWI4YzVjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjNDQ0ZGNlYWYwNjBiYTE2NTg2MGM2NjlkY2ZjZmM0MTVmZGIwODU0NTZjNzNiNjhiYWU3YmI1NDJhYTEyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU2NGFhZmU1OGExYjExYTg0Njk1ZGQ1OWY2ZGMxMzJkNTVkN2NjNTQyYzM5NGRkODdhYzFhM2UyY2Q3NzA4MCJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.2",
+    "at": "2026-11-01T12:05:30.576Z"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:849fbf500b1b99bdf872befd1915fcc26ab408833e0f66ea69ffa4198fce095b",
+  "pageVersion": "sha256:c2d2e282f8a3cab417508da722d17408b957298170df05af24c777f2e89e797a",
   "claims": [
     {
       "id": "claim_ac00681834cf48618dd0a8fcf98ab188",
@@ -35,7 +35,7 @@
           "version": "repo-lines-v1:sha256:fbc90cff9d169d1ccc3f357cd43ce90bca98517aee25e106a6df4b375805caff:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDNmZmNmZGI3YjUxYTk4Zjg4ODhlNGM4YmZhYWFlODUwNzJjODEyYzhhNGI4ZTNjYzIyMGVkNDMwZDM1ODM4MiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjFlZTFiZWU2NjZiOWRmZTVmM2NlOTMwNmQ3MDA3ODQxZTBkMzA4YzcwMzY3MDQ3NjA1ZTM4ZGM4MzE0NjRhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmE0MWQ3M2M0NTIyYmVhMzlmZjgxNWUyNGJjZjEzMTE4NTMxZDY3MWViM2NmNTMxMjE4ODVlMTFhMWM0NzI0ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMzAxMjkxOTcyMTk1NDU3ZTQ4Y2I5MjBmZmQ1NDIzMGQxNDhiNjRjYWRjM2YxNTEzZGJkNDE3MDQyYWI3ODJiNCJ9"
         },
         {
-          "resource": "repo://manifest.json#L34-L34",
+          "resource": "repo://manifest.json#L35-L35",
           "version": "repo-lines-v1:sha256:491ea6521eee1b162226f070b7ea611e1bbb92afb76925659cc09fee884fcf8f:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkxZWE2NTIxZWVlMWIxNjIyMjZmMDcwYjdlYTYxMWUxYmJiOTJhZmI3NjkyNTY1OWNjMDlmZWU4ODRmY2Y4ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDkxZWE2NTIxZWVlMWIxNjIyMjZmMDcwYjdlYTYxMWUxYmJiOTJhZmI3NjkyNTY1OWNjMDlmZWU4ODRmY2Y4ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjUxZjgzMWQyYTcxNzU0ZTg0YjJkNTk3ODExYzNjYmZiNDUxMzcxMGQ2N2RlZGM0MDEzZWU4ZTZiN2IwZjdhOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNzUyODI3ZWI4MTE4ODdiMTcxMDJjMDIzYTQwMzVlMmFlZjM3ZDE2MTY5YmU1ZjE4M2VmN2IzNDYwMGU1ZTYzZCJ9"
         }
       ]
@@ -53,6 +53,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T11:23:59.117Z"
+    "at": "2026-11-01T12:05:30.576Z"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:0b2a2cf2781eca5cdae563b455d874c30b14f1f033100384e01383f1806da422",
+  "pageVersion": "sha256:f18a32c2b4099d6ddb3c5fef86a8eb1ea993eeac74060d75daf373f19d6acb4a",
   "claims": [
     {
       "id": "claim_788f3b0084aa4f42bf84363410b053d2",
@@ -51,7 +51,7 @@
       "statement": "The lock page only returns to a URL that is https and whose host is recognized by siteFor.",
       "evidence": [
         {
-          "resource": "repo://locked.js#L3-L11",
+          "resource": "repo://locked.js#L4-L12",
           "version": "repo-lines-v1:sha256:379f2b398ad3026591dd52f65eff055881ec223182dd45e773c131b5467b81c6:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWRkMDJjZjAxNGYxNDQ1NDZjOTJlMGY2ZWY1NzI2YjIzNzAzMmUwZDQ5NWUyYWZlMzk0NTExMGM3NTBlMzI3MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDlmYWM1YTMwMzliYmFkMjg3YWM4MTVkNTMzY2YzYWJkNGI0MjE3OTIwY2JlMmM5M2JiMzRhNmUzMDAwMzE0MiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjc2N2EyMjI3MjNjZmE4OGEyODdiYTMyYzIyZGU1NTM5MDMwYjYzNzk3OTdlODYxN2Y5M2I4ODYwYWI4ZGYzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmU4NzA2MzBkMmUzMTc5MjJhYTRiMzg1M2NiOGQxYWMwYjQ5ZGUxZWNhYWJmODlkMjYzNzNhN2YxMzEyMjRiNyJ9"
         }
       ]
@@ -61,7 +61,7 @@
       "statement": "The supported host patterns appear in host_permissions, content_scripts matches and web_accessible_resources matches in the manifest, and all three lists are generated from the SITES entries' matches fields by tools/sync-manifest.js rather than edited by hand.",
       "evidence": [
         {
-          "resource": "repo://manifest.json#L9-L53",
+          "resource": "repo://manifest.json#L10-L54",
           "version": "repo-lines-v1:sha256:732575a617e25acd9f9823baff604f5e651bdbd22b7df4d9f728f62ae1ec9515:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NTIxY2MwMjYwMGZjOTM4YjZjZTMxYzJmMzlkN2JlYjk0ZTEwNGQyMGZiZmY2ZmFiZmE4MDJkNTEzZTlkMmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NGQ4YzA3MzQyOTg5MzEwMTU3NmQ4OGQ5OTEyN2U4OWQ2ODkxZDNiMTdlODlkZjAyZWM5YWU3MDcwNWQ4YmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUyODE3ZTA4ZmRmNTNmYjM5N2YwMGM3NTNjYTBkMzc1ZDBiN2VmMzJjMmZlMTk4OGJjM2UxYWUzY2JlZjEzMTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmODA4YWUyMjIyNDM3YmMzMGUxYWJkZjMyY2ZhMTA5OTI4NmIxNzQyMDNhMzIyNjA5ZWM2ZmUyOGQ2M2M2ZWIifQ"
         },
         {
@@ -97,6 +97,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T11:48:12.232Z"
+    "at": "2026-11-01T12:05:30.576Z"
   }
 }

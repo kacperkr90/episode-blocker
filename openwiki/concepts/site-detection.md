@@ -12,10 +12,10 @@ sources:
     resource: repo://manifest.json
   - id: openwiki-source-395d1fa7dad02829f74386db
     resource: repo://tools/sync-manifest.js
-generated: { by: "claude-code", at: "2026-11-01T11:48:12.232Z" }
+generated: { by: "claude-code", at: "2026-11-01T12:05:30.576Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T11:48:12.232Z
+    at: 2026-11-01T12:05:30.576Z
 ---
 
 # Supported sites and video detection
@@ -93,8 +93,8 @@ to an arbitrary site.
    [manifest.json](../../manifest.json): `host_permissions`, `content_scripts[0].matches`,
    and `web_accessible_resources[0].matches`. Do not edit those lists by hand. The lock page
    cannot be opened from a site that is missing in the last list.
-3. If the site is a single-page app, nothing else is needed. The content script polls
-   `location.href` every 300 ms.
+3. Reload the extension in `chrome://extensions`. If the site is a single-page app, nothing
+   else is needed. The content script polls `location.href` every 300 ms.
 
 [tools/sync-manifest.js](../../tools/sync-manifest.js) also validates each entry before
 writing. Every site needs at least one pattern. Each pattern must have the form
