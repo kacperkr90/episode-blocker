@@ -1,11 +1,11 @@
-# Limit odcinków
+# Episode Limit
 
 A Chrome extension (Manifest V3) that limits how many episodes a child can watch. Video playback
 on supported sites is blocked until a parent unlocks a set number of episodes with a password.
 Each video page that is opened uses up one episode.
 
-The user interface is in Polish and English. Chrome picks the language from its own UI language;
-any language other than Polish falls back to English.
+The user interface is available in two languages. Chrome picks the language from its own UI
+language; anything other than the one non-English translation falls back to English.
 
 ## Supported sites
 
@@ -35,19 +35,19 @@ Until a password is set, every video is locked.
 
 ### Toolbar popup (for the parent)
 
-- **Create the password** ("Utwórz hasło rodzica"). It must be at least 4 characters. The popup
-  has no screen for changing it later.
-- **Set the remaining episodes** ("Ustaw liczbę pozostałych odcinków"). Setting the number to `0`
+- **Create the password** ("Create a parent password"). It must be at least 4 characters. The
+  popup has no screen for changing it later.
+- **Set the remaining episodes** ("Set the number of episodes left"). Setting the number to `0`
   locks everything at once, including videos that are already playing.
-- **Turn blocking off or on** ("Wyłącz blokadę" / "Włącz blokadę"). When blocking is turned back
-  on, videos that are already open have to be paid for again.
+- **Turn blocking off or on** ("Turn blocking off" / "Turn blocking on"). When blocking is turned
+  back on, videos that are already open have to be paid for again.
 
 Every action needs the password.
 
 ### Lock page
 
 When no episodes are left, the video tab is sent to a lock page. There the parent can enter the
-password and a number of episodes, then click **Odblokuj** ("Unlock"). This sets the remaining
+password and a number of episodes, then click **Unlock**. This sets the remaining
 count to that number (it does not add to the old one) and goes back to the video. Opening the
 video then uses one episode, so unlocking `1` lets exactly that video play.
 
@@ -97,7 +97,7 @@ All user-visible text is in [_locales/en/messages.json](_locales/en/messages.jso
 - In `manifest.json`, use `__MSG_key__`.
 
 `chrome.i18n` has no plural forms, so write counts as "label: number" (for example
-"Pozostało odcinków: 3"). To test the other language on macOS, set Chrome's language in System
+"Episodes left: 3"). To test the other language on macOS, set Chrome's language in System
 Settings → General → Language & Region → Applications, restart Chrome and reload the extension.
 
 ## Checks and releases
@@ -118,7 +118,7 @@ To release, bump `version` in [manifest.json](manifest.json), commit, and push a
 git tag v2.4.0 && git push origin v2.4.0
 ```
 
-The workflow then creates a GitHub release with `limit-odcinkow-<version>.zip` attached. To
+The workflow then creates a GitHub release with `episode-limit-<version>.zip` attached. To
 install it, download the zip from the release, unzip it, and load the unzipped folder with
 **Load unpacked** as described in [Installation](#installation). Chrome does not install zip
 files directly. To update, unzip the new version over the same folder and click the reload

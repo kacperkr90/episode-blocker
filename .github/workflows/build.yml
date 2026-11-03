@@ -50,8 +50,8 @@ jobs:
         run: |
           version=$(jq -r .version manifest.json)
           mkdir dist
-          zip -r "dist/limit-odcinkow-$version.zip" manifest.json *.js *.html _locales
-          unzip -l "dist/limit-odcinkow-$version.zip"
+          zip -r "dist/episode-limit-$version.zip" manifest.json *.js *.html _locales
+          unzip -l "dist/episode-limit-$version.zip"
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Upload package
@@ -69,7 +69,7 @@ jobs:
       contents: write
     env:
       VERSION: ${{ needs.build.outputs.version }}
-      ZIP: dist/limit-odcinkow-${{ needs.build.outputs.version }}.zip
+      ZIP: dist/episode-limit-${{ needs.build.outputs.version }}.zip
     steps:
       - name: Check tag matches manifest version
         run: |
