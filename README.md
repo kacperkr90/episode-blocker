@@ -35,41 +35,28 @@ Until a password is set, every video is locked.
 
 ### Toolbar popup (for the parent)
 
-- **Create the password** ("Create a parent password"). It must be at least 4 characters. The
-  popup has no screen for changing it later.
-- **Set the remaining episodes** ("Set the number of episodes left"). Setting the number to `0`
-  locks everything at once, including videos that are already playing.
-- **Turn blocking off or on** ("Turn blocking off" / "Turn blocking on"). When blocking is turned
-  back on, videos that are already open have to be paid for again.
-
-Every action needs the password.
 The large text at the top shows the current state: episodes left, "🔒 No episodes left" or
 "No limit until 3:00".
 
-- **Create the password** ("Utwórz hasło rodzica"). It must be at least 6 characters. The popup
-  has no screen for changing it later.
-- **Enter the password once** ("Hasło rodzica", then **Dalej**). The controls then stay available
-  until the popup is closed.
+- **Create the password** ("Create a parent password"). It must be at least 6 characters. The
+  popup has no screen for changing it later.
+- **Enter the password once** ("Parent password", then **Continue**). The controls then stay
+  available until the popup is closed.
 - **Add episodes** with **+1**, **+2** or **+3**, or set the exact number with **−**, **+** and
-  **Ustaw** ("Set"). The number field starts at the current count. The maximum is 50.
-- **🔒 Zablokuj teraz** ("Lock now") sets the count to 0 and locks every video at once, including
-  videos that are already playing. It also ends a pause.
-- **Bez limitu do 3:00** ("No limit until 3:00") lets videos play without using episodes until
-  the next 3:00 at night. While the pause is on, the button changes to **Przywróć limit teraz**
-  ("Turn the limit back on now"), which also makes every open video pay again. When the pause
-  ends by itself at 3:00, videos that are already playing continue; the next video opened uses
-  an episode.
+  **Set**. The number field starts at the current count. The maximum is 50.
+- **🔒 Lock now** sets the count to 0 and locks every video at once, including videos that are
+  already playing. It also ends a pause.
+- **No limit until 3:00** lets videos play without using episodes until the next 3:00 at night.
+  While the pause is on, the button changes to **Turn the limit back on now**, which also makes
+  every open video pay again. When the pause ends by itself at 3:00, videos that are already
+  playing continue; the next video opened uses an episode.
 
 ### Lock page
 
-When no episodes are left, the video tab is sent to a lock page. There the parent can enter the
-password and a number of episodes, then click **Unlock**. This sets the remaining
-count to that number (it does not add to the old one) and goes back to the video. Opening the
-video then uses one episode, so unlocking `1` lets exactly that video play.
-When no episodes are left, the video tab is sent to a lock page. Under **Dla rodzica** ("For
-parents") the parent picks **+1**, **+2** or **+3**, enters the password and clicks **Odblokuj**
-("Unlock"). The episodes are added to the remaining count and the tab goes back to the video.
-Opening the video then uses one episode, so unlocking `+1` lets exactly that video play.
+When no episodes are left, the video tab is sent to a lock page. Under **For parents** the parent
+picks **+1**, **+2** or **+3**, enters the password and clicks **Unlock**. The episodes are added
+to the remaining count (up to 50) and the tab goes back to the video. Opening the video then
+uses one episode, so unlocking `+1` lets exactly that video play.
 
 ### Wrong passwords
 
@@ -81,7 +68,7 @@ resets the counter. The counter is kept when the popup or the lock page is close
 
 - Each video page that is opened uses one episode.
 - Reloading the same video in the same tab is free.
-- "Lock now" and turning the limit back on make every open video pay again.
+- "Lock now" and "Turn the limit back on now" make every open video pay again.
 - If something cannot be checked, the extension locks the video.
 
 ### Updating from versions before 2.4
@@ -144,16 +131,19 @@ node --test
 The [Build workflow](.github/workflows/build.yml) runs the same checks on every push and pull
 request, and packages the extension as a zip (downloadable from the workflow run).
 
-To release, bump `version` in [manifest.json](manifest.json), commit, and push a matching tag:
+Releases are made by [release-please](https://github.com/googleapis/release-please). Write
+commit messages as [Conventional Commits](https://www.conventionalcommits.org/) (`feat: ...`,
+`fix: ...`). On every push to `main`, release-please opens or updates a release pull request
+that bumps `version` in [manifest.json](manifest.json) and updates `CHANGELOG.md`: `fix:` bumps
+the patch version, `feat:` the minor version, and a breaking change (`feat!:`) the major
+version. Merging that pull request tags `v<version>`, creates the GitHub release and attaches
+`episode-limit-<version>.zip`. Do not change `version` or push tags by hand. The configuration
+is in [release-please-config.json](release-please-config.json) and
+[.release-please-manifest.json](.release-please-manifest.json).
 
-```sh
-git tag v2.4.0 && git push origin v2.4.0
-```
-
-The workflow then creates a GitHub release with `episode-limit-<version>.zip` attached. To
-install it, download the zip from the release, unzip it, and load the unzipped folder with
-**Load unpacked** as described in [Installation](#installation). Chrome does not install zip
-files directly. To update, unzip the new version over the same folder and click the reload
+To install a release, download the zip from the release, unzip it, and load the unzipped folder
+with **Load unpacked** as described in [Installation](#installation). Chrome does not install
+zip files directly. To update, unzip the new version over the same folder and click the reload
 button on the extension's card in `chrome://extensions`; the password and episode count are kept.
 
 ## Limitations

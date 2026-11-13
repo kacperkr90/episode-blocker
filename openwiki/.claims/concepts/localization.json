@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:c413e302ac98cba0cee4973ddc0ba29ce7016886b961fb9d2b22237640485ed0",
+  "pageVersion": "sha256:d01de7a59ab9d4ed228c948dd5ff8bfe97ec328fd5f8dd9f1ec8d7ca7847b93d",
   "claims": [
     {
       "id": "claim_2f288495c2b7462b8b61144e457f6496",
@@ -8,7 +8,7 @@
       "evidence": [
         {
           "resource": "repo://README.md#L7-L8",
-          "version": "repo-lines-v1:sha256:1237b4843baffb25279578e50ed85b7851ca7c05dfb418ad586c8cb390f0d856:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTc5MzlhODAwZWJlNjFjOTQ5MWZkYmZlNWEwOTI2NDBlY2Q2M2FmOWNlMDA3NmQ1ZDEyODQyMDJhMTAzM2U3MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjY3MzczYTc3ZjkyMmY0ODIxZDEyMmU5MWI0YjcyMzc2YjYyYTRmZjU2ZTU4ZmMxNmEyMGFhNTY2NDAyMTg4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjBjMjg4NGZhYjc5MTc2ODM5MWM1Y2Y5MTRhZDUxNDFhM2UxNGJkODUyYTU4NGVkNGNmZTEzZTJmYzZkNWYxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDZiYmMyMmQzMDE0OWI1YWM0OWNjNjkzNjViOTM3NjM0YmE4NTQzNzFiMTc4M2Q1OTZjYzM4NmZkYTc2MWIzZiJ9"
+          "version": "repo-lines-v1:sha256:9fbdeb747e5c06bb88413e202d7bf1a20bcb090fc3e49d06d588daf0d44678e5:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzBkMzMxMDYzZTBmOTc4YjY3MmJkZjIyNDViZDZiZWFjZTlkYWRmNDE3MDdmYjk3ZTUzNDViYWI5OGZlNTk5YSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzlmMTk0MWJmODc4NzZjMmQzNGZhODNjZDlhYTJhYWZkMzUzYTUwZTJmMzhkOTFlZDhhNjkzZTUwMzM1ODQwMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNjBjMjg4NGZhYjc5MTc2ODM5MWM1Y2Y5MTRhZDUxNDFhM2UxNGJkODUyYTU4NGVkNGNmZTEzZTJmYzZkNWYxNCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDZiYmMyMmQzMDE0OWI1YWM0OWNjNjkzNjViOTM3NjM0YmE4NTQzNzFiMTc4M2Q1OTZjYzM4NmZkYTc2MWIzZiJ9"
         },
         {
           "resource": "repo://_locales/en/messages.json",
@@ -57,8 +57,8 @@
       "statement": "The remaining, noLimitUntil, tooManyTries and version messages take a $1 placeholder, and counts are written as label: number because chrome.i18n has no plural forms.",
       "evidence": [
         {
-          "resource": "repo://README.md#L119-L121",
-          "version": "repo-lines-v1:sha256:3437cff89ca4c26265a1b968e7ab62e71a28b404860fd686b900ea4e4270ed1f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAyNjk0Nzk0ZTk4YzI2YzBkOGUxMDkwOWFjYWIxNWFkMGJhZjNlZDY5MDk1OGM1MjIxOTQ1YzZjOTg2NzY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNhMjVhOGUyYjRkZTk3Mzk3ODRkZDkwZjBkMmNjODgzMDcwYTJhZTcyYmRiNTU0ZDZmZDE1NGI4MmY0ZjRjMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc2N2QyMmU3YTY5ZmQwMzIwODIzYmY1YTgwMmQ4OWE3YzczYmIzYzExMGJlMTc5OGQ4OWU2YzI0MGExZGU5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjlmYWZkNjA5YzM3Zjk5OWIwYzQ4YmJmZDA1N2VjMDZmNGRjZTliNzQzYzg1MTY1MDk0ZDdhOWI4MjBjOWQ2ZCJ9"
+          "resource": "repo://README.md#L118-L120",
+          "version": "repo-lines-v1:sha256:177e16b4782190eea5752f286d4f72a8e2f4098431cfe9a11e5c19dac88823c6:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAyNjk0Nzk0ZTk4YzI2YzBkOGUxMDkwOWFjYWIxNWFkMGJhZjNlZDY5MDk1OGM1MjIxOTQ1YzZjOTg2NzY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNhMjVhOGUyYjRkZTk3Mzk3ODRkZDkwZjBkMmNjODgzMDcwYTJhZTcyYmRiNTU0ZDZmZDE1NGI4MmY0ZjRjMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc2N2QyMmU3YTY5ZmQwMzIwODIzYmY1YTgwMmQ4OWE3YzczYmIzYzExMGJlMTc5OGQ4OWU2YzI0MGExZGU5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjlmYWZkNjA5YzM3Zjk5OWIwYzQ4YmJmZDA1N2VjMDZmNGRjZTliNzQzYzg1MTY1MDk0ZDdhOWI4MjBjOWQ2ZCJ9"
         },
         {
           "resource": "repo://_locales/en/messages.json#L5-L37",
@@ -79,7 +79,7 @@
       "statement": "Both catalogs must define the same keys.",
       "evidence": [
         {
-          "resource": "repo://README.md#L112-L113",
+          "resource": "repo://README.md#L111-L112",
           "version": "repo-lines-v1:sha256:ac388aedee0648a3b0357fe11e68eb0543dd882bbe696129746413561e9709bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVkZTcyMDk5NjJhMDZjZDAzYTczY2U3ZTk0N2M1OGQyNjcwMmE0YmQxY2JlMDQ1NGRlMmNmMzU2MTJjOWRjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJhZDk5NTYyOTg1ZWE2YmI1N2E2MzU0M2I5ZjRkMDMyMDEwNWUwMDg3Mjc2ZDkzMzUwOGQ5MTAyOWI4YzVjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjNDQ0ZGNlYWYwNjBiYTE2NTg2MGM2NjlkY2ZjZmM0MTVmZGIwODU0NTZjNzNiNjhiYWU3YmI1NDJhYTEyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU2NGFhZmU1OGExYjExYTg0Njk1ZGQ1OWY2ZGMxMzJkNTVkN2NjNTQyYzM5NGRkODdhYzFhM2UyY2Q3NzA4MCJ9"
         }
       ]
@@ -107,6 +107,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-13T21:24:43.706Z"
+    "at": "2026-11-13T21:53:44.309Z"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:25a9731bbc1df87c3bc9f4c5994892cb46d45541a050dc46ccd6d55c05d2930f",
+  "pageVersion": "sha256:fc7ca3891802b960a09b71fc2df7399dd98d2d5aaa30ef2e554c7630725f044d",
   "claims": [
     {
       "id": "claim_ac00681834cf48618dd0a8fcf98ab188",
@@ -55,8 +55,8 @@
       "statement": "The extension can be loaded unpacked from the repository folder or from the unzipped release zip, and a release install is updated by unzipping the new version over the same folder and reloading.",
       "evidence": [
         {
-          "resource": "repo://README.md#L141-L145",
-          "version": "repo-lines-v1:sha256:52106ad81666fba45ed023b71f501dd78798dfca781fc1273671a59aca05c563:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg0YjRiYjI3OTBkZjExOTNiYmJiYTNkMzNlZjhlZThmNWJhNThjYTA0NWU4MmUyZDBlMWY5Mzg5NTM1NjBhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBlYzFiM2UwYzY4ODMwZTIyYzc3ZGY4ZTE1Mzc3MzY5YTFmYjJhZDY1NmY2NzhjYzdmNTBmYWQ3YjQwOWFhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2MyNWEyNGE2N2E2OWYxYjk0OTY3NmU0YzMwYzdlNTUyMDdkMzEyMjRkYzc1NTZlMGYxMTVmYzNkYjA1N2U0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEyNjZhNmRmODc3NWQzNmU3NDNiNjNiOGJhODNlYWFlODk4Y2MyMGFmOTc5ODRmY2UwZWY5MjU3OTEzZTdkMyJ9"
+          "resource": "repo://README.md#L144-L147",
+          "version": "repo-lines-v1:sha256:8a5d1f0413d7f8ea29bcc8b8767afb94f463f424afcdc2155d92e54b4d853b79:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzgzMDcxNDA2MGJjM2Q0ZjhlMzhhZTNmMDQ1NmY0MjVjZTA0ZjZkNDhkMTZjMGE3ZTMzZmFmZjc3MDBhZGY4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBlYzFiM2UwYzY4ODMwZTIyYzc3ZGY4ZTE1Mzc3MzY5YTFmYjJhZDY1NmY2NzhjYzdmNTBmYWQ3YjQwOWFhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmMzODNiNzU0OGFjMWFjNTI2MmRjM2I3ODlkZjFmZTk1YjIxMmIyZTk4NTBkMTY0OGZhYWM3YTBiNzdjMGVhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEyNjZhNmRmODc3NWQzNmU3NDNiNjNiOGJhODNlYWFlODk4Y2MyMGFmOTc5ODRmY2UwZWY5MjU3OTEzZTdkMyJ9"
         },
         {
           "resource": "repo://README.md#L22-L31",
@@ -91,6 +91,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-13T21:24:43.706Z"
+    "at": "2026-11-13T21:53:44.309Z"
   }
 }

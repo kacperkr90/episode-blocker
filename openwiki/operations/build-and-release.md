@@ -1,27 +1,30 @@
 ---
 type: operations
 title: Checks, packaging and releases
-description: The automated checks (JavaScript syntax, manifest sync, node --test unit tests for video detection and translation keys), the Build GitHub Actions workflow that packages the extension as a zip, and the tag-triggered GitHub release used for manual download and Load-unpacked install.
-tags: [operations, ci, github-actions, testing, release, packaging]
-verified:
-  - by: openwiki/0.7.2
-    at: 2026-11-01T12:16:37.173Z
+description: The automated checks (JavaScript syntax, manifest sync, node --test unit tests for lib.js helpers and translation keys), the Build GitHub Actions workflow that packages the extension as a zip, and the release-please flow that versions, tags and publishes GitHub releases for manual download and Load-unpacked install.
+tags: [operations, ci, github-actions, testing, release, packaging, release-please]
 sources:
   - id: openwiki-source-7a80b79a6fb3618cbfab08a2
     resource: repo://.github/workflows/build.yml
-  - id: openwiki-source-6d4b4e707b8d60b6ccfa3425
-    resource: repo://.github/workflows/openwiki-update.yml
+  - id: openwiki-source-5e59f90a38f5bdf9ed76984b
+    resource: repo://.release-please-manifest.json
   - id: openwiki-source-23775c3de52f3ab95a13cb8b
     resource: repo://README.md
-generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
+  - id: openwiki-source-482fa4ca84f42b04ba025fc1
+    resource: repo://release-please-config.json
+generated: { by: "claude-code", at: "2026-11-13T21:53:44.309Z" }
+verified:
+  - by: openwiki/0.7.2
+    at: 2026-11-13T21:53:44.309Z
 ---
 
 # Checks, packaging and releases
 
 The extension has no build step and no dependencies. "Building" means zipping the files Chrome
-loads. The [Build workflow](../../.github/workflows/build.yml) runs the checks, makes the zip
-and, for a version tag, attaches it to a GitHub release. Releases are for manual download only.
-Nothing is published to the Chrome Web Store.
+loads. The [Build workflow](../../.github/workflows/build.yml) runs the checks and makes the zip.
+On `main`, [release-please](https://github.com/googleapis/release-please) manages versions,
+tags and GitHub releases, and the workflow attaches the zip to each release. Releases are for
+manual download only. Nothing is published to the Chrome Web Store.
 
 ## Running the checks locally
 
@@ -35,7 +38,7 @@ nothing installed. Node finds files named `*.test.js` on its own. The tests are:
 
 | File | What it checks |
 |---|---|
-| [tests/lib.test.js](../../tests/lib.test.js) | `videoKey` returns the expected key for a video URL on every supported site, and `null` for browsing pages. See [site detection](../concepts/site-detection.md). |
+| [tests/lib.test.js](../../tests/lib.test.js) | `lib.js` helpers: `videoKey` for video and browsing URLs on every supported site (see [site detection](../concepts/site-detection.md)), the next 3:00 pause end, and the wrong-password wait steps. |
 | [tests/locales.test.js](../../tests/locales.test.js) | All `_locales/*` catalogs have the same keys, and every key the code, pages and manifest use exists. See [localization](../concepts/localization.md). |
 
 Both test files and `tools/sync-manifest.js` run `lib.js` in a Node `vm` sandbox. This works
@@ -48,42 +51,60 @@ or tab reloading. For those, use the
 
 ## The Build workflow
 
-`.github/workflows/build.yml` runs on pushes to `main`, on version tags `v*`, on pull requests
-and on manual dispatch. It has three jobs, each depending on the one before:
+`.github/workflows/build.yml` runs on pushes to `main`, on pull requests and on manual
+dispatch. Pushed tags do not trigger it. The default token permission is `contents: read`; only
+the two release jobs ask for more. It has four jobs:
 
 1. **test**: sets up Node 22, then:
    - runs `node --check` on every root, `tools/` and `tests/` `.js` file;
    - runs `node tools/sync-manifest.js --check`;
    - runs `node --test`.
-2. **build**:
+2. **build** (after test):
    - reads `version` from `manifest.json` with `jq`;
    - zips `manifest.json`, the root `*.js` and `*.html` files and `_locales/` into
-     `dist/limit-odcinkow-<version>.zip`;
+     `dist/episode-limit-<version>.zip`;
    - uploads the zip as the `extension` workflow artifact, which can be downloaded from the run
      page.
 
-   README, AGENTS.md, `tools/`, `tests/`, `openwiki/` and `.github/` are left out. A new runtime
-   file at the repository root (`.js` or `.html`) is included automatically. A file in a new
-   subdirectory, such as icons, must be added to the `zip` command.
-3. **publish**: runs only for `refs/tags/v*`, with `contents: write`.
-   - It fails unless the tag name is exactly `v` followed by the manifest version.
-   - It downloads the artifact and runs `gh release create`, which attaches the zip and writes
-     generated release notes.
+   README, AGENTS.md, `tools/`, `tests/`, `openwiki/`, `.github/` and the release-please files
+   are left out. A new runtime file at the repository root (`.js` or `.html`) is included
+   automatically. A file in a new subdirectory, such as icons, must be added to the `zip`
+   command.
+3. **release-please** (after test, only for pushes to `main`, with `contents: write` and
+   `pull-requests: write`): runs `googleapis/release-please-action`. It either opens or updates
+   the release pull request, or, when that pull request has just been merged, tags the commit
+   and creates the GitHub release. It outputs whether a release was created and its tag.
+4. **publish** (after build and release-please, only when a release was just created, with
+   `contents: write`):
+   - fails unless the release tag is exactly `v` followed by the `manifest.json` version;
+   - downloads the `extension` artifact and attaches the zip to the release with
+     `gh release upload`.
 
-The rest of the workflow can only read the repository.
+The zip is attached in the same run because tags pushed with the workflow's `GITHUB_TOKEN` do
+not start new workflow runs.
 
-This workflow is separate from [openwiki-update.yml](../../.github/workflows/openwiki-update.yml).
-That workflow runs daily on a schedule, regenerates `openwiki/` and opens a pull request on the
-`openwiki/update` branch. It does not test or package the extension.
+The wiki is no longer regenerated by a scheduled workflow; run the OpenWiki update locally.
 
 ## Making a release
 
-1. Bump `version` in [manifest.json](../../manifest.json). The popup footer shows it.
-2. Commit and push to `main`.
-3. Tag and push the tag: `git tag v2.4.0 && git push origin v2.4.0`.
+Releases are driven by commit messages, written as
+[Conventional Commits](https://www.conventionalcommits.org/):
 
-If the tag and the manifest version differ, the publish job fails and no release is created.
-Fix the manifest or move the tag, then push again.
+1. Merge or push commits to `main` with prefixes such as `fix:` (patch bump), `feat:` (minor
+   bump) or a breaking change such as `feat!:` (major bump). Types like `ci:` or `docs:` do not
+   trigger a release by themselves.
+2. release-please keeps one release pull request open. It bumps `version` in
+   [manifest.json](../../manifest.json) (the popup footer shows it), writes `CHANGELOG.md`, and
+   updates [.release-please-manifest.json](../../.release-please-manifest.json).
+3. Merge the release pull request. The next run tags `v<version>`, creates the release, and the
+   publish job attaches `episode-limit-<version>.zip`.
+
+Do not bump `version` or push tags by hand. The configuration is in
+[release-please-config.json](../../release-please-config.json): release type `simple`, tags
+without a component name (`v2.4.0`, not `limit-odcinkow-v2.4.0`), changelog in `CHANGELOG.md`,
+and `manifest.json`'s `$.version` as an extra file to bump. `bootstrap-sha` limits the first
+changelog to commits after it. `.release-please-manifest.json` holds the last released version,
+from which the next one is computed.
 
 ## Installing a release
 

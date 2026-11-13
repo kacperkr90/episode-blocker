@@ -1,38 +1,34 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:f70b23d19caaef2628b9883f7c7e0e0721e54961b7142cbd872cbe27e84600c2",
+  "pageVersion": "sha256:79a3c02bfa1de93e8138a18317c4e5a2a1b07a71b2dad3fc077f959cbcb79b59",
   "claims": [
     {
       "id": "claim_d4c9f3badaac4470ba65ac7e8c0f18ab",
-      "statement": "The Build workflow runs on pushes to main, v* tags, pull requests and manual dispatch, and its test job runs node --check on all JS files, tools/sync-manifest.js --check, and node --test on Node 22.",
+      "statement": "The Build workflow runs on pushes to main, pull requests and manual dispatch (not on pushed tags), and its test job runs node --check on all JS files, tools/sync-manifest.js --check, and node --test on Node 22.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/build.yml#L7-L36",
-          "version": "repo-lines-v1:sha256:2019a53a687637ac2212366cd3834c52c035860134a31e39a47a1b453e3ae6d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZTM2M2I2ZjdjNDdkOGZjZDYyYTZmN2UxZGM4MjQ5YzllZDdiYTE4MDBjNjQwOWZmZjM3ZWQ3OTYyOGU5ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5NjIyYWIxNzIwOWYzNmRjNjA5ODU3MzI1NzNiNzQzMzEwYmZlMmY4OGQ2NWNhMWYyYTIwOTZiNTZkMzU0ZWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljY2UzOWFiMDhhMDFlOTc4NzViNDU4NzliNWJkYTk1YjA5M2ZlODZmMmIyN2FjM2IzODQwOWViN2IyMzRmMWEifQ"
+          "resource": "repo://.github/workflows/build.yml#L8-L36",
+          "version": "repo-lines-v1:sha256:81e4531ff174712588017eb79abd6c69a2f0a04bad10dde0824f1eae29f418b2:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5NmRjNDgxNDlmNWE4M2QxZWQ2ZGJiMzliYmM3ZTJiOTAyYWEzZDM0ZDZiZDVhZTRiMjkxYjY4ZGYwY2E3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIxZTM2M2I2ZjdjNDdkOGZjZDYyYTZmN2UxZGM4MjQ5YzllZDdiYTE4MDBjNjQwOWZmZjM3ZWQ3OTYyOGU5ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNjZmQ1ZTFjODVlMWM0OWM2MzgwMDczNzk4NjA2YzhlYTVkYzNlNzhhZDY4ZTYzNzFhODEyOTA1NjI2ODgzNTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjljY2UzOWFiMDhhMDFlOTc4NzViNDU4NzliNWJkYTk1YjA5M2ZlODZmMmIyN2FjM2IzODQwOWViN2IyMzRmMWEifQ"
         }
       ]
     },
     {
       "id": "claim_1d91b9102a4b4c83841b697c5e8a9495",
-      "statement": "The build job packages only manifest.json, root *.js and *.html files and _locales/ into dist/limit-odcinkow-<manifest version>.zip and uploads it as the 'extension' workflow artifact.",
+      "statement": "The build job packages only manifest.json, root *.js and *.html files and _locales/ into dist/episode-limit-<manifest version>.zip and uploads it as the 'extension' workflow artifact.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/build.yml#L38-L62",
-          "version": "repo-lines-v1:sha256:07269651e6c091a660d6f5abff86e44b3a6f6bb9f8c57b57aea93b11c91327f1:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZTNjNjBkYjI1M2NiY2VhNzI0YWFkZDkxOGViOTQ2NjRmN2M2N2U3ODRmNzk2Zjc4NGNmMTAyMjA3ZDI2YmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlZGFmNWYyNTgxMmM3MDViOTA4MzIyNTczOWE1MzFjZmY5NmM4MDE3M2UyMTJmMzAzZWZjYjg5ZWU0MDc3NzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBjOTdiM2UyMWRkYmQyZTJkZjk4YWQyZTc5NWRlNDgwNGUxMDNmOGI4Yzg2YWQ0MzIxNmJhNDI3NzEzZTIzMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwZjM0MDNiMzg1M2M1YWVmZWEzMDdmMjMzMDY5NjhlOWJmYTBiY2I2MGYwZjgyNWY0ZGNlMjU3NWJlMmE5MmQifQ"
+          "resource": "repo://.github/workflows/build.yml#L47-L61",
+          "version": "repo-lines-v1:sha256:32f321054b97a0719c124e2ab7f0f5ea1c8521f01a65820822ce8e65821f2957:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBjYmJjYmU0ZTQzM2Y5NGQxZjk5MmNjZTQ2NGI1OGE3MGRmZDBkNDNiNzUxOTE5M2ZlNjM2ZGNmOWEwMTYxNDMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4ZTViMDY0NDk3MTQ5NzRhOTk4Mzg4ZTllZTViMTIwZDNlMjM2MWU4NzgzYjZmYjU5NTQ4YTY4ZWM5NTQ2YjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM1MDE5MzgwYjBlODE1MzJjMWRkYmQ2ZmUzYzMyZTAxNWY2NTk0M2Q5NmNmNDgwNmU4ODE5ZjhmN2UzZGQ5NGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyZDQ4YjNhODk0ZWM2NTQ2MWY3YWUzZTAwN2Y4NjRmYzkyODZhOGY2Y2NlMWY5YWE0NjVjNWQ3MjVjZjk0YTcifQ"
         }
       ]
     },
     {
       "id": "claim_bc6076b813a94505a746b5b48010ef6c",
-      "statement": "The publish job runs only for v* tag refs, fails unless the tag equals 'v' plus the manifest.json version, and creates a GitHub release with the zip attached via gh release create; it is the only job with contents: write.",
+      "statement": "The publish job runs only when the release-please job reports a created release, fails unless the release tag equals 'v' plus the manifest.json version, and attaches the zip to the existing release with gh release upload.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/build.yml#L14-L15",
-          "version": "repo-lines-v1:sha256:e8f2263b0413f25128aa11d16dd3ae0ef6b0c660fb5b1dc08fe71e0a7daabb4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzUyNjI0N2VkZTAwNmU5YmRhYjljNjg1MDcyODQyNWQxYjQxNjZjYWY1Y2FjNTBjZjA5NTVjNDRkMjRjMWE4ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZDllY2VkYzE4ZWNhZjFkYWY5ZTdiZWZiOWZkNzllMmMzY2YxNTU5OWU1M2U3OWNkYmQ5MDFlZTZlMmM5NzlkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDlkNGZlMzYxMTkzM2EzZWJmN2ZkMTFiNDYxMmFiOTY1NTYyZjc4OWJmNjY3NDE5ZDE0MTI0ZmZkZjM1Y2Y5ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjE3MWM2ZjEwYjgwNmNmZGFiZmJlZWQ5NTg5MWZmMzdjYTVjYzYxZDQzMGY4ZDJjMzQ4MjJkZjVkMDdmM2ZhZCJ9"
-        },
-        {
-          "resource": "repo://.github/workflows/build.yml#L64-L90",
-          "version": "repo-lines-v1:sha256:7815a805d15332bbd64ecbc339180568016add471ab2886752f80f0469d52ef8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MjU0YzkxNmE0NDgxMjNlMmQzZDk1ZWJhYTJlNGIxZGIwZmE3YjU0M2UxMmMzZTFiMTFjZjM2MjE2ZjIwMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MDI5Y2I4ZjcxMDk0MDAyY2QzNTlkOWJkNzcxOTFhOGJhMzRiZTEzODJiOWI2MDJkYzMxNDIzNzgxYjUxZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNmFiMzZiZjM3MDcyYzE2MWMwMTNlZDc5MTUxMDFhNDAzZjNlYTI4MjM1YzkyODNmNWIzYWJhNzdkNmZmM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://.github/workflows/build.yml#L82-L109",
+          "version": "repo-lines-v1:sha256:b7c7ce6dd5b4f3e5fee9f362f51788f32a68b116d342616b9bdc0d542f86920e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4MjU0YzkxNmE0NDgxMjNlMmQzZDk1ZWJhYTJlNGIxZGIwZmE3YjU0M2UxMmMzZTFiMTFjZjM2MjE2ZjIwMGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk0MDI5Y2I4ZjcxMDk0MDAyY2QzNTlkOWJkNzcxOTFhOGJhMzRiZTEzODJiOWI2MDJkYzMxNDIzNzgxYjUxZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwY2YxYmQ5Yzk5ZWQ3Zjk2YmM3NDc2YmMyYTVkZWI0NTUwYzU3ZTJhZmE4OTgxODEwYjdhZDk1NzhhNjY1NWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -41,32 +37,66 @@
       "statement": "Releases are intended for manual download: users unzip the release zip and install it with Load unpacked; there is no Chrome Web Store publishing.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/build.yml#L1-L5",
-          "version": "repo-lines-v1:sha256:956c133eddf43fb0d5435e3e096deb10d42fa342e61c6b716816b69e83f0b47a:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTgyMzRjNGY2OWE2YjEzYzBiMjhjOTBjNmYzYTRhNzliNmEwNTViMWRkZGRjNmM5NWM3OTlmZDk2NzEzZTVjZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE5ZWFlMGUwOTE4MmY3YzI5NGNjZmJkOTEzNWY3ZGFiYzcwZjU5ZDYxZDVmYTcwMmUzYjQ5MzNiOWRjODk5ZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMzNjJjMTlmYWVkZDcwNDMxNWY1ODg4MzBlNGE1ZDA4MTllNjlkODkyMDc2MDJkYzY1N2FjZWFkNDNhNTIxYSJ9"
+          "resource": "repo://.github/workflows/build.yml#L3-L6",
+          "version": "repo-lines-v1:sha256:ad73eb30625c79c177c4658459c488cab303f9ae930b285398e01718361c5ab2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjUxM2M5NjQ1ZWU3MmRhYTZhNDE3MjYwOTA0OWRlNjNjYzdlM2Y0NTU2MzQwMWYxMzBkOTkwNjFlMjE4YWY3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ExOWU3ZTZhMGRjZTcyODUxN2I0MzlhMGUxYTQ0NzQ1MTM3NWY4NDFlMmU1NGVkNGI1ZGM0MWI5ZDI0NjZiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGYzMzViMjE2NjE1MTM5MzFlYTNjYmNjYjkxNmZjNTI1MTllMjI1ZWYwNjVkMDYwMmQyMWFmMDMyMmMxMjg3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMzNjJjMTlmYWVkZDcwNDMxNWY1ODg4MzBlNGE1ZDA4MTllNjlkODkyMDc2MDJkYzY1N2FjZWFkNDNhNTIxYSJ9"
         },
         {
-          "resource": "repo://README.md#L103-L125",
-          "version": "repo-lines-v1:sha256:c30eeedf841e5fb43c0e4dcb1da0aeb52e9f20659aaf95396bc9a03bcf910c4b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZlMTM3NTQ2YWFkZDU2ZmQyOWRiMjUyNDM4MjE5MDY1MTU4YWYwNjYyNzJiNDlmMGJlNDBjZGQ2YmFmODlhZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAwZWMxYjNlMGM2ODgzMGUyMmM3N2RmOGUxNTM3NzM2OWExZmIyYWQ2NTZmNjc4Y2M3ZjUwZmFkN2I0MDlhYWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmMjYwNGE1MjljNmRkYWZiNzZlZmE4YmVjMmM3OTdjNTNhN2JjM2QxY2JkMDY5YTAyY2FiOWU3OGUxNWEwYjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMjY2YTZkZjg3NzVkMzZlNzQzYjYzYjhiYTgzZWFhZTg5OGNjMjBhZjk3OTg0ZmNlMGVmOTI1NzkxM2U3ZDMifQ"
+          "resource": "repo://README.md#L144-L147",
+          "version": "repo-lines-v1:sha256:8a5d1f0413d7f8ea29bcc8b8767afb94f463f424afcdc2155d92e54b4d853b79:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzgzMDcxNDA2MGJjM2Q0ZjhlMzhhZTNmMDQ1NmY0MjVjZTA0ZjZkNDhkMTZjMGE3ZTMzZmFmZjc3MDBhZGY4NSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBlYzFiM2UwYzY4ODMwZTIyYzc3ZGY4ZTE1Mzc3MzY5YTFmYjJhZDY1NmY2NzhjYzdmNTBmYWQ3YjQwOWFhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmMzODNiNzU0OGFjMWFjNTI2MmRjM2I3ODlkZjFmZTk1YjIxMmIyZTk4NTBkMTY0OGZhYWM3YTBiNzdjMGVhMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEyNjZhNmRmODc3NWQzNmU3NDNiNjNiOGJhODNlYWFlODk4Y2MyMGFmOTc5ODRmY2UwZWY5MjU3OTEzZTdkMyJ9"
         }
       ]
     },
     {
-      "id": "claim_1a531d90d2de45628f3a811078f07a3e",
-      "statement": "The separate OpenWiki Update workflow runs on a daily schedule, regenerates openwiki/ and opens a pull request on the openwiki/update branch; it does not test or package the extension.",
+      "id": "claim_4e1ff5bffb9147539a6258b7f98f9b03",
+      "statement": "The release-please job runs only for pushes to main with contents and pull-requests write permission; it maintains a release pull request and, once that is merged, tags the commit and creates the GitHub release, exposing release_created and tag_name outputs.",
       "evidence": [
         {
-          "resource": "repo://.github/workflows/openwiki-update.yml#L1-L12",
-          "version": "repo-lines-v1:sha256:1a27c71781b6cfecdcb9515c9523b05e81fe6c63a5a13aa4505bfe3f7c531fa4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MDI3ODdhZjZkY2MwODM0ZGUxMjFjYmIxY2I5NWY5NDU5YjcyMWVhYjAzNDlmMTA1MDFiOTk2YzFjNzdmZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU5ZDgwMTU0ZWQ0MmZjNWM3NzliMTMzMTU3OGI1OGI4OWM4MDFlYWNlNzRmMjRjZDQ4ZWI0YTIzNTc5NDBhOTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjNWE4OTI3NzBhZTRmNTMzM2ZkN2M5ZTEyZTBhNmJjNDViMjZiNWJiNzc1M2UwMzlkZjhlZDQ5Yzk3Yjk2MDcifQ"
+          "resource": "repo://.github/workflows/build.yml#L64-L78",
+          "version": "repo-lines-v1:sha256:29a3700fe8982a45090d38464c7c0198508bc81feae7fa06a3f78de6aa0663f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YTBmMjExMzcxNTA0YjUwMGVjZmFmYzdjMTA2NzdmODdlNzdiYWU0Mzc4YjNhNjhmOWMyNTU5YjA3ZWVhZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyZDY2NTU3OGU2ZjBhNDY2M2EzMjY3N2UzZTdkNzEyZGYwNzA0NTM3OGE0MjY3OTVjMzk4ZWJhOTczMzUyNmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNmFiMzZiZjM3MDcyYzE2MWMwMTNlZDc5MTUxMDFhNDAzZjNlYTI4MjM1YzkyODNmNWIzYWJhNzdkNmZmM2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMwY2YxYmQ5Yzk5ZWQ3Zjk2YmM3NDc2YmMyYTVkZWI0NTUwYzU3ZTJhZmE4OTgxODEwYjdhZDk1NzhhNjY1NWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_277aa11385544547a6184c9c5d421c54",
+      "statement": "release-please is configured as a simple release type with component-less v<version> tags, CHANGELOG.md as the changelog, and manifest.json's $.version bumped as an extra file; .release-please-manifest.json records the last released version.",
+      "evidence": [
+        {
+          "resource": "repo://.release-please-manifest.json",
+          "version": "repo-file-v1:sha256:e38da7160809af8637d0a176891f93d0067fc89026fe41f67ca28c0cb0bb63e6"
         },
         {
-          "resource": "repo://.github/workflows/openwiki-update.yml#L64-L72",
-          "version": "repo-lines-v1:sha256:e4f0c376295a0ab27415fbd9ed19def5186a7b603927304b523fd75ee9b15f04:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDFjZmY0YWQzM2JhOTFiMTQ4ZTFiMWI4MjkwYjhmZmYyN2IyMDNmYWJmZWU1ODcwMjgyZGUzNjczODNiMWJlMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGRhNDE2NjQ5MGIxNzI5YjVlY2JmYWZiZGUyZjViYWIwOWQyZjdlZWZlNDRkZDVlZmQwNmRmZTIwNWJiNjFhNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMGJlMWFkYWRhMTdhZTJmNGYzZDhkNDc5N2RiMzZkNTI2NzU4YmY0OWE4YzRhNzQ5ODk4NjRhNDNjY2IxOGUxNSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZGQ4OWRkZTY2ODA4NTU2NGZiZGRjMWJkNzczMDEwYzI0Y2FkZWI5NWJjNDZlNzExMGIzMTk3Y2RiYmE3Y2RmOCJ9"
+          "resource": "repo://release-please-config.json",
+          "version": "repo-file-v1:sha256:285e9a4be5941d429cb5708846e9a8003d9e513f43306f6ebe78e675e40792ca"
+        }
+      ]
+    },
+    {
+      "id": "claim_af9596f9f1dc4df384af2dae64738473",
+      "statement": "Versions are derived from Conventional Commit messages on main, so version and tags must not be changed by hand.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L3-L6",
+          "version": "repo-lines-v1:sha256:ad73eb30625c79c177c4658459c488cab303f9ae930b285398e01718361c5ab2:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjUxM2M5NjQ1ZWU3MmRhYTZhNDE3MjYwOTA0OWRlNjNjYzdlM2Y0NTU2MzQwMWYxMzBkOTkwNjFlMjE4YWY3MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiY2ExOWU3ZTZhMGRjZTcyODUxN2I0MzlhMGUxYTQ0NzQ1MTM3NWY4NDFlMmU1NGVkNGI1ZGM0MWI5ZDI0NjZiZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjIsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGYzMzViMjE2NjE1MTM5MzFlYTNjYmNjYjkxNmZjNTI1MTllMjI1ZWYwNjVkMDYwMmQyMWFmMDMyMmMxMjg3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDMzNjJjMTlmYWVkZDcwNDMxNWY1ODg4MzBlNGE1ZDA4MTllNjlkODkyMDc2MDJkYzY1N2FjZWFkNDNhNTIxYSJ9"
+        },
+        {
+          "resource": "repo://README.md#L134-L142",
+          "version": "repo-lines-v1:sha256:5499790f8f84faeb972736a5713d92d1b7afa587b9d0a58d19a467b1bb776a23:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWQ3OTE2OTcyMTU2OWRlNjljYTliOTIwNTRlOGQ0OTMwNWI1ZTZmOTNhMGIyOGM2N2ViMjYwZDI1ZWNhODllNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzg3N2ZjZGExY2NkN2I4NTNiNjhkMmNiYzkxMDBmYTM5ZjAyZmUzODBlNDlmMjU0MGYwYTgxZTcxYTc1MmUyYSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmU4Y2NhY2FjNWU5MzViNzA5NjIzOWEyOGU2N2U4YjgyMTA2M2JlOTVkNWM3OGM5MDc5MjAyOGZlMWMxZGU2YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTM5MDY5M2ZmZTg1YTNiNzhhN2FmOTBiY2FiZjNmMmU5ZjEzODc5MDliZGE3Yjc3OTNmZjRiMjI0NzJkZTRiOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_ac954b919e294ad381c5070dffbd53d5",
+      "statement": "The zip is attached in the same run as the merged release PR because tags pushed with GITHUB_TOKEN do not start new workflow runs.",
+      "evidence": [
+        {
+          "resource": "repo://.github/workflows/build.yml#L80-L84",
+          "version": "repo-lines-v1:sha256:af361ce83aa7a01b20ef3fd57181c6fd40396df4e14c4c2f7069b586f16f5aa3:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWY3NmE2N2ZiNmZjOGYwMTU0YmZmMWI0YWE4MTQ2NzFiZmFkMDZjMDJmMTBiMmY2NjZkOTQxNjA1Mjk2NzFjNiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzE5N2Y5NWNkY2E0NzlhZTQ0Nzg4MmE3NTc5MzkyZjA4MzZmODExMjY5YTU3MGVjNDliNjRkOWQ1OTZhZjZkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTIxNTA1NGJiZjA5NmJhZDdmZjA4MWFlYWJlMDFiYjBmMGYxNDlkN2I3M2Y2OWU2MmI2MjhjOTg0NDEyOGJiYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTA3MzEzZWJkMmU3MGFjZTdmMTBkYmZmZjBiNTJiZmY5Mzg2NDI5NjIzOGM5ZjBkMjY5ZDE4YzI3Yzc0OGY1YiJ9"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:16:37.173Z"
+    "at": "2026-11-13T21:53:44.309Z"
   }
 }

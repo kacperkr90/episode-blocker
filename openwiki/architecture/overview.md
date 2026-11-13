@@ -33,7 +33,7 @@ sources:
 generated: { by: "claude-code", at: "2026-11-13T21:24:43.706Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-13T21:24:43.706Z
+    at: 2026-11-13T21:53:44.309Z
 ---
 
 # Architecture overview

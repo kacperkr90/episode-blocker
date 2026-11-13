@@ -16,10 +16,10 @@ sources:
     resource: repo://README.md
   - id: openwiki-source-395d1fa7dad02829f74386db
     resource: repo://tools/sync-manifest.js
-generated: { by: "claude-code", at: "2026-11-13T21:24:43.706Z" }
+generated: { by: "claude-code", at: "2026-11-13T21:53:44.309Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-13T21:24:43.706Z
+    at: 2026-11-13T21:53:44.309Z
 ---
 
 # Quickstart
@@ -37,8 +37,10 @@ from a GitHub release zip. Click the toolbar icon to set the parent password. Un
 is set, every video is locked.
 
 Run the checks with `node tools/sync-manifest.js --check` and `node --test`. They need Node only.
-The Build GitHub Actions workflow runs them on every push and pull request. When a `v<version>`
-tag is pushed, it also attaches `limit-odcinkow-<version>.zip` to a GitHub release.
+The Build GitHub Actions workflow runs them on every push and pull request. Releases are
+automated with release-please: conventional commits on `main` (`fix:`, `feat:`) feed a release
+pull request, and merging it bumps the version, tags `v<version>` and attaches
+`episode-limit-<version>.zip` to the GitHub release.
 
 ## File map
 
@@ -54,7 +56,8 @@ tag is pushed, it also attaches `limit-odcinkow-<version>.zip` to a GitHub relea
 | [README.md](../README.md) | User-facing install and usage guide. |
 | [tools/sync-manifest.js](../tools/sync-manifest.js) | Dev-only Node script, not shipped in the extension. Generates the three site lists in `manifest.json` from `SITES` in `lib.js`. `--check` reports drift. |
 | [tests/](../tests/) | `node --test` unit tests for `lib.js` helpers: video detection, pause end time, wrong-password wait (`lib.test.js`), and translation keys (`locales.test.js`). Not shipped. |
-| [.github/workflows/build.yml](../.github/workflows/build.yml) | CI: checks, packages the zip, and creates a GitHub release for `v*` tags. `openwiki-update.yml` separately regenerates this wiki. |
+| [.github/workflows/build.yml](../.github/workflows/build.yml) | CI: checks and packages the zip; on `main` runs release-please and attaches the zip to each new release. |
+| [release-please-config.json](../release-please-config.json) / [.release-please-manifest.json](../.release-please-manifest.json) | release-please settings (bumps `manifest.json` `version`, writes `CHANGELOG.md`) and the last released version. |
 
 The UI is in English and Polish. Chrome picks the language from its own UI language, and
 anything other than Polish falls back to English.
@@ -69,7 +72,7 @@ anything other than Polish falls back to English.
 | Change the popup, lock page, or password behavior | [Parent controls](workflows/parent-controls.md) |
 | Add or change UI text, or test the other language | [Localization](concepts/localization.md) |
 | Handle install, update or reload, SPA navigation, or test manually | [Install, update and reload behavior](operations/extension-lifecycle.md) |
-| Run or extend the automated tests, change packaging, or cut a release | [Checks, packaging and releases](operations/build-and-release.md) |
+| Run or extend the automated tests, change packaging, or understand how releases are made | [Checks, packaging and releases](operations/build-and-release.md) |
 
 ## Key ideas in one breath
 
