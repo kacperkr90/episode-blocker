@@ -43,6 +43,22 @@ Until a password is set, every video is locked.
   back on, videos that are already open have to be paid for again.
 
 Every action needs the password.
+The large text at the top shows the current state: episodes left, "🔒 No episodes left" or
+"No limit until 3:00".
+
+- **Create the password** ("Utwórz hasło rodzica"). It must be at least 6 characters. The popup
+  has no screen for changing it later.
+- **Enter the password once** ("Hasło rodzica", then **Dalej**). The controls then stay available
+  until the popup is closed.
+- **Add episodes** with **+1**, **+2** or **+3**, or set the exact number with **−**, **+** and
+  **Ustaw** ("Set"). The number field starts at the current count. The maximum is 50.
+- **🔒 Zablokuj teraz** ("Lock now") sets the count to 0 and locks every video at once, including
+  videos that are already playing. It also ends a pause.
+- **Bez limitu do 3:00** ("No limit until 3:00") lets videos play without using episodes until
+  the next 3:00 at night. While the pause is on, the button changes to **Przywróć limit teraz**
+  ("Turn the limit back on now"), which also makes every open video pay again. When the pause
+  ends by itself at 3:00, videos that are already playing continue; the next video opened uses
+  an episode.
 
 ### Lock page
 
@@ -50,13 +66,28 @@ When no episodes are left, the video tab is sent to a lock page. There the paren
 password and a number of episodes, then click **Unlock**. This sets the remaining
 count to that number (it does not add to the old one) and goes back to the video. Opening the
 video then uses one episode, so unlocking `1` lets exactly that video play.
+When no episodes are left, the video tab is sent to a lock page. Under **Dla rodzica** ("For
+parents") the parent picks **+1**, **+2** or **+3**, enters the password and clicks **Odblokuj**
+("Unlock"). The episodes are added to the remaining count and the tab goes back to the video.
+Opening the video then uses one episode, so unlocking `+1` lets exactly that video play.
+
+### Wrong passwords
+
+After 3 wrong passwords in a row, the popup and the lock page wait 30 seconds before accepting
+another try. Each further wrong password doubles the wait, up to 1 hour. A correct password
+resets the counter. The counter is kept when the popup or the lock page is closed.
 
 ### How episodes are counted
 
 - Each video page that is opened uses one episode.
 - Reloading the same video in the same tab is free.
-- "Lock now" and turning blocking back on make every open video pay again.
+- "Lock now" and turning the limit back on make every open video pay again.
 - If something cannot be checked, the extension locks the video.
+
+### Updating from versions before 2.4
+
+Older versions had a blocking on/off switch. If blocking was off when the extension is updated,
+it becomes a pause until the next 3:00.
 
 ## Project structure
 
@@ -71,7 +102,8 @@ video then uses one episode, so unlocking `1` lets exactly that video play.
 | [_locales/](_locales/) | Translations: `en/messages.json` and `pl/messages.json` |
 | [tools/sync-manifest.js](tools/sync-manifest.js) | Copies site match patterns from `lib.js` into `manifest.json` |
 
-State is kept in `chrome.storage.local` (password hash, remaining episodes, blocking switch, epoch).
+State is kept in `chrome.storage.local` (password hash, remaining episodes, pause end, epoch, and
+the wrong-password counter).
 Records of which tab has paid for which video are kept in `chrome.storage.session`.
 
 ## Adding or changing a site

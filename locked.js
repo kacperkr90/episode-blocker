@@ -21,7 +21,7 @@ function goBackToVideo() {
 // Leave automatically when the parent unlocks from the toolbar popup or switches blocking off.
 async function maybeReturn() {
   const s = await getState();
-  if (s.enabled === false || (s.hash && (s.remaining || 0) > 0)) goBackToVideo();
+  if (isPaused(s) || (s.hash && (s.remaining || 0) > 0)) goBackToVideo();
 }
 
 async function init() {
@@ -31,15 +31,22 @@ async function init() {
   // No automatic return on load: if the counter can't be reached, that would bounce forever.
 }
 
+// Number of episodes to add, picked with the +1 / +2 / +3 buttons.
+let count = 1;
+document.querySelectorAll('[data-n]').forEach((b) => b.addEventListener('click', () => {
+  count = Number(b.dataset.n);
+  document.querySelectorAll('[data-n]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+}));
+
 $('unlock').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const n = parseInt($('n').value, 10);
-  if (!(n >= 1)) { $('err').textContent = t('atLeastOne'); return; }
-  if (!(await checkPassword($('pw').value))) { $('err').textContent = t('wrongPassword'); return; }
-  const s = await getState();
-  s.remaining = n;
-  await setState(s);
+  const r = await tryPassword($('pw').value);
   $('pw').value = '';
+  if (!r.ok) { $('err').textContent = r.wait ? t('tooManyTries', r.wait) : t('wrongPassword'); return; }
+  $('err').textContent = '';
+  const s = await getState();
+  s.remaining = Math.min(50, (s.remaining || 0) + count);
+  await setState(s);
   if (!returnUrl) $('err').textContent = t('unlockedReopen');
   goBackToVideo();
 });

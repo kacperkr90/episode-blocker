@@ -2,28 +2,35 @@
   "extName": { "message": "Episode Limit" },
   "extDescription": { "message": "Blocks playback on Netflix, Disney+, YouTube, CDA and TVP VOD until a parent unlocks a set number of episodes." },
 
-  "blockingOn": { "message": "Blocking: ON" },
-  "blockingOff": { "message": "Blocking: OFF" },
   "remaining": {
     "message": "Episodes left: $COUNT$",
     "placeholders": { "count": { "content": "$1", "example": "3" } }
   },
+  "noEpisodesLeft": { "message": "🔒 No episodes left" },
+  "noLimitUntil": {
+    "message": "No limit until $TIME$",
+    "placeholders": { "time": { "content": "$1", "example": "3:00" } }
+  },
   "noPassword": { "message": "No password set." },
   "createPassword": { "message": "Create a parent password" },
+  "passwordHint": { "message": "At least 6 characters, e.g. a short phrase." },
   "repeatPassword": { "message": "Repeat the password" },
   "savePassword": { "message": "Save password" },
   "parentPassword": { "message": "Parent password" },
-  "turnBlockingOff": { "message": "Turn blocking off" },
-  "turnBlockingOn": { "message": "Turn blocking on" },
-  "setRemaining": { "message": "Set the number of episodes left (0 = lock now)" },
-  "apply": { "message": "Apply" },
-  "passwordTooShort": { "message": "Use at least 4 characters" },
+  "continue": { "message": "Continue" },
+  "addEpisodes": { "message": "Add episodes" },
+  "setExactly": { "message": "Or set the exact number" },
+  "set": { "message": "Set" },
+  "lockNow": { "message": "🔒 Lock now" },
+  "restoreLimit": { "message": "Turn the limit back on now" },
+  "passwordTooShort": { "message": "Use at least 6 characters" },
   "passwordsDiffer": { "message": "The passwords don't match" },
   "saved": { "message": "Saved" },
   "wrongPassword": { "message": "Wrong password" },
-  "blockingTurnedOn": { "message": "Blocking turned on" },
-  "blockingTurnedOff": { "message": "Blocking turned off" },
-  "updated": { "message": "Updated" },
+  "tooManyTries": {
+    "message": "Too many attempts. Try again in $SECONDS$ s.",
+    "placeholders": { "seconds": { "content": "$1", "example": "30" } }
+  },
   "version": {
     "message": "version $VERSION$",
     "placeholders": { "version": { "content": "$1", "example": "2.3.0" } }
@@ -38,6 +45,5 @@
   "episodeCount": { "message": "Number of episodes / videos" },
   "unlock": { "message": "Unlock" },
   "back": { "message": "← Back" },
-  "atLeastOne": { "message": "Enter at least 1" },
   "unlockedReopen": { "message": "Unlocked. Open the video again." }
 }

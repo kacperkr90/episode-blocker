@@ -1,7 +1,7 @@
 ---
 type: architecture
 title: Architecture overview
-description: The four runtime contexts of the Limit odcinków Manifest V3 extension (background worker, content script, popup, lock page), the shared lib.js helpers, and the storage areas and messages that connect them.
+description: The four runtime contexts of the Episode Limit Manifest V3 extension (background worker, content script, popup, lock page), the shared lib.js helpers, and the storage areas and messages that connect them.
 tags: [architecture, manifest-v3, chrome-extension, storage, messaging]
 sources:
   - id: openwiki-source-c7a8e6c25b0da5055873aed3
@@ -26,22 +26,24 @@ sources:
     resource: repo://popup.js
   - id: openwiki-source-6827bfa6cc4545b673ce7dc4
     resource: repo://tests/lib.test.js
+  - id: openwiki-source-667e11e637cd9f360199963b
+    resource: repo://tests/locales.test.js
   - id: openwiki-source-395d1fa7dad02829f74386db
     resource: repo://tools/sync-manifest.js
-generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
+generated: { by: "claude-code", at: "2026-11-13T21:24:43.706Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:16:37.173Z
+    at: 2026-11-13T21:24:43.706Z
 ---
 
 # Architecture overview
 
-"Limit odcinków" ("Episode limit") is a Chrome Manifest V3 extension. It blocks video playback
+Episode Limit is a Chrome Manifest V3 extension. It blocks video playback
 on Netflix, Disney+, YouTube, YouTube Kids, CDA and TVP VOD until a parent unlocks a
 specific number of episodes ([manifest.json](../../manifest.json)). It is plain JavaScript, with
 no build step and no dependencies. You load the folder (or an unzipped release package) as an
-unpacked extension. Unit tests for video detection and translation keys run under Node's built-in
-test runner, and a GitHub Actions workflow checks, packages and releases the extension (see
+unpacked extension. Unit tests for video detection, the pause end time, the wrong-password
+delay and translation keys run under Node's built-in test runner, and a GitHub Actions workflow checks, packages and releases the extension (see
 [checks, packaging and releases](../operations/build-and-release.md)).
 The UI is available in English (the default locale) and Polish; strings live in
 [_locales/](../../_locales/).
@@ -49,7 +51,7 @@ The UI is available in English (the default locale) and Polish; strings live in
 ## Runtime contexts
 
 ```
-            chrome.storage.local  { state: {salt, hash, remaining, enabled, epoch} }
+            chrome.storage.local  { state: {salt, hash, remaining, pausedUntil, epoch}, guard }
              ▲   ▲   ▲   │ onChanged
    writes    │   │   │   ▼
   ┌──────────┴┐ ┌┴───┴──────────┐        claim {id}        ┌──────────────────────┐
@@ -67,23 +69,29 @@ The UI is available in English (the default locale) and Polish; strings live in
 |---|---|---|
 | Background service worker | [background.js](../../background.js) (+ `importScripts('lib.js')`) | The only place that spends quota. It serializes claims, tracks what each tab has paid for, and reloads open tabs on install. |
 | Content script | [lib.js](../../lib.js), [content.js](../../content.js), injected at `document_start` on supported hosts | Spots video pages, asks for a claim, and redirects to the lock page when refused. |
-| Toolbar popup | [popup.html](../../popup.html), [popup.js](../../popup.js) | Lets the parent set the password, turn blocking on or off, and set or zero the remaining count. |
-| Lock page | [locked.html](../../locked.html), [locked.js](../../locked.js), a web-accessible resource | Shows the child "That's all for now!" ("Koniec oglądania!" in Polish) and lets the parent unlock with the password. |
+| Toolbar popup | [popup.html](../../popup.html), [popup.js](../../popup.js) | Lets the parent set the password, then (after entering it once) add or set episodes, lock now, or pause the limit until 3:00. |
+| Lock page | [locked.html](../../locked.html), [locked.js](../../locked.js), a web-accessible resource | Tells the child that watching is over and lets the parent add 1–3 episodes with the password. |
 
 [lib.js](../../lib.js) is loaded into all four contexts. It holds:
 
 - **site detection**: `SITES`, `siteFor`, `videoKey` (see [site detection](../concepts/site-detection.md));
-- **state access**: `STATE_KEY = 'state'`, `getState`, `setState` over `chrome.storage.local`;
+- **state access**: `STATE_KEY = 'state'`, `getState`, `setState` over `chrome.storage.local`, plus
+  `nextPauseEnd` and `isPaused` for the pause;
 - **translations**: `t(key, ...subs)` over `chrome.i18n.getMessage` and `localizePage()`, which
   fills `data-i18n` elements on the popup and lock page (see [localization](../concepts/localization.md));
 - **password**: PBKDF2-SHA-256 hashing through Web Crypto (`hashPassword`, `savePassword`,
-  `checkPassword`) (see [parent controls](../workflows/parent-controls.md)).
+  `checkPassword`), and `tryPassword`, which adds a growing wait after wrong attempts (see
+  [parent controls](../workflows/parent-controls.md)).
 
 ## Storage
 
 - `chrome.storage.local['state']` is the persistent shared state: `salt`, `hash`
-  (password), `remaining` (episodes left), `enabled` (blocking switch; `false` means off,
-  and a missing value means on), and `epoch` (bumped to invalidate earlier payments).
+  (password), `remaining` (episodes left), `pausedUntil` (time in ms until which videos play
+  without using episodes; missing or past means no pause), and `epoch` (bumped to invalidate
+  earlier payments).
+- `chrome.storage.local['guard']` is `{ fails, until }`: wrong passwords in a row and the time
+  the next attempt is allowed. Only `tryPassword` reads and writes it, and no listener reacts
+  to it.
 - `chrome.storage.session['paid']` is `{ [tabId]: { id, epoch } }`, written only by the
   background worker. It is cleared when the browser session ends.
 
@@ -113,5 +121,5 @@ are generated from the `matches` field of each `SITES` entry in [lib.js](../../l
 
 The manifest's `name`, `description` and `action.default_title` are `__MSG_extName__` /
 `__MSG_extDescription__` placeholders resolved from the message catalogs, and
-`default_locale` is `en`. Chrome therefore shows "Episode Limit" or "Limit odcinków"
-depending on its UI language. See [localization](../concepts/localization.md).
+`default_locale` is `en`. Chrome therefore shows the English or the Polish name depending on
+its UI language. See [localization](../concepts/localization.md).

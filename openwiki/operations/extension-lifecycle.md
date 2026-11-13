@@ -16,10 +16,10 @@ sources:
     resource: repo://tests/lib.test.js
   - id: openwiki-source-667e11e637cd9f360199963b
     resource: repo://tests/locales.test.js
-generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
+generated: { by: "claude-code", at: "2026-11-13T21:24:43.706Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:16:37.173Z
+    at: 2026-11-13T21:24:43.706Z
 ---
 
 # Install, update and reload behavior
@@ -36,8 +36,7 @@ release (see [checks, packaging and releases](build-and-release.md#installing-a-
 To update a release install, unzip the new version over the same folder and reload. Chrome
 derives an unpacked extension's ID from its path, so the stored password and count are kept.
 The version shown in the popup
-footer ("version …" in English, "wersja …" in Polish) comes from `manifest.json`'s `version`
-(currently `2.3.0`).
+footer comes from `manifest.json`'s `version` (currently `2.4.0`).
 
 ## Already-open tabs on install or update
 
@@ -46,6 +45,14 @@ was installed, updated or reloaded. Those tabs would play without limits. On
 `chrome.runtime.onInstalled`, [background.js](../../background.js) queries every tab matching
 `content_scripts[0].matches` from the manifest and reloads it. Discarded tabs are skipped,
 because they reload by themselves when activated. Reload errors are ignored.
+
+## Migrating stored state
+
+Before reloading tabs, the same `onInstalled` handler runs `migrate()` through the claim queue
+(`serialize`), so no claim can read `state` half-migrated. Versions before 2.4 stored an
+`enabled` switch. If it was `false` (blocking off), `migrate()` turns it into a pause that ends
+at the next 3:00 (`pausedUntil = nextPauseEnd(Date.now())`). In every case it deletes
+`enabled`, so the migration runs only once. The password, `remaining` and `epoch` are kept.
 
 ## Orphaned content scripts
 
@@ -79,16 +86,23 @@ chain only orders requests that are in flight.
 
 ## Manual testing checklist
 
-`node --test` covers only video detection and translation keys (see
+`node --test` covers only pure helpers (video detection, the 3:00 pause end, the
+wrong-password delay steps) and translation keys (see
 [checks, packaging and releases](build-and-release.md)). Everything below needs a real browser.
 After a change, reload the unpacked extension and check:
 
 1. With no password set, opening a video on a supported site goes to the lock page.
-2. After setting a password and, say, 2 episodes in the popup, two different videos play and
-   the third is locked. Re-opening the current video in the same tab does not spend an episode.
-3. Setting 0 in the popup locks an open, playing video at once.
-4. Turning blocking off lets everything play. Turning it back on makes open videos pay again.
-5. Reloading the extension while a video tab is open reloads that tab within about 2 s.
-6. Unlocking on the lock page returns to the video and spends one episode.
-7. With Chrome's UI language set to Polish, and again to English, the popup and lock page show
+2. After setting a password, the popup asks for it once and then shows the controls. Pressing
+   Enter in the password field only opens the controls.
+3. After +2 in the popup, two different videos play and the third is locked. Re-opening the
+   current video in the same tab does not spend an episode.
+4. "Lock now" locks an open, playing video at once.
+5. "No limit until 3:00" lets everything play without spending episodes. "Turn the limit back
+   on now" makes open videos pay again.
+6. Three wrong passwords in a row, in the popup or on the lock page, start a 30-second wait.
+   Closing and reopening the popup does not reset it.
+7. Reloading the extension while a video tab is open reloads that tab within about 2 s.
+8. Unlocking with +1 on the lock page returns to the video and spends one episode.
+9. Updating from a version before 2.4 with blocking switched off shows a pause until 3:00.
+10. With Chrome's UI language set to Polish, and again to English, the popup and lock page show
    translated text and no raw message keys (see [localization](../concepts/localization.md)).

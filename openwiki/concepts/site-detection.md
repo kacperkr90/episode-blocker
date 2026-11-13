@@ -17,7 +17,7 @@ sources:
 generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:16:37.173Z
+    at: 2026-11-13T21:24:43.706Z
 ---
 
 # Supported sites and video detection

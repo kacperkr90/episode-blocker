@@ -1,4 +1,4 @@
-// Video detection in lib.js: which URLs count as an episode and which key they get.
+// lib.js helpers: which URLs count as an episode, when a pause ends, how long wrong passwords wait.
 //   node --test
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -6,9 +6,10 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 
-// lib.js is a plain browser script: run it in a sandbox and take videoKey out of it.
+// lib.js is a plain browser script: run it in a sandbox and take the helpers out of it.
 const libPath = path.join(__dirname, '..', 'lib.js');
-const videoKey = vm.runInNewContext(fs.readFileSync(libPath, 'utf8') + '\n;videoKey', {}, { filename: libPath });
+const { videoKey, nextPauseEnd, lockoutMs } = vm.runInNewContext(
+  fs.readFileSync(libPath, 'utf8') + '\n;({ videoKey, nextPauseEnd, lockoutMs })', {}, { filename: libPath });
 const key = (url) => videoKey(new URL(url));
 
 test('video pages get a key', () => {
@@ -43,4 +44,16 @@ test('browsing pages are not counted', () => {
     'https://example.com/watch?v=dQw4w9WgXcQ',
   ];
   for (const url of urls) assert.equal(key(url), null, url);
+});
+
+test('a pause ends at the next 3:00 local time', () => {
+  const at = (d, h, m = 0) => new Date(2026, 10, d, h, m).getTime();
+  assert.equal(nextPauseEnd(at(13, 20)), at(14, 3));      // evening: 3:00 the next night
+  assert.equal(nextPauseEnd(at(14, 1, 30)), at(14, 3));   // after midnight: 3:00 the same night
+  assert.equal(nextPauseEnd(at(14, 3)), at(15, 3));       // exactly 3:00: the following night
+});
+
+test('wrong passwords wait longer and longer', () => {
+  assert.deepEqual([0, 1, 2, 3, 4, 5].map(lockoutMs), [0, 0, 0, 30000, 60000, 120000]);
+  assert.equal(lockoutMs(20), 3600000);
 });

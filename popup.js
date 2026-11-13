@@ -1,57 +1,97 @@
 const $ = (id) => document.getElementById(id);
 localizePage();
 
-function msg(text, ok) {
+const MAX = 50;
+let unlocked = false;   // password entered in this popup; forgotten when the popup closes
+let dirty = false;      // the parent is editing the exact number: don't overwrite it
+let msgTimer = 0;
+
+const clamp = (n) => Math.min(MAX, Math.max(0, n || 0));
+const timeOf = (ms) => new Date(ms).toLocaleTimeString(chrome.i18n.getUILanguage(), { hour: '2-digit', minute: '2-digit' });
+const failText = (r) => (r.wait ? t('tooManyTries', r.wait) : t('wrongPassword'));
+
+function say(text) {
   $('msg').textContent = text;
-  $('msg').className = ok ? 'ok' : '';
+  clearTimeout(msgTimer);
+  msgTimer = setTimeout(() => { $('msg').textContent = ''; }, 3000);
 }
 
 async function render() {
   const s = await getState();
-  const enabled = s.enabled !== false;   // default: blocking ON
+  const paused = isPaused(s);
+  const left = s.remaining || 0;
   $('setup').hidden = !!s.hash;
-  $('manage').hidden = !s.hash;
-  $('state').textContent = s.hash ? t(enabled ? 'blockingOn' : 'blockingOff') : '';
-  $('state').className = enabled ? 'on' : 'off';
-  $('status').textContent = s.hash
-    ? t('remaining', s.remaining || 0)
-    : t('noPassword');
-  $('toggle').textContent = t(enabled ? 'turnBlockingOff' : 'turnBlockingOn');
+  $('login').hidden = !s.hash || unlocked;
+  $('controls').hidden = !s.hash || !unlocked;
+  $('state').textContent = !s.hash ? t('noPassword')
+    : paused ? t('noLimitUntil', timeOf(s.pausedUntil))
+    : left > 0 ? t('remaining', left) : t('noEpisodesLeft');
+  $('pause').textContent = paused ? t('restoreLimit') : t('noLimitUntil', timeOf(nextPauseEnd(Date.now())));
+  if (!dirty) $('n').value = left;
+  if (!$('login').hidden) $('pw').focus();
+}
+
+async function update(change) {
+  const s = await getState();
+  change(s);
+  await setState(s);
+  dirty = false;
+  say(t('saved'));
+  render();
 }
 
 $('setup').addEventListener('submit', async (e) => {
   e.preventDefault();
   const a = $('pw1').value, b = $('pw2').value;
-  if (a.length < 4) return msg(t('passwordTooShort'));
-  if (a !== b) return msg(t('passwordsDiffer'));
+  if (a.length < MIN_PASSWORD) { $('setupErr').textContent = t('passwordTooShort'); return; }
+  if (a !== b) { $('setupErr').textContent = t('passwordsDiffer'); return; }
   await savePassword(a);
-  msg(t('saved'), true);
+  unlocked = true;   // just created: go straight to the controls
   render();
 });
 
-$('toggle').addEventListener('click', async () => {
-  if (!(await checkPassword($('pw').value))) return msg(t('wrongPassword'));
-  const s = await getState();
-  s.enabled = s.enabled === false;   // flip
-  // Turning blocking back ON: videos that are open now must be paid for (or get locked).
-  if (s.enabled) s.epoch = (s.epoch || 0) + 1;
-  await setState(s);
-  $('pw').value = '';
-  msg(t(s.enabled ? 'blockingTurnedOn' : 'blockingTurnedOff'), true);
-  render();
-});
-
-$('manage').addEventListener('submit', async (e) => {
+$('login').addEventListener('submit', async (e) => {
   e.preventDefault();
-  if (!(await checkPassword($('pw').value))) return msg(t('wrongPassword'));
-  const n = Math.max(0, parseInt($('n').value, 10) || 0);
-  const s = await getState();
-  s.remaining = n;
-  if (n === 0) s.epoch = (s.epoch || 0) + 1;   // lock now, including videos already playing
-  await setState(s);
+  const r = await tryPassword($('pw').value);
   $('pw').value = '';
-  msg(t('updated'), true);
+  $('loginErr').textContent = r.ok ? '' : failText(r);
+  if (!r.ok) return;
+  unlocked = true;
   render();
+});
+
+document.querySelectorAll('[data-add]').forEach((b) => b.addEventListener('click', () =>
+  update((s) => { s.remaining = clamp((s.remaining || 0) + Number(b.dataset.add)); })));
+
+$('dec').addEventListener('click', () => { dirty = true; $('n').value = clamp(parseInt($('n').value, 10) - 1); });
+$('inc').addEventListener('click', () => { dirty = true; $('n').value = clamp(parseInt($('n').value, 10) + 1); });
+$('n').addEventListener('input', () => { dirty = true; });
+
+$('exact').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const n = clamp(parseInt($('n').value, 10));
+  update((s) => { s.remaining = n; });
+});
+
+// Lock now: no episodes left, no pause, and videos that are already playing get locked too.
+$('lockNow').addEventListener('click', () => update((s) => {
+  s.remaining = 0;
+  s.pausedUntil = 0;
+  s.epoch = (s.epoch || 0) + 1;
+}));
+
+$('pause').addEventListener('click', () => update((s) => {
+  if (isPaused(s)) {
+    s.pausedUntil = 0;
+    s.epoch = (s.epoch || 0) + 1;   // limit back on: videos that are open now must be paid for (or get locked)
+  } else {
+    s.pausedUntil = nextPauseEnd(Date.now());
+  }
+}));
+
+// Keep the count current while the popup is open (a video in another tab may use an episode).
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === 'local' && changes[STATE_KEY]) render();
 });
 
 $('ver').textContent = t('version', chrome.runtime.getManifest().version);

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:a847d4a32be83bfe83f3d367950ef0e9bc894c6907ff6c48b560c090a7056a04",
+  "pageVersion": "sha256:c413e302ac98cba0cee4973ddc0ba29ce7016886b961fb9d2b22237640485ed0",
   "claims": [
     {
       "id": "claim_2f288495c2b7462b8b61144e457f6496",
@@ -12,15 +12,15 @@
         },
         {
           "resource": "repo://_locales/en/messages.json",
-          "version": "repo-file-v1:sha256:de27ddf9e7acaf4a1c16dbac78efcd92f7a56b2179c45c640e2796feaf275950"
+          "version": "repo-file-v1:sha256:7c214dac307a06fe8c9d7617da2471d7e9d4bca44bb6d8171fd29a5e381fd3a4"
         },
         {
           "resource": "repo://_locales/pl/messages.json",
-          "version": "repo-file-v1:sha256:5ded29685fa5fb28d8770a2147aa3e0f41d1952fdf5c50152a55921cd79b8f37"
+          "version": "repo-file-v1:sha256:ae8c357c868156bcb383ebaaefc7b98fa95fd24ba8c86dacac57b46dc99e26c8"
         },
         {
           "resource": "repo://manifest.json#L1-L6",
-          "version": "repo-lines-v1:sha256:9ad19ac0f4a5607f33dfd9082cd453386d7b3f017070c697dd88834c464f87b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM5YzdiYTQ5OWI0MWM3YWFmZjkxODI1ZDhhYzdhNmY1ZmNiZTk2MjkzNzJhOWU5OTUyZDEwYmVhMWM5OGU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI4MTdlMDhmZGY1M2ZiMzk3ZjAwYzc1M2NhMGQzNzVkMGI3ZWYzMmMyZmUxOTg4YmMzZTFhZTNjYmVmMTMxMSJ9"
+          "version": "repo-lines-v1:sha256:ba8d6c0f4a733567c66beabd9eb297b72f466768ee80e201ed2ffd5a341537e0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM5YzdiYTQ5OWI0MWM3YWFmZjkxODI1ZDhhYzdhNmY1ZmNiZTk2MjkzNzJhOWU5OTUyZDEwYmVhMWM5OGU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI4MTdlMDhmZGY1M2ZiMzk3ZjAwYzc1M2NhMGQzNzVkMGI3ZWYzMmMyZmUxOTg4YmMzZTFhZTNjYmVmMTMxMSJ9"
         }
       ]
     },
@@ -29,7 +29,7 @@
       "statement": "t(key, ...subs) wraps chrome.i18n.getMessage and returns the key itself when no message is found.",
       "evidence": [
         {
-          "resource": "repo://lib.js#L101-L103",
+          "resource": "repo://lib.js#L116-L118",
           "version": "repo-lines-v1:sha256:c0d5db837e092a31d77b05381f8d895e6c58e5392f9d1ec8f1629e493f55d2b4:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYzkwZjQ0YzI2OTM2NDRjNTJjOWQ2MzA1NDcwYTg4NTZjNDllNDgwOTM0MDA3NDBhYWFiNzU1ZmFlNzlkYWUwOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjMzZjVlNzQ5NDgyNmFmMjkzOTI5MzIyNjRiMTQ3NDlkOTFiNzcwYjczNmE0MmE0YmU5ZDNiYWQ5NDcwZmQ3MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTNmYzk3ZjlmNzMwZTkxMzNmNmJiOGYzMDBjYzE2OTIzOWIxY2JmNGU0MDM4NDQwMWEwMGJjNjYxMTNhYTIxMyJ9"
         }
       ]
@@ -39,7 +39,7 @@
       "statement": "localizePage() sets the document lang from chrome.i18n.getUILanguage() and fills every data-i18n element's textContent; popup.js and locked.js call it at startup.",
       "evidence": [
         {
-          "resource": "repo://lib.js#L105-L109",
+          "resource": "repo://lib.js#L120-L124",
           "version": "repo-lines-v1:sha256:07bbcc98a1d764e1574b1a8a761a9bb4e556a547e2225ea192be08b1a0ec4851:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNjMyOWFlMmEwYzliMmIyMWE0MTk0MTZhMzQxZTg4NmU1OWQwMmE1NjY5NGVmMGQyNDg1YTBiYzQ5ODBhMzE4NyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyY2EzNDVjY2Y3NWJmOWMwODA2YmNlNjk1YmU4ZGU4MDhiNzk5ODQyNTFhN2E1NGQyMDJjZjYxMDFkZDQ1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTQ1NmRlZDYxNDk1ZWM2MTUzOGZmNWUzZGE4M2I4YmE3YThmYTQ3NDEzZGEwZmFlYmM0YWM2MDZmOTNlY2UwOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDhmNTEzZWJkMzRiYmY3MTA5MmI2NTA5Y2NmNmE0ZjA2NTBiOGQ0M2MxZDY5ZTBhNTVmMGIxYjc2NDkzYjYyZiJ9"
         },
         {
@@ -54,23 +54,23 @@
     },
     {
       "id": "claim_5932f4ba3d55466ba795b260b0dc03bb",
-      "statement": "The remaining and version messages take a $1 placeholder, and counts are written as label: number because chrome.i18n has no plural forms.",
+      "statement": "The remaining, noLimitUntil, tooManyTries and version messages take a $1 placeholder, and counts are written as label: number because chrome.i18n has no plural forms.",
       "evidence": [
         {
-          "resource": "repo://README.md#L99-L100",
-          "version": "repo-lines-v1:sha256:ae3a964a758d42140f663c6086e05a5ac54ec68cc27e2e70d1f6ce704c420b7e:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAyNjk0Nzk0ZTk4YzI2YzBkOGUxMDkwOWFjYWIxNWFkMGJhZjNlZDY5MDk1OGM1MjIxOTQ1YzZjOTg2NzY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzQ1OWRjM2FlNTM1MjYzNjBlYjVlMmU0YjMxYmQ5MjgxODRmMDE0N2EwNTRlMTU4NzY5ZmE1MTgzNDJkNDI5OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc2N2QyMmU3YTY5ZmQwMzIwODIzYmY1YTgwMmQ4OWE3YzczYmIzYzExMGJlMTc5OGQ4OWU2YzI0MGExZGU5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTA3NTc4ZmJmMjY4MDI1MGIxYTc5ZGE5ZDdiNmIxNWNiODM1ZmMzZjY2MjRkMTgyNjI2Nzc3NWNkYWQ3NTVhOCJ9"
+          "resource": "repo://README.md#L119-L121",
+          "version": "repo-lines-v1:sha256:3437cff89ca4c26265a1b968e7ab62e71a28b404860fd686b900ea4e4270ed1f:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDAyNjk0Nzk0ZTk4YzI2YzBkOGUxMDkwOWFjYWIxNWFkMGJhZjNlZDY5MDk1OGM1MjIxOTQ1YzZjOTg2NzY3ZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmNhMjVhOGUyYjRkZTk3Mzk3ODRkZDkwZjBkMmNjODgzMDcwYTJhZTcyYmRiNTU0ZDZmZDE1NGI4MmY0ZjRjMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTc2N2QyMmU3YTY5ZmQwMzIwODIzYmY1YTgwMmQ4OWE3YzczYmIzYzExMGJlMTc5OGQ4OWU2YzI0MGExZGU5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjlmYWZkNjA5YzM3Zjk5OWIwYzQ4YmJmZDA1N2VjMDZmNGRjZTliNzQzYzg1MTY1MDk0ZDdhOWI4MjBjOWQ2ZCJ9"
         },
         {
-          "resource": "repo://_locales/en/messages.json#L27-L30",
-          "version": "repo-lines-v1:sha256:f165e402fa68c1c14a2a74c8ef508f6833306ac9fc4e10e3178bd7dce249f463:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTMwODE4NzFiZWU2MTNmOGVmNTU5OTQ5NWFhZWMwNWIwM2MxMzFlN2Q1MzY5ODdlM2U2NDMzOWU1YjU1Y2E5ZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOWRiNWIxNzZhZWE4NjkwMzU0NDhmYWQwMjNlZjZhZGFmMjQ1ZTg2NTYwMmExZDdlNDFhYjRiODI4NzU1ZDM0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGEyMzE1NmM2OGUyMDliYTc3ZTYxOWMxZDZhYjkxMTBjZjM2MzAzOTFkZmJhMjRlZjg3ZmNmZWYyOGQwNWI4NiJ9"
+          "resource": "repo://_locales/en/messages.json#L5-L37",
+          "version": "repo-lines-v1:sha256:2195e39ab0817393ed24fc445b1d6a831a32c72b310346a0f0b3d025d1df8077:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZmE1OGJlMmMxMWMyMjk1YTkwNTUxOTIwYWI2MDIzODJlYWNhNjM2MzI1NzQ5MDEzOGFjODkwOGZjNzNiNGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRkNWNkMmZiNGYzZGY4ODQ1MTUyNTViMzk1MjNmMmY4YjU0NzJiZWVhOWY1NjZmZmNhMjA0ZGI4MDI1NjEwNDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkNDNjZjZjYjU1ZWVmYWIyYmE5MWM3OWE3OWVmMWJkODk5NTkwYTcyYTM2YjBhNjI1NzdiODJiMzI1MjNiOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRhMjMxNTZjNjhlMjA5YmE3N2U2MTljMWQ2YWI5MTEwY2YzNjMwMzkxZGZiYTI0ZWY4N2ZjZmVmMjhkMDViODYifQ"
         },
         {
-          "resource": "repo://_locales/en/messages.json#L7-L10",
-          "version": "repo-lines-v1:sha256:31eea45e3dbc58e2c0f6a0ad5468f76944ddb5345faa3f29355626b57914e88f:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZTRmYTU4YmUyYzExYzIyOTVhOTA1NTE5MjBhYjYwMjM4MmVhY2E2MzYzMjU3NDkwMTM4YWM4OTA4ZmM3M2I0YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGQ1Y2QyZmI0ZjNkZjg4NDUxNTI1NWIzOTUyM2YyZjhiNTQ3MmJlZWE5ZjU2NmZmY2EyMDRkYjgwMjU2MTA0MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDc4YzBjMTZjN2UzMWFjZmUwNGY2Y2E3YjZhZjNmMjI3ZjBlZTI2ZDRlMzZlMDJiNzU3NTg3NTVmZjMzNmJmYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDgzYWIzMWM3Y2QzY2VlMWRhZjIxMDcxNWQwZTA3MmE3NTJhZTgxM2FhNDE0ODAxNjNlMDg3MDlmNWVmOGRkMSJ9"
+          "resource": "repo://popup.js#L10-L11",
+          "version": "repo-lines-v1:sha256:b7df380544982cead435c82ba94a4abfb2db3ee51c66f607e01d0072dd5a1968:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE4YzMwZTNkMjNlOTZlZDM2YThmYzBkNGRhOWFlN2YwOWRkZDgzOTE2MzhkOWUwZDlmM2RiZjExMmRhODMxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTcwYmEzZTY1MmVmYWM3ZDg2ODk2MGVlODliYzJmZjJlZjc1NzdjMWVkNTUyYTIwMjRkYjBlMzQ5MWExY2E1MSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzE5YWNlNjg2M2VlMDk4NDA3NzhiOGUwNWQwYjNkY2IxOTFlN2UyZjlhMWQ2YWJlZDU0Y2NmZGI4MTc0YmFjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjg0ZWU1MTkyYjg3MDZlODY5OGI5MTlkYzY4ZjNkYTdhODE5YWU0YWNhZmJhNTE0YzBmMTE0ZTU5MDc4NTIyNSJ9"
         },
         {
-          "resource": "repo://popup.js#L16-L18",
-          "version": "repo-lines-v1:sha256:a67af1ca91a990a3e2292af9847ac6e4249c3bcb72a10eba5162a96c4992f60d:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGIxZjQ2MTFiNjRiNGYwOGRkNjI5NjQ0ZTYzZDk0MjA5NTg2MGE3NTU5MDMwMzA5MGQ2ZGNiNWU0NzgxYzU0YiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOThmYzAxOGQ5ZWYyYzg3YTQ3ZjgzMDE1ZTUxNmY1YjI2YjYzNjBlZTc1MDU3ZmE0ZTFiM2RmYmM4MDRjYjBhOSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTg2MTdjMTlhODI4Y2I0YmZhNmYzNTkyODdkYzU0ODJjNDM4MGU1YjhiZTg0NDRkYWNhMDdmZmYzOTkzNDVhOCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMDMwMzMyNWY5MGY3ZDc4YTFjMzY3NGY4MDI0N2VjMmFlZDJlNDRjYjllOTI2NDczZmUyZmZiZDZkYWQ0YTMyOCJ9"
+          "resource": "repo://popup.js#L26-L29",
+          "version": "repo-lines-v1:sha256:1cdd68cf46d9948cf008bf6b32bfbc2dadd39ff5cf5b063964c57bb0b9766dd1:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDEyYjFhMDQ4ZDA2ZTExODlmY2Q0OTBhMzFlOGVmZjkyNDBhNDJmYjQxYjA1MWEyNGNkZjUwYzM4MTkxNTdhYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYTYxMWIyOTVmM2FhOGM0ZjFmMTdjOWEwZTUxMTNmMWQ1ZWQ2OTIzMDJmYTI3MzJjOGI2ODUzMmFkOGU2MmYxNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDZlNmU5NjY2OWZjMzgxZThkYzAyM2UxY2M1NTZlYzM0ZGY1NjFmZGQ1OTM5ZWQ2MDU1OGVmNGMwNDUzOTk0MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYmRlNGRiZTNiNGQ1NGU0NDljNzEwNzhjM2E2NzBlMjM1ODcyZTUwNDc2ZmUyODZmM2NmZTk0OWFlMTY0MTdlZCJ9"
         }
       ]
     },
@@ -79,7 +79,7 @@
       "statement": "Both catalogs must define the same keys.",
       "evidence": [
         {
-          "resource": "repo://README.md#L92-L93",
+          "resource": "repo://README.md#L112-L113",
           "version": "repo-lines-v1:sha256:ac388aedee0648a3b0357fe11e68eb0543dd882bbe696129746413561e9709bc:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOGVkZTcyMDk5NjJhMDZjZDAzYTczY2U3ZTk0N2M1OGQyNjcwMmE0YmQxY2JlMDQ1NGRlMmNmMzU2MTJjOWRjZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmJhZDk5NTYyOTg1ZWE2YmI1N2E2MzU0M2I5ZjRkMDMyMDEwNWUwMDg3Mjc2ZDkzMzUwOGQ5MTAyOWI4YzVjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODJjNDQ0ZGNlYWYwNjBiYTE2NTg2MGM2NjlkY2ZjZmM0MTVmZGIwODU0NTZjNzNiNjhiYWU3YmI1NDJhYTEyOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmU2NGFhZmU1OGExYjExYTg0Njk1ZGQ1OWY2ZGMxMzJkNTVkN2NjNTQyYzM5NGRkODdhYzFhM2UyY2Q3NzA4MCJ9"
         }
       ]
@@ -93,10 +93,20 @@
           "version": "repo-lines-v1:sha256:32f48477a9698bee55d9ae3e3c6c0db562efb5153edb69e6f26266eb2bd811f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlY2RiNjAwOWUyNTU0NWYyY2JmN2JhNWZkMDA5NTczNjJhMjlmYjRmOWEyMGExZWY1NDg3ZjAyZWFhNGU4NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5NTU0NDJjMzIxZWM0Y2E5MjNmZDljMGZlZDg4NDY1NDk3ZWZiNzMzOGIxOWI5NTU2NzI2NjNiMjJhZjU2ZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
+    },
+    {
+      "id": "claim_3113be7e48714c37b5dd17866a9e0d4a",
+      "statement": "The pause time shown in noLimitUntil is formatted with toLocaleTimeString in Chrome's UI language.",
+      "evidence": [
+        {
+          "resource": "repo://popup.js#L10-L10",
+          "version": "repo-lines-v1:sha256:218c30e3d23e96ed36a8fc0d4da9ae7f09ddd8391638d9e0d9f3dbf112da831e:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE4YzMwZTNkMjNlOTZlZDM2YThmYzBkNGRhOWFlN2YwOWRkZDgzOTE2MzhkOWUwZDlmM2RiZjExMmRhODMxZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjE4YzMwZTNkMjNlOTZlZDM2YThmYzBkNGRhOWFlN2YwOWRkZDgzOTE2MzhkOWUwZDlmM2RiZjExMmRhODMxZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYzE5YWNlNjg2M2VlMDk4NDA3NzhiOGUwNWQwYjNkY2IxOTFlN2UyZjlhMWQ2YWJlZDU0Y2NmZGI4MTc0YmFjZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGQ2NTBmMjk4YmNmOWM3Y2I1OGVhOGQzZjA1Y2RlYjkyMDI5ZWJjYzc5MzlmNzdkYmU5ODE5YzFjNDBkOTNmMiJ9"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:16:37.173Z"
+    "at": "2026-11-13T21:24:43.706Z"
   }
 }

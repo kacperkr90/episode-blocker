@@ -54,7 +54,7 @@
     if (location.href !== lastHref) { lastHref = location.href; schedule(); }
   }, 300);
 
-  // Parent changed something (lock now, toggle, quota): re-check this tab.
+  // Parent changed something (lock now, pause, quota): re-check this tab.
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area === 'local' && changes[STATE_KEY]) schedule();
   });

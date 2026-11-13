@@ -2,28 +2,35 @@
   "extName": { "message": "Limit odcinków" },
   "extDescription": { "message": "Blokuje odtwarzanie na Netflix, Disney+, YouTube, CDA i TVP VOD, dopóki rodzic nie odblokuje określonej liczby odcinków." },
 
-  "blockingOn": { "message": "Blokada: WŁĄCZONA" },
-  "blockingOff": { "message": "Blokada: WYŁĄCZONA" },
   "remaining": {
     "message": "Pozostało odcinków: $COUNT$",
     "placeholders": { "count": { "content": "$1", "example": "3" } }
   },
+  "noEpisodesLeft": { "message": "🔒 Brak odcinków" },
+  "noLimitUntil": {
+    "message": "Bez limitu do $TIME$",
+    "placeholders": { "time": { "content": "$1", "example": "03:00" } }
+  },
   "noPassword": { "message": "Nie ustawiono hasła." },
   "createPassword": { "message": "Utwórz hasło rodzica" },
+  "passwordHint": { "message": "Co najmniej 6 znaków, np. krótka fraza." },
   "repeatPassword": { "message": "Powtórz hasło" },
   "savePassword": { "message": "Zapisz hasło" },
   "parentPassword": { "message": "Hasło rodzica" },
-  "turnBlockingOff": { "message": "Wyłącz blokadę" },
-  "turnBlockingOn": { "message": "Włącz blokadę" },
-  "setRemaining": { "message": "Ustaw liczbę pozostałych odcinków (0 = zablokuj teraz)" },
-  "apply": { "message": "Zastosuj" },
-  "passwordTooShort": { "message": "Użyj co najmniej 4 znaków" },
+  "continue": { "message": "Dalej" },
+  "addEpisodes": { "message": "Dodaj odcinki" },
+  "setExactly": { "message": "Lub ustaw dokładną liczbę" },
+  "set": { "message": "Ustaw" },
+  "lockNow": { "message": "🔒 Zablokuj teraz" },
+  "restoreLimit": { "message": "Przywróć limit teraz" },
+  "passwordTooShort": { "message": "Użyj co najmniej 6 znaków" },
   "passwordsDiffer": { "message": "Hasła nie są takie same" },
   "saved": { "message": "Zapisano" },
   "wrongPassword": { "message": "Błędne hasło" },
-  "blockingTurnedOn": { "message": "Blokada włączona" },
-  "blockingTurnedOff": { "message": "Blokada wyłączona" },
-  "updated": { "message": "Zaktualizowano" },
+  "tooManyTries": {
+    "message": "Za dużo prób. Spróbuj ponownie za $SECONDS$ s.",
+    "placeholders": { "seconds": { "content": "$1", "example": "30" } }
+  },
   "version": {
     "message": "wersja $VERSION$",
     "placeholders": { "version": { "content": "$1", "example": "2.3.0" } }
@@ -38,6 +45,5 @@
   "episodeCount": { "message": "Liczba odcinków / filmów" },
   "unlock": { "message": "Odblokuj" },
   "back": { "message": "← Wróć" },
-  "atLeastOne": { "message": "Wpisz co najmniej 1" },
   "unlockedReopen": { "message": "Odblokowano. Otwórz film ponownie." }
 }

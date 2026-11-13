@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:eccc93bf2ef76909b9cd5b0093a0fb3d057dbab53cfbcd712199cad56e128bbc",
+  "pageVersion": "sha256:371ad0066a06ed2d84a58d98cd85c4a92eff216742748e761a94fcb54c6a7805",
   "claims": [
     {
       "id": "claim_788f3b0084aa4f42bf84363410b053d2",
@@ -99,14 +99,14 @@
       "statement": "tests/lib.test.js runs lib.js in a Node vm sandbox and asserts videoKey results for counted video URLs on every supported site and null for browsing pages such as TVP category, series and season pages and unsupported hosts.",
       "evidence": [
         {
-          "resource": "repo://tests/lib.test.js#L1-L46",
-          "version": "repo-lines-v1:sha256:e26056d00eea9e4af2fc50bfeaa12de5fa69367190d940b06969f552d9204d57:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OTJlMjQ4YWUxYzcwY2JkM2IxMDI4M2JiNjk0NjA0MzI3MDdmMDVlZjU3MDY5YjYzODVmNjY2N2JkNWE2NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://tests/lib.test.js#L1-L47",
+          "version": "repo-lines-v1:sha256:47b9c668d6d442dee92c848d685f53f009841d60210434484224bb334e9ae799:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU0ZjQzMTU1MDc5MGVmMDEwYWNlZDNkYTI0MWM1ZmU2ZGI2MzBhNDQ3YzU1YzFkOTI0ZGQ3OTM4NGFhNzMyODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQzYTk4ZTgyNDNlNmQwOWZmMjk3MzQ3ZGY2MGYxN2Y4NmYwNzc2MDM0Zjc1NzFkMjNmNDIzODRiZmNjNjBhYWMifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:16:37.173Z"
+    "at": "2026-11-13T21:24:43.706Z"
   }
 }

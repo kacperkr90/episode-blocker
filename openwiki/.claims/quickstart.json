@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:edcba7fff954726dbf741fb02cb44b4541fa99942087c45b5300412910320449",
+  "pageVersion": "sha256:98283a75d61e447eeff0deb60a51a5e946ff6ebdde481ac9ee53169b20f560e4",
   "claims": [
     {
       "id": "claim_559bdb1a0956421b9cd09105cdbf0950",
@@ -8,17 +8,17 @@
       "evidence": [
         {
           "resource": "repo://manifest.json#L1-L59",
-          "version": "repo-lines-v1:sha256:f471c861feaab1904a0a7e24c512c0f1b30aa37b240e2941f23e6191b5f3e863:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "version": "repo-lines-v1:sha256:7b411abfbb8b616bda6d47700c913fedf74d20df08b6bc87477b1c89beb58809:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE2ZmIwOGZkYTFhY2I5NTdiNjExNmJkMzc4MTFhMWZlNDFhMDE2MTFjMDYzMWVkYmY3ODZkNjg4OWEyN2E1NWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMGIzNmFhNzRhNTliY2Y0YTg4MTg1ODM3ZjY1OGFmYWYzNjQ2ZWZmMmJiMTZjMzkyOGQwZTkzMzVlOTQ1ZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
     {
       "id": "claim_e8634ea0dc98464e8ab42ddfc0fb24f8",
-      "statement": "Each new video page opened in a tab spends one episode through the background worker's claim handling, and a tab with no remaining quota is redirected to the lock page.",
+      "statement": "Each new video page opened in a tab spends one episode through the background worker's claim handling unless a pause is active, and a tab with no remaining quota is redirected to the lock page.",
       "evidence": [
         {
           "resource": "repo://background.js#L18-L35",
-          "version": "repo-lines-v1:sha256:68755dc2506faee25c79a234ceb697cdfaaf96a16f3aa8a78fe16678bc768765:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNmNmMDJjZWQxNDBiZjdmOTQ0MjVmOTQ4NDBjMGU0MmMwNmFkNzA5N2VlY2IzN2Y3ZGI5OTI4Yzk1MzEwMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MjE5NDc3ZTg4ZjJhMDYzOGE2ODczNzYzY2ZlOGQzYTliZjFhYzhlZDFjYjc1MDViMTFlNjBmMzNmN2Y2ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZjUzYTQ3MTM3YjNlN2QwNDM2OGE1MjA1YThhNjFiM2JmZGNmMDE1ZGIyN2RhYjFjYWQ1ZDgxOWY0ZDVkZjAifQ"
+          "version": "repo-lines-v1:sha256:3ba9599f3ff6c9326999ca5ec3c9c4ba2700312ff1d25b724ee88855100052e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhNmNmMDJjZWQxNDBiZjdmOTQ0MjVmOTQ4NDBjMGU0MmMwNmFkNzA5N2VlY2IzN2Y3ZGI5OTI4Yzk1MzEwMWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU2MjE5NDc3ZTg4ZjJhMDYzOGE2ODczNzYzY2ZlOGQzYTliZjFhYzhlZDFjYjc1MDViMTFlNjBmMzNmN2Y2ZjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJjZjUzYTQ3MTM3YjNlN2QwNDM2OGE1MjA1YThhNjFiM2JmZGNmMDE1ZGIyN2RhYjFjYWQ1ZDgxOWY0ZDVkZjAifQ"
         },
         {
           "resource": "repo://content.js#L14-L35",
@@ -32,7 +32,7 @@
       "evidence": [
         {
           "resource": "repo://manifest.json",
-          "version": "repo-file-v1:sha256:f471c861feaab1904a0a7e24c512c0f1b30aa37b240e2941f23e6191b5f3e863"
+          "version": "repo-file-v1:sha256:7b411abfbb8b616bda6d47700c913fedf74d20df08b6bc87477b1c89beb58809"
         },
         {
           "resource": "repo://tools/sync-manifest.js#L1-L16",
@@ -50,7 +50,7 @@
         },
         {
           "resource": "repo://manifest.json#L1-L6",
-          "version": "repo-lines-v1:sha256:9ad19ac0f4a5607f33dfd9082cd453386d7b3f017070c697dd88834c464f87b6:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM5YzdiYTQ5OWI0MWM3YWFmZjkxODI1ZDhhYzdhNmY1ZmNiZTk2MjkzNzJhOWU5OTUyZDEwYmVhMWM5OGU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI4MTdlMDhmZGY1M2ZiMzk3ZjAwYzc1M2NhMGQzNzVkMGI3ZWYzMmMyZmUxOTg4YmMzZTFhZTNjYmVmMTMxMSJ9"
+          "version": "repo-lines-v1:sha256:ba8d6c0f4a733567c66beabd9eb297b72f466768ee80e201ed2ffd5a341537e0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTZmYjA4ZmRhMWFjYjk1N2I2MTE2YmQzNzgxMWExZmU0MWEwMTYxMWMwNjMxZWRiZjc4NmQ2ODg5YTI3YTU1YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYzM5YzdiYTQ5OWI0MWM3YWFmZjkxODI1ZDhhYzdhNmY1ZmNiZTk2MjkzNzJhOWU5OTUyZDEwYmVhMWM5OGU2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTI4MTdlMDhmZGY1M2ZiMzk3ZjAwYzc1M2NhMGQzNzVkMGI3ZWYzMmMyZmUxOTg4YmMzZTFhZTNjYmVmMTMxMSJ9"
         }
       ]
     },
@@ -75,6 +75,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:16:37.173Z"
+    "at": "2026-11-13T21:24:43.706Z"
   }
 }

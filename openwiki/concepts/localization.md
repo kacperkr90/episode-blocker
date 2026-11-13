@@ -1,6 +1,6 @@
 ---
 type: concept
-title: Localization (Polish and English UI)
+title: Localization (English and Polish UI)
 description: How the extension's user-visible text is translated into English and Polish — the _locales message catalogs, default_locale, __MSG_ placeholders in the manifest, the t() and localizePage() helpers in lib.js, data-i18n markup, and how to add or test a string.
 tags: [i18n, localization, translations, chrome-i18n, ui]
 sources:
@@ -20,13 +20,13 @@ sources:
     resource: repo://README.md
   - id: openwiki-source-667e11e637cd9f360199963b
     resource: repo://tests/locales.test.js
-generated: { by: "claude-code", at: "2026-11-01T12:16:37.173Z" }
+generated: { by: "claude-code", at: "2026-11-13T21:24:43.706Z" }
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:16:37.173Z
+    at: 2026-11-13T21:24:43.706Z
 ---
 
-# Localization (Polish and English UI)
+# Localization (English and Polish UI)
 
 All user-visible text comes from Chrome's built-in `chrome.i18n` system. There are two
 message catalogs:
@@ -60,17 +60,21 @@ Both helpers live in the "Translations" section of [lib.js](../../lib.js):
   (for example `pl` from `pl-PL`) and fills every `[data-i18n]` element with `t(key)`.
 
 `popup.js` and `locked.js` call `localizePage()` as their first statement after defining `$`,
-before any rendering. The HTML files still contain Polish fallback text and `lang="pl"`; those
-are overwritten at load and only matter if the script fails.
+before any rendering. The HTML files still contain fallback text in Polish and `lang="pl"`;
+those are overwritten at load and only matter if the script fails.
 
 ## Placeholders and counts
 
-Two messages take a value through a `$1` placeholder:
+Four messages take a value through a `$1` placeholder:
 
-- `remaining` — "Episodes left: $COUNT$" / "Pozostało odcinków: $COUNT$", used by the popup
-  header with `t('remaining', s.remaining || 0)`;
-- `version` — "version $VERSION$" / "wersja $VERSION$", used by the popup footer with the
-  manifest version.
+- `remaining` — "Episodes left: $COUNT$", used by the popup header with
+  `t('remaining', left)`;
+- `noLimitUntil` — "No limit until $TIME$", used both for the popup header during a pause and
+  for the pause button. The time comes from `toLocaleTimeString` in Chrome's UI language, so it
+  reads "03:00" in Polish and "03:00 AM" in English;
+- `tooManyTries` — "Too many attempts. Try again in $SECONDS$ s.", shown by the popup and the
+  lock page while the wrong-password wait is running;
+- `version` — "version $VERSION$", used by the popup footer with the manifest version.
 
 `chrome.i18n` has no plural forms, so counts are written as "label: number" rather than in a
 sentence that would need Polish plural agreement.

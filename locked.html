@@ -21,6 +21,8 @@
     button{flex:1;padding:10px 14px;font-size:16px;border:0;border-radius:8px;cursor:pointer}
     .primary{background:#3b82f6;color:#fff}
     .secondary{background:#2b2f3a;color:#eef0f4}
+    .pick{background:#2b2f3a;color:#eef0f4;border:2px solid transparent}
+    .pick[aria-pressed="true"]{border-color:#3b82f6;background:#22304a}
     .err{color:#ff7b7b;min-height:20px;margin-top:8px;font-size:14px}
     details{margin-top:16px;color:#9aa0ad}
     summary{cursor:pointer;font-size:14px}
@@ -39,10 +41,14 @@
       <form id="unlock">
         <p class="muted" id="nopw" data-i18n="noPasswordHint" hidden>Hasło nie jest jeszcze ustawione. Kliknij ikonę rozszerzenia na pasku narzędzi, aby je ustawić.</p>
         <div id="fields">
+          <label id="countLabel" data-i18n="episodeCount">Liczba odcinków / filmów</label>
+          <div class="row" role="group" aria-labelledby="countLabel">
+            <button type="button" class="pick" data-n="1" aria-pressed="true">+1</button>
+            <button type="button" class="pick" data-n="2" aria-pressed="false">+2</button>
+            <button type="button" class="pick" data-n="3" aria-pressed="false">+3</button>
+          </div>
           <label for="pw" data-i18n="password">Hasło</label>
           <input type="password" id="pw" autocomplete="off">
-          <label for="n" data-i18n="episodeCount">Liczba odcinków / filmów</label>
-          <input type="number" id="n" min="1" max="50" value="1">
           <div class="row"><button type="submit" class="primary" data-i18n="unlock">Odblokuj</button></div>
           <div class="err" id="err"></div>
         </div>

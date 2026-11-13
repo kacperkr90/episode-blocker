@@ -3,43 +3,67 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body{font-family:system-ui,sans-serif;width:260px;padding:12px;font-size:14px}
-    input{display:block;width:100%;box-sizing:border-box;margin:6px 0;padding:6px}
-    button{padding:6px 12px;margin-top:6px}
-    #msg{margin-top:8px;min-height:18px;color:#b00}
-    .ok{color:#080 !important}
-    label{font-size:12px;color:#555}
-    #state{font-weight:600;margin-bottom:4px}
-    .on{color:#b00}
-    .off{color:#080}
-    hr{border:0;border-top:1px solid #ddd;margin:10px 0}
+    body{font-family:system-ui,sans-serif;width:300px;margin:0;padding:16px;font-size:15px;color:#222}
+    #state{font-size:22px;font-weight:600;text-align:center;margin:4px 0 12px}
+    label{display:block;font-size:13px;color:#444;margin-top:10px}
+    input{display:block;width:100%;box-sizing:border-box;margin:4px 0;padding:8px;font-size:15px}
+    button{padding:8px 10px;font-size:15px;cursor:pointer}
+    .wide{display:block;width:100%;margin-top:10px}
+    .row{display:flex;gap:6px;margin-top:4px}
+    .row > *{flex:1;min-width:0}
+    .row input{margin:0;text-align:center}
+    .hint{font-size:12px;color:#666;margin:2px 0 0}
+    .err{color:#b00;font-size:13px;min-height:18px;margin-top:6px}
+    .danger{color:#b00;font-weight:600}
+    #msg{color:#080;font-size:13px;min-height:18px;margin-top:8px;text-align:center}
+    hr{border:0;border-top:1px solid #ddd;margin:14px 0 4px}
+    #ver{margin-top:8px;font-size:11px;color:#999}
   </style>
 </head>
 <body>
   <div id="state"></div>
-  <div id="status"></div>
 
   <form id="setup" hidden>
-    <label data-i18n="createPassword">Utwórz hasło rodzica</label>
+    <label for="pw1" data-i18n="createPassword">Utwórz hasło rodzica</label>
     <input type="password" id="pw1" autocomplete="off">
-    <label data-i18n="repeatPassword">Powtórz hasło</label>
+    <p class="hint" data-i18n="passwordHint">Co najmniej 6 znaków, np. krótka fraza.</p>
+    <label for="pw2" data-i18n="repeatPassword">Powtórz hasło</label>
     <input type="password" id="pw2" autocomplete="off">
-    <button type="submit" data-i18n="savePassword">Zapisz hasło</button>
+    <button type="submit" class="wide" data-i18n="savePassword">Zapisz hasło</button>
+    <div class="err" id="setupErr"></div>
   </form>
 
-  <form id="manage" hidden>
-    <hr>
-    <label data-i18n="parentPassword">Hasło rodzica</label>
+  <!-- The password is asked once; the controls stay open until the popup closes. -->
+  <form id="login" hidden>
+    <label for="pw" data-i18n="parentPassword">Hasło rodzica</label>
     <input type="password" id="pw" autocomplete="off">
-    <button type="button" id="toggle"></button>
-    <hr>
-    <label data-i18n="setRemaining">Ustaw liczbę pozostałych odcinków (0 = zablokuj teraz)</label>
-    <input type="number" id="n" min="0" max="50" value="1">
-    <button type="submit" data-i18n="apply">Zastosuj</button>
+    <button type="submit" class="wide" data-i18n="continue">Dalej</button>
+    <div class="err" id="loginErr"></div>
   </form>
 
-  <div id="msg"></div>
-  <div id="ver" style="margin-top:8px;font-size:11px;color:#999"></div>
+  <div id="controls" hidden>
+    <label data-i18n="addEpisodes">Dodaj odcinki</label>
+    <div class="row">
+      <button type="button" data-add="1">+1</button>
+      <button type="button" data-add="2">+2</button>
+      <button type="button" data-add="3">+3</button>
+    </div>
+    <form id="exact">
+      <label for="n" data-i18n="setExactly">Lub ustaw dokładnie</label>
+      <div class="row">
+        <button type="button" id="dec">−</button>
+        <input type="number" id="n" min="0" max="50">
+        <button type="button" id="inc">+</button>
+        <button type="submit" data-i18n="set">Ustaw</button>
+      </div>
+    </form>
+    <hr>
+    <button type="button" id="lockNow" class="wide danger" data-i18n="lockNow">🔒 Zablokuj teraz</button>
+    <button type="button" id="pause" class="wide"></button>
+    <div id="msg"></div>
+  </div>
+
+  <div id="ver"></div>
   <script src="lib.js"></script>
   <script src="popup.js"></script>
 </body>

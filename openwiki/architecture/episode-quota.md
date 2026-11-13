@@ -5,7 +5,7 @@ description: How the extension spends one unit of the shared episode quota per v
 tags: [quota, claim, background, content-script, storage, epoch]
 verified:
   - by: openwiki/0.7.2
-    at: 2026-11-01T12:05:30.576Z
+    at: 2026-11-13T21:24:43.706Z
 sources:
   - id: openwiki-source-f22365b596e25ba4bf7c6003
     resource: repo://background.js
@@ -17,7 +17,9 @@ sources:
     resource: repo://locked.js
   - id: openwiki-source-dda1dc9054b73bb09bf02f85
     resource: repo://popup.js
-generated: { by: "claude-code", at: "2026-11-01T11:23:59.117Z" }
+  - id: openwiki-source-6827bfa6cc4545b673ce7dc4
+    resource: repo://tests/lib.test.js
+generated: { by: "claude-code", at: "2026-11-13T21:24:43.706Z" }
 ---
 
 # Episode quota and claim accounting
@@ -34,7 +36,7 @@ happens in one place, the background service worker
 |---|---|---|
 | `check()` / `schedule()` | [content.js](../../content.js) | Detects a video page and asks for a claim; navigates to the lock page if refused. |
 | `claim(tabId, id)` | [background.js](../../background.js) | Decides allow/deny and spends quota. |
-| `state` (`STATE_KEY`) | `chrome.storage.local` | `{ salt, hash, remaining, enabled, epoch }`, read and written through `getState`/`setState` in [lib.js](../../lib.js). |
+| `state` (`STATE_KEY`) | `chrome.storage.local` | `{ salt, hash, remaining, pausedUntil, epoch }`, read and written through `getState`/`setState` in [lib.js](../../lib.js). |
 | `paid` | `chrome.storage.session` | `{ [tabId]: { id, epoch } }`: the video each tab has already paid for, and in which epoch. |
 
 `chrome.storage.session` is cleared when the browser closes, so paid records do not
@@ -56,7 +58,8 @@ outlive the session. The quota itself (`remaining`) lives in `local` storage and
    all tabs are therefore processed strictly one after another, so two tabs can never spend the
    same last episode at once. A failed task does not break the chain, because the chain continues from `p.catch(() => {})`.
 6. **Decide** (`claim`):
-   - `enabled === false` → allow and charge nothing. The parent has switched blocking off.
+   - `isPaused(s)` (`pausedUntil` is later than now) → allow and charge nothing. The parent has
+     paused the limit.
    - `paid[tabId]` matches both `id` and the current `epoch` → allow and charge nothing. This tab
      already paid for this video, which covers the re-checks triggered by storage changes and repeated
      URL polls.
@@ -73,27 +76,46 @@ outlive the session. The quota itself (`remaining`) lives in `local` storage and
   tab replaces A's record, so going back to A costs another episode.
 - **The same video in two tabs costs twice.** Paid records are keyed by tab, not by video.
 - **No password means locked.** Until a parent sets a password, `hash` is absent and every
-  video page is denied, unless blocking has been explicitly disabled.
+  video page is denied, unless a pause is active.
 - **Fail closed.** If the worker throws, it replies `{ allow: false }`. If the message
   itself fails while the extension is still alive, the content script locks anyway. The one
   exception is an orphaned content script after an extension reload. That case is handled by the
   self-reload timer described in [extension lifecycle](../operations/extension-lifecycle.md).
+
+## Pause
+
+`pausedUntil` is a timestamp in milliseconds. While it is in the future, `claim` allows every
+video without charging and without writing a paid record. The popup sets it to
+`nextPauseEnd(Date.now())`: the next 3:00 local time, so a pause started in the evening lasts
+past midnight and one started at 1:30 ends the same night ([lib.js](../../lib.js)).
+
+A pause that expires on its own changes nothing in storage, so no content script re-checks.
+Videos that are already playing continue, and the next video page a tab opens is charged as
+usual. Because nothing was recorded during the pause, re-opening the same video after the
+pause also costs an episode.
+
+The lock page treats an active pause like an unlock: its `storage.onChanged` handler returns
+to the video when `isPaused(s)` is true or `remaining > 0`.
+
+Older versions stored an `enabled` switch instead. The background migrates it on install or
+update (see [extension lifecycle](../operations/extension-lifecycle.md)).
 
 ## Epoch: forcing re-payment
 
 `epoch` is a counter in `state`. A paid record is valid only while its `epoch` equals the
 current one. The popup bumps it in two cases ([popup.js](../../popup.js)):
 
-- the parent sets remaining to `0` ("lock now");
-- the parent turns blocking back **on** after it was off.
+- "Lock now", which also sets `remaining` to 0 and clears `pausedUntil`;
+- "Turn the limit back on now", which ends an active pause early.
 
 The bump changes `state`, so every open content script re-checks through its
 `storage.onChanged` listener. Their paid records are now stale, so each tab currently on a video
-page must spend a new episode or get locked. That is how "lock now" stops videos that are
+page must spend a new episode or get locked. That is how "Lock now" stops videos that are
 already playing.
 
-Setting a positive count from the popup or the lock page does **not** bump the epoch, so
-tabs that already paid keep playing.
+Adding episodes or setting an exact count from the popup, and unlocking from the lock page, do
+**not** bump the epoch, so tabs that already paid keep playing. This includes setting the
+exact count to 0: open videos continue, and only the next video page is locked.
 
 ## Tab cleanup
 

@@ -83,7 +83,8 @@ function videoKey(u) {
 }
 
 // ---- State -------------------------------------------------------------------
-// { salt, hash, remaining, enabled, epoch }
+// { salt, hash, remaining, pausedUntil, epoch }
+// pausedUntil: time (ms) until which videos play without using episodes ("No limit until 3:00").
 // epoch: bumped when the parent forces a lock, so already-paid videos must be paid again.
 
 async function getState() {
@@ -93,6 +94,20 @@ async function getState() {
 
 async function setState(s) {
   await chrome.storage.local.set({ [STATE_KEY]: s });
+}
+
+// A pause ends at 3:00 at night, not at midnight, so a late evening isn't cut short.
+const PAUSE_END_HOUR = 3;
+
+function nextPauseEnd(now) {
+  const d = new Date(now);
+  d.setHours(PAUSE_END_HOUR, 0, 0, 0);
+  if (d.getTime() <= now) d.setDate(d.getDate() + 1);
+  return d.getTime();
+}
+
+function isPaused(s, now = Date.now()) {
+  return (s.pausedUntil || 0) > now;
 }
 
 // ---- Translations --------------------------------------------------------------
@@ -109,6 +124,15 @@ function localizePage() {
 }
 
 // ---- Password ------------------------------------------------------------------
+
+const MIN_PASSWORD = 6;
+const GUARD_KEY = 'guard';   // chrome.storage.local: { fails, until } — wrong attempts in a row, next allowed try
+const FREE_TRIES = 3;
+
+// Wait after `fails` wrong attempts in a row: none for the first 3, then 30 s, doubling, at most 1 h.
+function lockoutMs(fails) {
+  return fails < FREE_TRIES ? 0 : Math.min(30000 * 2 ** (fails - FREE_TRIES), 3600000);
+}
 
 function toB64(buf) {
   return btoa(String.fromCharCode(...new Uint8Array(buf)));
@@ -141,4 +165,20 @@ async function checkPassword(pw) {
   const s = await getState();
   if (!s.hash) return false;
   return (await hashPassword(pw, s.salt)) === s.hash;
+}
+
+// checkPassword with a growing wait after wrong attempts, shared by the popup and the lock page.
+// Returns { ok: true } or { ok: false, wait } where wait is in seconds (0 = may try again now).
+async function tryPassword(pw) {
+  const now = Date.now();
+  const g = (await chrome.storage.local.get(GUARD_KEY))[GUARD_KEY] || { fails: 0, until: 0 };
+  if (g.until > now) return { ok: false, wait: Math.ceil((g.until - now) / 1000) };
+  if (await checkPassword(pw)) {
+    if (g.fails) await chrome.storage.local.remove(GUARD_KEY);
+    return { ok: true };
+  }
+  g.fails += 1;
+  g.until = now + lockoutMs(g.fails);
+  await chrome.storage.local.set({ [GUARD_KEY]: g });
+  return { ok: false, wait: Math.ceil(lockoutMs(g.fails) / 1000) };
 }

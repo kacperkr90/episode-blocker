@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:2e189d0c14e407186bd806029747ff42c20256bf97e157e74311d7d415d5a35e",
+  "pageVersion": "sha256:25a9731bbc1df87c3bc9f4c5994892cb46d45541a050dc46ccd6d55c05d2930f",
   "claims": [
     {
       "id": "claim_ac00681834cf48618dd0a8fcf98ab188",
       "statement": "On install, update or reload, the background worker reloads every non-discarded tab matching the content script's URL patterns, because Chrome does not inject content scripts into already-open tabs.",
       "evidence": [
         {
-          "resource": "repo://background.js#L47-L55",
-          "version": "repo-lines-v1:sha256:588a6f9016a7f09107ff59c183541ef308ee47d1855acb132bbcf51724b76c67:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDJjZjZhNjAyZTg3MDRjZWNmOTE1YThjYTYxM2NiOWVjZGU1ZDhlYzY1NzNhOTcyNGNhMTM4NTM2NzM4NjU5MCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZjZmNWI0MGIxNTg0NTdkMTc4NjRmMjE3OTA3ODZkZDVhMmVjZGI2NGI2NmE2NTFmNzg4ZDRlMjVjZDMzMDNkMiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMTQxNmJhNTRiYmMyMmE0MTVhMTE1ZWI0NTE3NGYzYWUwOWI4MTAyN2M1YWY5YmE0ZDY0ZjFmYjJjY2UzZmI3MSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMmI4MTMzNmQyNzY4ZDEwNTY3Y2E2NDZhNWYwMzkyZmEyZGQ4NzU1MDRhMzVhOTVlNjBlZTRkZGIyMjQ2YWQ0NiJ9"
+          "resource": "repo://background.js#L56-L65",
+          "version": "repo-lines-v1:sha256:fd2c9983ff1c216b52b2debbe9dab1cc5a3d87d54b1978a9d487c6163e960c1c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyY2Y2YTYwMmU4NzA0Y2VjZjkxNWE4Y2E2MTNjYjllY2RlNWQ4ZWM2NTczYTk3MjRjYTEzODUzNjczODY1OTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ZjViNDBiMTU4NDU3ZDE3ODY0ZjIxNzkwNzg2ZGQ1YTJlY2RiNjRiNjZhNjUxZjc4OGQ0ZTI1Y2QzMzAzZDIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzZGYwMjAwNGUxYTdmM2U1ZWY3NmFhM2RhYzI3MmFhM2Y1ZDBkZDkyM2RkYWRjYzdjZGEzZmVkMGQ2ZDE5NTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiODEzMzZkMjc2OGQxMDU2N2NhNjQ2YTVmMDM5MmZhMmRkODc1NTA0YTM1YTk1ZTYwZWU0ZGRiMjI0NmFkNDYifQ"
         }
       ]
     },
@@ -55,7 +55,7 @@
       "statement": "The extension can be loaded unpacked from the repository folder or from the unzipped release zip, and a release install is updated by unzipping the new version over the same folder and reloading.",
       "evidence": [
         {
-          "resource": "repo://README.md#L121-L125",
+          "resource": "repo://README.md#L141-L145",
           "version": "repo-lines-v1:sha256:52106ad81666fba45ed023b71f501dd78798dfca781fc1273671a59aca05c563:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOTg0YjRiYjI3OTBkZjExOTNiYmJiYTNkMzNlZjhlZThmNWJhNThjYTA0NWU4MmUyZDBlMWY5Mzg5NTM1NjBhMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMDBlYzFiM2UwYzY4ODMwZTIyYzc3ZGY4ZTE1Mzc3MzY5YTFmYjJhZDY1NmY2NzhjYzdmNTBmYWQ3YjQwOWFhZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiN2MyNWEyNGE2N2E2OWYxYjk0OTY3NmU0YzMwYzdlNTUyMDdkMzEyMjRkYzc1NTZlMGYxMTVmYzNkYjA1N2U0OCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYWEyNjZhNmRmODc3NWQzNmU3NDNiNjNiOGJhODNlYWFlODk4Y2MyMGFmOTc5ODRmY2UwZWY5MjU3OTEzZTdkMyJ9"
         },
         {
@@ -66,21 +66,31 @@
     },
     {
       "id": "claim_0b4fa64fdb6d4f0bbcc0ea6244996412",
-      "statement": "Automated tests cover only video detection and translation keys, so runtime behavior such as claims, storage, popup, lock page and tab reloads is verified manually in Chrome.",
+      "statement": "Automated tests cover only pure helpers (video detection, pause end time, wrong-password delay steps) and translation keys, so runtime behavior such as claims, storage, popup, lock page and tab reloads is verified manually in Chrome.",
       "evidence": [
         {
-          "resource": "repo://tests/lib.test.js#L1-L11",
-          "version": "repo-lines-v1:sha256:725b5c39b4caf98bbb0b4347b0e66fe74ba184a29fa54629f64b31499305d8c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1OTJlMjQ4YWUxYzcwY2JkM2IxMDI4M2JiNjk0NjA0MzI3MDdmMDVlZjU3MDY5YjYzODVmNjY2N2JkNWE2NGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk5MmFkMzExNDU4ZGIzOTg1MWZkNjNlMmEyM2FlN2Y5Njc3ZWIyZmJkMmM1ZGJiMmRiNzE4YzExYjljNjI1MjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY5NjAzOGQ3YWI2YjVhNjhmZTNlNDFmYzIzYTdhNWU3MjMxM2QwYzVlZjc0ZDM5NmM2NWQzMWQyYjZhZjFjOTYifQ"
+          "resource": "repo://tests/lib.test.js",
+          "version": "repo-file-v1:sha256:792fbfa08188083e75dff9eefb58fd1e5c3494a51373f0d0ed2ab312d92b5081"
         },
         {
           "resource": "repo://tests/locales.test.js#L1-L2",
           "version": "repo-lines-v1:sha256:d35c5f3232e953132e59d4c0f126257e95d97534e507faa8452125cf65f60439:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTk4YmE3MzQ2YzY2NWMzMWZjYjk5MDIyMjMyMzM1MWE4MDUyNzcxOGQ0NjY0MDRiMTc0YTYwNjI5ZTYyYmM4ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjZlNmU4MTkwMWZhZmIyNjNiODhkNmIwNTRlNzYyZGQxZmVlNmM3ZjY4MzA5Y2Y0Mzk2M2FjNjM4YjJkZDQ1OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjAsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMGQ0ODNiZTcwMDY1YzM0YmFmOTEwNjNkMmRlMmQ1OWNlZjhhN2E1MmYyNTA2OGU1MzQ4MTcyZjAxZWIzODNiNiJ9"
         }
       ]
+    },
+    {
+      "id": "claim_aa76783ff6ef4a1c95038faaca77cdf0",
+      "statement": "On install or update, the background worker migrates the pre-2.4 enabled switch through the claim queue: enabled false becomes pausedUntil at the next 3:00, and enabled is deleted so the migration runs once.",
+      "evidence": [
+        {
+          "resource": "repo://background.js#L47-L59",
+          "version": "repo-lines-v1:sha256:32dcef50a8fc2cedc94afe8cd5a985458324975921249973794d4c33fa435472:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkODkyNjFlN2ExOWMyNWFiZGQ1Mjc3NzNlNmJmYzY4YThkNjk5ZDRmYzhkOGJjYzMyMGNmMzNkMzYzNDI2ZmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc5OTYwMmVjZmM3M2NlMDE3NjJlNmVhNzhjYjhkZjUzOTNlNjQzNWFhYzkwOTVhMmVlZjgzZDJmYTA3MzZjOGEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE0MTZiYTU0YmJjMjJhNDE1YTExNWViNDUxNzRmM2FlMDliODEwMjdjNWFmOWJhNGQ2NGYxZmIyY2NlM2ZiNzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2MTYzZjE2N2NhMDZlMjE1MzBhNmQzNjEwNzQ4ODZiYWEyZTdkZmVmZjc1ZDc2OWU1M2ZiNzE0MDU0NjZmYTcifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.2",
-    "at": "2026-11-01T12:16:37.173Z"
+    "at": "2026-11-13T21:24:43.706Z"
   }
 }
